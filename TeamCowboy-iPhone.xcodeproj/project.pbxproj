@@ -12,6 +12,8 @@
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
 		97A069A61997F90A0094556D /* TeamCowboy_iPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069A51997F90A0094556D /* TeamCowboy_iPhoneTests.m */; };
 		97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B11997FAB60094556D /* ITCAppDelegate.m */; };
+		97A069B6199803120094556D /* ITCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B5199803120094556D /* ITCLoginViewController.m */; };
+		97A069BA1998046A0094556D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069B91998046A0094556D /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,9 @@
 		97A069A51997F90A0094556D /* TeamCowboy_iPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamCowboy_iPhoneTests.m; sourceTree = "<group>"; };
 		97A069B01997FAB60094556D /* ITCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAppDelegate.h; sourceTree = "<group>"; };
 		97A069B11997FAB60094556D /* ITCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAppDelegate.m; sourceTree = "<group>"; };
+		97A069B4199803120094556D /* ITCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCLoginViewController.h; sourceTree = "<group>"; };
+		97A069B5199803120094556D /* ITCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCLoginViewController.m; sourceTree = "<group>"; };
+		97A069B91998046A0094556D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				97A069AF1997FA320094556D /* App */,
+				97A069B3199802E30094556D /* Login Page */,
 				97A069961997F90A0094556D /* Main.storyboard */,
 				97A069991997F90A0094556D /* Images.xcassets */,
 			);
@@ -109,6 +115,16 @@
 				97A069B11997FAB60094556D /* ITCAppDelegate.m */,
 			);
 			name = App;
+			sourceTree = "<group>";
+		};
+		97A069B3199802E30094556D /* Login Page */ = {
+			isa = PBXGroup;
+			children = (
+				97A069B4199803120094556D /* ITCLoginViewController.h */,
+				97A069B5199803120094556D /* ITCLoginViewController.m */,
+				97A069B91998046A0094556D /* Login.storyboard */,
+			);
+			name = "Login Page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +209,7 @@
 			files = (
 				97A069981997F90A0094556D /* Main.storyboard in Resources */,
 				97A0699A1997F90A0094556D /* Images.xcassets in Resources */,
+				97A069BA1998046A0094556D /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97A0698F1997F90A0094556D /* main.m in Sources */,
+				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
