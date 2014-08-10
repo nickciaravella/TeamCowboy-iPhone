@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
+		97A069981997F90A0094556D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069961997F90A0094556D /* Main.storyboard */; };
+		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
+		97A069A61997F90A0094556D /* TeamCowboy_iPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069A51997F90A0094556D /* TeamCowboy_iPhoneTests.m */; };
+		97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B11997FAB60094556D /* ITCAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97A069A01997F90A0094556D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97A069811997F90A0094556D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97A069881997F90A0094556D;
+			remoteInfo = "TeamCowboy-iPhone";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		97A069971997F90A0094556D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97A069991997F90A0094556D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		97A0699F1997F90A0094556D /* TeamCowboy-iPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TeamCowboy-iPhoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		97A069A41997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97A069A51997F90A0094556D /* TeamCowboy_iPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamCowboy_iPhoneTests.m; sourceTree = "<group>"; };
+		97A069B01997FAB60094556D /* ITCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAppDelegate.h; sourceTree = "<group>"; };
+		97A069B11997FAB60094556D /* ITCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97A069861997F90A0094556D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97A0699C1997F90A0094556D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97A069801997F90A0094556D = {
+			isa = PBXGroup;
+			children = (
+				97A0698B1997F90A0094556D /* TeamCowboy-iPhone */,
+				97A069A21997F90A0094556D /* TeamCowboy-iPhoneTests */,
+				97A0698A1997F90A0094556D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97A0698A1997F90A0094556D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97A069891997F90A0094556D /* TeamCowboy-iPhone.app */,
+				97A0699F1997F90A0094556D /* TeamCowboy-iPhoneTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97A0698B1997F90A0094556D /* TeamCowboy-iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				97A069AF1997FA320094556D /* App */,
+				97A069961997F90A0094556D /* Main.storyboard */,
+				97A069991997F90A0094556D /* Images.xcassets */,
+			);
+			path = "TeamCowboy-iPhone";
+			sourceTree = "<group>";
+		};
+		97A069A21997F90A0094556D /* TeamCowboy-iPhoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				97A069A51997F90A0094556D /* TeamCowboy_iPhoneTests.m */,
+				97A069A31997F90A0094556D /* Supporting Files */,
+			);
+			path = "TeamCowboy-iPhoneTests";
+			sourceTree = "<group>";
+		};
+		97A069A31997F90A0094556D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				97A069A41997F90A0094556D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		97A069AF1997FA320094556D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				97A0698D1997F90A0094556D /* Info.plist */,
+				97A0698E1997F90A0094556D /* main.m */,
+				97A069B01997FAB60094556D /* ITCAppDelegate.h */,
+				97A069B11997FAB60094556D /* ITCAppDelegate.m */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97A069881997F90A0094556D /* TeamCowboy-iPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97A069A91997F90A0094556D /* Build configuration list for PBXNativeTarget "TeamCowboy-iPhone" */;
+			buildPhases = (
+				97A069851997F90A0094556D /* Sources */,
+				97A069861997F90A0094556D /* Frameworks */,
+				97A069871997F90A0094556D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TeamCowboy-iPhone";
+			productName = "TeamCowboy-iPhone";
+			productReference = 97A069891997F90A0094556D /* TeamCowboy-iPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		97A0699E1997F90A0094556D /* TeamCowboy-iPhoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97A069AC1997F90A0094556D /* Build configuration list for PBXNativeTarget "TeamCowboy-iPhoneTests" */;
+			buildPhases = (
+				97A0699B1997F90A0094556D /* Sources */,
+				97A0699C1997F90A0094556D /* Frameworks */,
+				97A0699D1997F90A0094556D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97A069A11997F90A0094556D /* PBXTargetDependency */,
+			);
+			name = "TeamCowboy-iPhoneTests";
+			productName = "TeamCowboy-iPhoneTests";
+			productReference = 97A0699F1997F90A0094556D /* TeamCowboy-iPhoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97A069811997F90A0094556D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Nick Ciaravella";
+				TargetAttributes = {
+					97A069881997F90A0094556D = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					97A0699E1997F90A0094556D = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 97A069881997F90A0094556D;
+					};
+				};
+			};
+			buildConfigurationList = 97A069841997F90A0094556D /* Build configuration list for PBXProject "TeamCowboy-iPhone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97A069801997F90A0094556D;
+			productRefGroup = 97A0698A1997F90A0094556D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97A069881997F90A0094556D /* TeamCowboy-iPhone */,
+				97A0699E1997F90A0094556D /* TeamCowboy-iPhoneTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97A069871997F90A0094556D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97A069981997F90A0094556D /* Main.storyboard in Resources */,
+				97A0699A1997F90A0094556D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97A0699D1997F90A0094556D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97A069851997F90A0094556D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97A0698F1997F90A0094556D /* main.m in Sources */,
+				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97A0699B1997F90A0094556D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97A069A61997F90A0094556D /* TeamCowboy_iPhoneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97A069A11997F90A0094556D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97A069881997F90A0094556D /* TeamCowboy-iPhone */;
+			targetProxy = 97A069A01997F90A0094556D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		97A069961997F90A0094556D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97A069971997F90A0094556D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97A069A71997F90A0094556D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		97A069A81997F90A0094556D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97A069AA1997F90A0094556D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "TeamCowboy-iPhone/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		97A069AB1997F90A0094556D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "TeamCowboy-iPhone/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		97A069AD1997F90A0094556D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TeamCowboy-iPhoneTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeamCowboy-iPhone.app/TeamCowboy-iPhone";
+			};
+			name = Debug;
+		};
+		97A069AE1997F90A0094556D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TeamCowboy-iPhoneTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeamCowboy-iPhone.app/TeamCowboy-iPhone";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97A069841997F90A0094556D /* Build configuration list for PBXProject "TeamCowboy-iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97A069A71997F90A0094556D /* Debug */,
+				97A069A81997F90A0094556D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97A069A91997F90A0094556D /* Build configuration list for PBXNativeTarget "TeamCowboy-iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97A069AA1997F90A0094556D /* Debug */,
+				97A069AB1997F90A0094556D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97A069AC1997F90A0094556D /* Build configuration list for PBXNativeTarget "TeamCowboy-iPhoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97A069AD1997F90A0094556D /* Debug */,
+				97A069AE1997F90A0094556D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97A069811997F90A0094556D /* Project object */;
+}
