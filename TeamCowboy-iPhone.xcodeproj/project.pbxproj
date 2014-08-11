@@ -10,10 +10,11 @@
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
 		97A069981997F90A0094556D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069961997F90A0094556D /* Main.storyboard */; };
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
-		97A069A61997F90A0094556D /* TeamCowboy_iPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069A51997F90A0094556D /* TeamCowboy_iPhoneTests.m */; };
 		97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B11997FAB60094556D /* ITCAppDelegate.m */; };
 		97A069B6199803120094556D /* ITCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B5199803120094556D /* ITCLoginViewController.m */; };
 		97A069BA1998046A0094556D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069B91998046A0094556D /* Login.storyboard */; };
+		97A069C2199885080094556D /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069C1199885080094556D /* UIViewController+Common.m */; };
+		97A069C5199889410094556D /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069C4199889410094556D /* NSString+Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +35,15 @@
 		97A069991997F90A0094556D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		97A0699F1997F90A0094556D /* TeamCowboy-iPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TeamCowboy-iPhoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A069A41997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97A069A51997F90A0094556D /* TeamCowboy_iPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamCowboy_iPhoneTests.m; sourceTree = "<group>"; };
 		97A069B01997FAB60094556D /* ITCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAppDelegate.h; sourceTree = "<group>"; };
 		97A069B11997FAB60094556D /* ITCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAppDelegate.m; sourceTree = "<group>"; };
 		97A069B4199803120094556D /* ITCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCLoginViewController.h; sourceTree = "<group>"; };
 		97A069B5199803120094556D /* ITCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCLoginViewController.m; sourceTree = "<group>"; };
 		97A069B91998046A0094556D /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		97A069C0199885080094556D /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
+		97A069C1199885080094556D /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
+		97A069C3199889410094556D /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
+		97A069C4199889410094556D /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				97A069AF1997FA320094556D /* App */,
-				97A069B3199802E30094556D /* Login Page */,
+				97A069B3199802E30094556D /* Authentication */,
+				97A069BB199883AC0094556D /* Common */,
 				97A069961997F90A0094556D /* Main.storyboard */,
 				97A069991997F90A0094556D /* Images.xcassets */,
 			);
@@ -92,7 +97,6 @@
 		97A069A21997F90A0094556D /* TeamCowboy-iPhoneTests */ = {
 			isa = PBXGroup;
 			children = (
-				97A069A51997F90A0094556D /* TeamCowboy_iPhoneTests.m */,
 				97A069A31997F90A0094556D /* Supporting Files */,
 			);
 			path = "TeamCowboy-iPhoneTests";
@@ -117,14 +121,33 @@
 			name = App;
 			sourceTree = "<group>";
 		};
-		97A069B3199802E30094556D /* Login Page */ = {
+		97A069B3199802E30094556D /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				97A069B4199803120094556D /* ITCLoginViewController.h */,
 				97A069B5199803120094556D /* ITCLoginViewController.m */,
 				97A069B91998046A0094556D /* Login.storyboard */,
 			);
-			name = "Login Page";
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		97A069BB199883AC0094556D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				97A069BF199884F00094556D /* Controllers */,
+				97A069C3199889410094556D /* NSString+Common.h */,
+				97A069C4199889410094556D /* NSString+Common.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		97A069BF199884F00094556D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				97A069C0199885080094556D /* UIViewController+Common.h */,
+				97A069C1199885080094556D /* UIViewController+Common.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +251,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97A0698F1997F90A0094556D /* main.m in Sources */,
+				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
+				97A069C5199889410094556D /* NSString+Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97A069A61997F90A0094556D /* TeamCowboy_iPhoneTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

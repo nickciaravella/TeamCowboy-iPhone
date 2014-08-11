@@ -33,6 +33,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="D0a-3N-XhE" id="qbb-MD-X7G"/>
+                                        </connections>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AUt-fe-LE2" userLabel="separator">
                                         <rect key="frame" x="15" y="47" width="538" height="1"/>
@@ -45,6 +48,9 @@
                                         <rect key="frame" x="10" y="50" width="548" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="D0a-3N-XhE" id="PaQ-zR-9Ts"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,12 +72,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdg-IM-1Je" userLabel="button container">
                                 <rect key="frame" x="16" y="250" width="568" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-ht-JS0">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-ht-JS0">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="40"/>
                                         <state key="normal" title="Sign in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="1" green="0.96420811281761842" blue="0.9390481712767369" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onSignInButtonClicked:" destination="D0a-3N-XhE" eventType="touchUpInside" id="3Y2-BU-NNV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.75274226641414144" green="0.75274226641414144" blue="0.75274226641414144" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,6 +104,9 @@
                                 <state key="normal" title="Reset Password">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onResetPasswordButtonClicked:" destination="D0a-3N-XhE" eventType="touchUpInside" id="VxY-jY-66d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgv-It-Hxb">
                                 <rect key="frame" x="156" y="304" width="128" height="30"/>
@@ -102,6 +117,9 @@
                                 <state key="normal" title="Create an Account">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCreateAccountButtonClicked:" destination="D0a-3N-XhE" eventType="touchUpInside" id="5ip-er-Mhm"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hyi-MB-ZXx" userLabel="separator">
                                 <rect key="frame" x="299" y="300" width="1" height="40"/>
@@ -112,7 +130,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.76810220647115557" green="0.91559252677004366" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92815693973773716" green="0.97418698920171121" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="IKu-Zl-hxE" secondAttribute="centerX" id="Egv-84-uq6"/>
                             <constraint firstItem="zdg-IM-1Je" firstAttribute="centerX" secondItem="hyi-MB-ZXx" secondAttribute="centerX" id="H7k-XB-Nv2"/>
@@ -130,6 +148,12 @@
                             <constraint firstItem="8aM-cu-SJD" firstAttribute="leading" secondItem="hyi-MB-ZXx" secondAttribute="trailing" constant="15" id="wBF-p8-ss5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="OBD-My-ZMK" id="FZz-JQ-Eny"/>
+                        <outlet property="signInButton" destination="9Cg-ht-JS0" id="Lle-mA-ddC"/>
+                        <outlet property="usernameTextField" destination="uln-Wf-gC1" id="EL1-BK-zCR"/>
+                        <outlet property="view" destination="SgQ-OK-vCW" id="MG8-pq-JrF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="anS-uG-b6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
