@@ -12,8 +12,10 @@
 
 // App-Wide
 #import "ITCAppFactory.h"
+#import "ITCError.h"
 
 // Helper categories
+#import "NSError+Common.h"
 #import "NSObject+Concurrency.h"
 #import "NSString+Common.h"
 #import "UIViewController+Common.h"

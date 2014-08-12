@@ -14,4 +14,9 @@ const BOOL shouldUseMocks = YES;
     return [ITCAuthenticationProviderImp new];
 }
 
++ (id<ITCTeamCowboyService>)teamCowboyService
+{
+    return nil;
+}
+
 @end

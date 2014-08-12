@@ -14,7 +14,26 @@
 - (NSError *)authenticateUserWithUsername:(NSString *)username
                                  password:(NSString *)password
 {
-    [NSThread sleepForTimeInterval:3];
+    if ( username.length == 0 || password.length == 0 )
+    {
+        return [NSError errorWithCode:ITCErrorInvalidArgument
+                              message:@"Username or password is invalid."];
+    }
+    
+    NSError *responseError = nil;
+    NSDictionary *requestBody = @{ @"username" : username,
+                                   @"password" : password };
+    NSDictionary *response = [[ITCAppFactory teamCowboyService] securePostRequestWithPath:@"Auth_GetUserToken"
+                                                                                     body:requestBody
+                                                                                    error:&responseError];
+    if ( responseError )
+    {
+        return responseError;
+    }
+    
+    self.userId = [response[@"userId"] unsignedIntegerValue];
+    self.token  = response[@"token"];
+
     return nil;
 }
 

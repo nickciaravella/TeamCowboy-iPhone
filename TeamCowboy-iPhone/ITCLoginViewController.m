@@ -48,29 +48,29 @@ replacementString:(NSString *)string
 //
 - (void)onSignInButtonClicked:(UIButton *)sender
 {
-    self.signInButton.enabled = NO;
-    self.usernameTextField.enabled = NO;
-    self.usernameTextField.textColor = [UIColor lightGrayColor];
-    self.passwordTextField.enabled = NO;
-    self.passwordTextField.textColor = [UIColor lightGrayColor];
+    [self setViewsForLoading:YES];
 
     [self dispatchConcurrentQueueFromUx:^{
         
-        /* NSError *error = */[[ITCAppFactory authenticationProvider] authenticateUserWithUsername:self.usernameTextField.text
-                                                                                          password:self.passwordTextField.text];
-        
-        [self dispatchMainQueue:^{
-            
-            self.signInButton.enabled = YES;
-            self.usernameTextField.enabled = YES;
-            self.usernameTextField.textColor = [UIColor blackColor];
-            self.passwordTextField.enabled = YES;
-            self.passwordTextField.textColor = [UIColor blackColor];
-            
-        }];
+        [[ITCAppFactory authenticationProvider] authenticateUserWithUsername:self.usernameTextField.text
+                                                                    password:self.passwordTextField.text];
+        [self dispatchMainQueue:^{ [self setViewsForLoading:NO]; }];
         
     }];
+}
 
+#pragma mark - Private helpers
+
+//
+//
+- (void)setViewsForLoading:(BOOL)isLoading
+{
+    UIColor *textFieldFontColor = ( isLoading ) ? [UIColor lightGrayColor] : [UIColor blackColor];
+    self.signInButton.enabled        = !isLoading;
+    self.usernameTextField.enabled   = !isLoading;
+    self.usernameTextField.textColor = textFieldFontColor;
+    self.passwordTextField.enabled   = !isLoading;
+    self.passwordTextField.textColor = textFieldFontColor;
 }
 
 @end

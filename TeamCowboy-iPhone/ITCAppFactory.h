@@ -4,6 +4,7 @@
 //
 
 #import "ITCAuthenticationProvider.h"
+#import "ITCTeamCowboyService.h"
 
 /**
  @brief Factory for creating the application objects.
@@ -11,5 +12,6 @@
 @interface ITCAppFactory : NSObject
 
 + (id<ITCAuthenticationProvider>)authenticationProvider;
++ (id<ITCTeamCowboyService>)teamCowboyService;
 
 @end

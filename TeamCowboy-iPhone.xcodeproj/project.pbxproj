@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
 		97A069981997F90A0094556D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069961997F90A0094556D /* Main.storyboard */; };
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
@@ -32,6 +33,10 @@
 
 /* Begin PBXFileReference section */
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
+		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
+		972907FB1999C7A200F568A5 /* NSError+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+Common.h"; sourceTree = "<group>"; };
+		972907FC1999C7A200F568A5 /* NSError+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Common.m"; sourceTree = "<group>"; };
 		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -75,6 +80,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		972907F61999C1B200F568A5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		972907F71999C1C400F568A5 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				97A069C3199889410094556D /* NSString+Common.h */,
+				97A069C4199889410094556D /* NSString+Common.m */,
+				97A069D31999B3360094556D /* NSObject+Concurrency.h */,
+				97A069D41999B3360094556D /* NSObject+Concurrency.m */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		972907F91999C63800F568A5 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				972907FA1999C67B00F568A5 /* ITCError.h */,
+				972907FB1999C7A200F568A5 /* NSError+Common.h */,
+				972907FC1999C7A200F568A5 /* NSError+Common.m */,
+			);
+			name = Error;
+			sourceTree = "<group>";
+		};
 		97A069801997F90A0094556D = {
 			isa = PBXGroup;
 			children = (
@@ -151,22 +185,21 @@
 		97A069BB199883AC0094556D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				97A069BF199884F00094556D /* Controllers */,
-				97A069C3199889410094556D /* NSString+Common.h */,
-				97A069C4199889410094556D /* NSString+Common.m */,
-				97A069D31999B3360094556D /* NSObject+Concurrency.h */,
-				97A069D41999B3360094556D /* NSObject+Concurrency.m */,
+				972907F91999C63800F568A5 /* Error */,
+				972907F71999C1C400F568A5 /* Foundation */,
+				972907F61999C1B200F568A5 /* Service */,
+				97A069BF199884F00094556D /* UIKit */,
 			);
 			name = Common;
 			sourceTree = "<group>";
 		};
-		97A069BF199884F00094556D /* Controllers */ = {
+		97A069BF199884F00094556D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				97A069C0199885080094556D /* UIViewController+Common.h */,
 				97A069C1199885080094556D /* UIViewController+Common.m */,
 			);
-			name = Controllers;
+			name = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +307,7 @@
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
 				97A069D21999AE510094556D /* ITCAuthenticationProviderImp.m in Sources */,
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
+				972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */,
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
 				97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */,
