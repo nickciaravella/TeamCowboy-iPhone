@@ -3,8 +3,6 @@
 //  Copyright (c) 2014 Nick Ciaravella. All rights reserved.
 //
 
-#import "NSString+Common.h"
-
 @implementation NSString (Common)
 
 //

@@ -1,0 +1,21 @@
+//
+//  Prefix.pch
+//  Copyright (c) 2014 Nick Ciaravella. All rights reserved.
+//
+
+#ifndef TeamCowboy_iPhone_Prefix_pch
+#define TeamCowboy_iPhone_Prefix_pch
+
+// Frameworks
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+// App-Wide
+#import "ITCAppFactory.h"
+
+// Helper categories
+#import "NSObject+Concurrency.h"
+#import "NSString+Common.h"
+#import "UIViewController+Common.h"
+
+#endif

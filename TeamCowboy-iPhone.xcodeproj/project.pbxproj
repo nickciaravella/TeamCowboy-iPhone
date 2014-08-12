@@ -15,6 +15,9 @@
 		97A069BA1998046A0094556D /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069B91998046A0094556D /* Login.storyboard */; };
 		97A069C2199885080094556D /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069C1199885080094556D /* UIViewController+Common.m */; };
 		97A069C5199889410094556D /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069C4199889410094556D /* NSString+Common.m */; };
+		97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069C719988EBE0094556D /* ITCAppFactory.m */; };
+		97A069D21999AE510094556D /* ITCAuthenticationProviderImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069D11999AE510094556D /* ITCAuthenticationProviderImp.m */; };
+		97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069D41999B3360094556D /* NSObject+Concurrency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,6 +48,13 @@
 		97A069C1199885080094556D /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
 		97A069C3199889410094556D /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
 		97A069C4199889410094556D /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
+		97A069C619988EBE0094556D /* ITCAppFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAppFactory.h; sourceTree = "<group>"; };
+		97A069C719988EBE0094556D /* ITCAppFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAppFactory.m; sourceTree = "<group>"; };
+		97A069CF1999AAB30094556D /* ITCAuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAuthenticationProvider.h; sourceTree = "<group>"; };
+		97A069D01999AE510094556D /* ITCAuthenticationProviderImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAuthenticationProviderImp.h; sourceTree = "<group>"; };
+		97A069D11999AE510094556D /* ITCAuthenticationProviderImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAuthenticationProviderImp.m; sourceTree = "<group>"; };
+		97A069D31999B3360094556D /* NSObject+Concurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Concurrency.h"; sourceTree = "<group>"; };
+		97A069D41999B3360094556D /* NSObject+Concurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Concurrency.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +128,9 @@
 				97A0698E1997F90A0094556D /* main.m */,
 				97A069B01997FAB60094556D /* ITCAppDelegate.h */,
 				97A069B11997FAB60094556D /* ITCAppDelegate.m */,
+				97A069C619988EBE0094556D /* ITCAppFactory.h */,
+				97A069C719988EBE0094556D /* ITCAppFactory.m */,
+				972907F51999B96E00F568A5 /* Prefix.pch */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -124,6 +138,9 @@
 		97A069B3199802E30094556D /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				97A069CF1999AAB30094556D /* ITCAuthenticationProvider.h */,
+				97A069D01999AE510094556D /* ITCAuthenticationProviderImp.h */,
+				97A069D11999AE510094556D /* ITCAuthenticationProviderImp.m */,
 				97A069B4199803120094556D /* ITCLoginViewController.h */,
 				97A069B5199803120094556D /* ITCLoginViewController.m */,
 				97A069B91998046A0094556D /* Login.storyboard */,
@@ -137,6 +154,8 @@
 				97A069BF199884F00094556D /* Controllers */,
 				97A069C3199889410094556D /* NSString+Common.h */,
 				97A069C4199889410094556D /* NSString+Common.m */,
+				97A069D31999B3360094556D /* NSObject+Concurrency.h */,
+				97A069D41999B3360094556D /* NSObject+Concurrency.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -253,8 +272,11 @@
 				97A0698F1997F90A0094556D /* main.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
+				97A069D21999AE510094556D /* ITCAuthenticationProviderImp.m in Sources */,
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,
+				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
+				97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +332,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TeamCowboy-iPhone/Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -350,6 +374,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TeamCowboy-iPhone/Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

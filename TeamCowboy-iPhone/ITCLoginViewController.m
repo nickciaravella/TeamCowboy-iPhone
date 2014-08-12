@@ -4,8 +4,6 @@
 //
 
 #import "ITCLoginViewController.h"
-#import "NSString+Common.h"
-#import "UIViewController+Common.h"
 
 #pragma mark - ITCLoginViewController (implementation)
 
@@ -50,7 +48,29 @@ replacementString:(NSString *)string
 //
 - (void)onSignInButtonClicked:(UIButton *)sender
 {
-    
+    self.signInButton.enabled = NO;
+    self.usernameTextField.enabled = NO;
+    self.usernameTextField.textColor = [UIColor lightGrayColor];
+    self.passwordTextField.enabled = NO;
+    self.passwordTextField.textColor = [UIColor lightGrayColor];
+
+    [self dispatchConcurrentQueueFromUx:^{
+        
+        /* NSError *error = */[[ITCAppFactory authenticationProvider] authenticateUserWithUsername:self.usernameTextField.text
+                                                                                          password:self.passwordTextField.text];
+        
+        [self dispatchMainQueue:^{
+            
+            self.signInButton.enabled = YES;
+            self.usernameTextField.enabled = YES;
+            self.usernameTextField.textColor = [UIColor blackColor];
+            self.passwordTextField.enabled = YES;
+            self.passwordTextField.textColor = [UIColor blackColor];
+            
+        }];
+        
+    }];
+
 }
 
 @end
