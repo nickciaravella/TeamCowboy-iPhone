@@ -4,6 +4,7 @@
 //
 
 #import "ITCAuthenticationProviderImp.h"
+#import "ITCTeamCowboyEntitySerializer.h"
 
 @implementation ITCAuthenticationProviderImp
 
@@ -23,25 +24,18 @@
     NSError *responseError = nil;
     NSDictionary *requestBody = @{ @"username" : username,
                                    @"password" : password };
-    NSDictionary *response = [[ITCAppFactory teamCowboyService] securePostRequestWithPath:@"Auth_GetUserToken"
-                                                                                     body:requestBody
-                                                                                    error:&responseError];
+    id<ITCObjectSerializer> serializer = [ITCTeamCowboyEntitySerializer serializerForClass:[ITCAuthenticationContext class]
+                                                                              isCollection:NO];
+    self.authenticationContext = [[ITCAppFactory teamCowboyService] securePostRequestWithPath:@"Auth_GetUserToken"
+                                                                                  requestBody:requestBody
+                                                                      usingResponseSerializer:serializer
+                                                                                        error:&responseError];
     if ( responseError )
     {
         return responseError;
     }
-    
-    self.userId = [response[@"userId"] unsignedIntegerValue];
-    self.token  = response[@"token"];
 
     return nil;
-}
-
-//
-//
-- (BOOL)isUserAuthenticated
-{
-    return self.userId && self.token;
 }
 
 @end

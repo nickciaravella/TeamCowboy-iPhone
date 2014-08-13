@@ -3,6 +3,8 @@
 //  Copyright (c) 2014 Nick Ciaravella. All rights reserved.
 //
 
+#import "ITCAuthenticationContext.h"
+
 @protocol ITCAuthenticationProvider <NSObject>
 
 /**
@@ -14,19 +16,9 @@
 - (NSError *)authenticateUserWithUsername:(NSString *)username
                                  password:(NSString *)password;
 
-/**
- @brief The token of the currently authenticated user.
+/** 
+ @brief Context for the currently logged in user. 
  */
-@property (nonatomic, readonly) NSString *token;
-
-/**
- @brief The identifier of the currently authenticated user.
- */
-@property (nonatomic, readonly) NSUInteger userId;
-
-/**
- @brief Returns YES if a user is currently logged in, NO otherwise.
- */
-@property (nonatomic, readonly) BOOL isUserAuthenticated;
+@property (nonatomic, readonly) ITCAuthenticationContext *authenticationContext;
 
 @end

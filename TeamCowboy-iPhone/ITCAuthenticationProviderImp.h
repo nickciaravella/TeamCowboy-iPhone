@@ -7,8 +7,7 @@
 
 @interface ITCAuthenticationProviderImp : NSObject <ITCAuthenticationProvider>
 
-// Make protocol properties writable.
-@property (nonatomic, strong, readwrite) NSString *token;
-@property (nonatomic, assign, readwrite) NSUInteger userId;
+// Making property writable
+@property (nonatomic, strong, readwrite) ITCAuthenticationContext *authenticationContext;
 
 @end
