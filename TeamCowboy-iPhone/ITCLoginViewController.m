@@ -34,6 +34,7 @@ replacementString:(NSString *)string
 //
 - (void)onCreateAccountButtonClicked:(UIButton *)sender
 {
+    ITCLog(@"User clicked the 'Create Account' button.");
     [self openUrlWithAbsoluteString:@"https://www.teamcowboy.com/register"];
 }
 
@@ -41,6 +42,7 @@ replacementString:(NSString *)string
 //
 - (void)onResetPasswordButtonClicked:(UIButton *)sender
 {
+    ITCLog(@"User clicked the 'Reset Password' button.");
     [self openUrlWithAbsoluteString:@"https://www.teamcowboy.com/resetPassword"];
 }
 
@@ -48,14 +50,27 @@ replacementString:(NSString *)string
 //
 - (void)onSignInButtonClicked:(UIButton *)sender
 {
+    ITCLog(@"User clicked the 'Sign in' button.");
+    
     [self setViewsForLoading:YES];
 
     [self dispatchConcurrentQueueFromUx:^{
         
-        [[ITCAppFactory authenticationProvider] authenticateUserWithUsername:self.usernameTextField.text
-                                                                    password:self.passwordTextField.text];
-        [self dispatchMainQueue:^{ [self setViewsForLoading:NO]; }];
+        NSError *signInError = [[ITCAppFactory authenticationProvider] authenticateUserWithUsername:self.usernameTextField.text
+                                                                                           password:self.passwordTextField.text];
+        [self dispatchMainQueue:^{
+            [self setViewsForLoading:NO];
+        }];
         
+        if (signInError)
+        {
+            ITCLogError(signInError, @"There was an error signing in.");
+            [[ITCAppFactory alertingService] showAlertForError:signInError
+                                                     withTitle:@"Sign In Failed"
+                                                       message:@"Make sure that you have entered your username and password correctly, then try again."
+                                              acknowledgeBlock:^{}
+                                                    retryBlock:nil];
+        }
     }];
 }
 

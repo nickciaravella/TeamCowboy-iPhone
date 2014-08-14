@@ -3,6 +3,7 @@
 //  Copyright (c) 2014 Nick Ciaravella. All rights reserved.
 //
 
+#import "ITCAlertingService.h"
 #import "ITCAuthenticationProvider.h"
 #import "ITCTeamCowboyService.h"
 
@@ -11,6 +12,7 @@
  */
 @interface ITCAppFactory : NSObject
 
++ (ITCAlertingService *)alertingService;
 + (id<ITCAuthenticationProvider>)authenticationProvider;
 + (id<ITCTeamCowboyService>)teamCowboyService;
 

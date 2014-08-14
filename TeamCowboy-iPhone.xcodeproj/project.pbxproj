@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */; };
+		971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F8199D6D6700C2EF5C /* ITCAlertingService.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -41,6 +42,9 @@
 /* Begin PBXFileReference section */
 		971104F2199D5BED00C2EF5C /* ITCTeamCowboyError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyError.h; sourceTree = "<group>"; };
 		971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyError.m; sourceTree = "<group>"; };
+		971104F6199D670900C2EF5C /* ITCDiagnosticsMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCDiagnosticsMacros.h; sourceTree = "<group>"; };
+		971104F7199D6D6700C2EF5C /* ITCAlertingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAlertingService.h; sourceTree = "<group>"; };
+		971104F8199D6D6700C2EF5C /* ITCAlertingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAlertingService.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -102,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		971104F5199D66D100C2EF5C /* Diagnostic */ = {
+			isa = PBXGroup;
+			children = (
+				971104F6199D670900C2EF5C /* ITCDiagnosticsMacros.h */,
+			);
+			name = Diagnostic;
+			sourceTree = "<group>";
+		};
 		972907F61999C1B200F568A5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,11 +241,14 @@
 		97A069BB199883AC0094556D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				971104F5199D66D100C2EF5C /* Diagnostic */,
 				972907F91999C63800F568A5 /* Error */,
 				972907F71999C1C400F568A5 /* Foundation */,
 				9729080B199B0B3E00F568A5 /* Serialization */,
 				972907F61999C1B200F568A5 /* Service */,
 				97A069BF199884F00094556D /* UIKit */,
+				971104F7199D6D6700C2EF5C /* ITCAlertingService.h */,
+				971104F8199D6D6700C2EF5C /* ITCAlertingService.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -361,6 +376,7 @@
 				97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */,
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,
 				97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */,
+				971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
 				97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */,
 			);

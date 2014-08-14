@@ -6,15 +6,26 @@
 #import "ITCAuthenticationProviderImp.h"
 #import "ITCTeamCowboyServiceImp.h"
 
-const BOOL shouldUseMocks = YES;
+const BOOL shouldUseMocks = NO;
 
 @implementation ITCAppFactory
 
+//
+//
++ (ITCAlertingService *)alertingService
+{
+    return [ITCAlertingService new];
+}
+
+//
+//
 + (id<ITCAuthenticationProvider>)authenticationProvider
 {
     return [ITCAuthenticationProviderImp new];
 }
 
+//
+//
 + (id<ITCTeamCowboyService>)teamCowboyService
 {
     return [ITCTeamCowboyServiceImp new];
