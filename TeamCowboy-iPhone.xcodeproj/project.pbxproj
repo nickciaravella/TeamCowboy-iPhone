@@ -11,6 +11,9 @@
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
 		97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290806199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m */; };
+		9729080A199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290809199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m */; };
+		9729080E199B108900F568A5 /* ITCTeamCowboyRequestSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729080D199B108900F568A5 /* ITCTeamCowboyRequestSigner.m */; };
+		97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290810199BC7CC00F568A5 /* NSString+URL.m */; };
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
 		97A069981997F90A0094556D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069961997F90A0094556D /* Main.storyboard */; };
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
@@ -47,6 +50,12 @@
 		97290804199B057D00F568A5 /* ITCObjectSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCObjectSerializer.h; sourceTree = "<group>"; };
 		97290805199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyEntitySerializer.h; sourceTree = "<group>"; };
 		97290806199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyEntitySerializer.m; sourceTree = "<group>"; };
+		97290808199B0B2300F568A5 /* ITCTeamCowboyServiceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyServiceImp.h; sourceTree = "<group>"; };
+		97290809199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyServiceImp.m; sourceTree = "<group>"; };
+		9729080C199B108900F568A5 /* ITCTeamCowboyRequestSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyRequestSigner.h; sourceTree = "<group>"; };
+		9729080D199B108900F568A5 /* ITCTeamCowboyRequestSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyRequestSigner.m; sourceTree = "<group>"; };
+		9729080F199BC7CC00F568A5 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
+		97290810199BC7CC00F568A5 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,12 +102,11 @@
 		972907F61999C1B200F568A5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				97290804199B057D00F568A5 /* ITCObjectSerializer.h */,
-				97290805199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.h */,
-				97290806199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m */,
-				97290801199B027F00F568A5 /* ITCSerializableObject.h */,
-				97290802199B027F00F568A5 /* ITCSerializableObject.m */,
+				9729080C199B108900F568A5 /* ITCTeamCowboyRequestSigner.h */,
+				9729080D199B108900F568A5 /* ITCTeamCowboyRequestSigner.m */,
 				972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */,
+				97290808199B0B2300F568A5 /* ITCTeamCowboyServiceImp.h */,
+				97290809199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -108,6 +116,8 @@
 			children = (
 				97A069C3199889410094556D /* NSString+Common.h */,
 				97A069C4199889410094556D /* NSString+Common.m */,
+				9729080F199BC7CC00F568A5 /* NSString+URL.h */,
+				97290810199BC7CC00F568A5 /* NSString+URL.m */,
 				97A069D31999B3360094556D /* NSObject+Concurrency.h */,
 				97A069D41999B3360094556D /* NSObject+Concurrency.m */,
 			);
@@ -122,6 +132,18 @@
 				972907FC1999C7A200F568A5 /* NSError+Common.m */,
 			);
 			name = Error;
+			sourceTree = "<group>";
+		};
+		9729080B199B0B3E00F568A5 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				97290804199B057D00F568A5 /* ITCObjectSerializer.h */,
+				97290801199B027F00F568A5 /* ITCSerializableObject.h */,
+				97290802199B027F00F568A5 /* ITCSerializableObject.m */,
+				97290805199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.h */,
+				97290806199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m */,
+			);
+			name = Serialization;
 			sourceTree = "<group>";
 		};
 		97A069801997F90A0094556D = {
@@ -204,6 +226,7 @@
 			children = (
 				972907F91999C63800F568A5 /* Error */,
 				972907F71999C1C400F568A5 /* Foundation */,
+				9729080B199B0B3E00F568A5 /* Serialization */,
 				972907F61999C1B200F568A5 /* Service */,
 				97A069BF199884F00094556D /* UIKit */,
 			);
@@ -323,13 +346,16 @@
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
+				9729080A199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m in Sources */,
 				97A069D21999AE510094556D /* ITCAuthenticationProviderImp.m in Sources */,
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
+				97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */,
 				972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */,
 				97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */,
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,
 				97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
+				9729080E199B108900F568A5 /* ITCTeamCowboyRequestSigner.m in Sources */,
 				97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

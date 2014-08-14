@@ -26,10 +26,10 @@
                                    @"password" : password };
     id<ITCObjectSerializer> serializer = [ITCTeamCowboyEntitySerializer serializerForClass:[ITCAuthenticationContext class]
                                                                               isCollection:NO];
-    self.authenticationContext = [[ITCAppFactory teamCowboyService] securePostRequestWithPath:@"Auth_GetUserToken"
-                                                                                  requestBody:requestBody
-                                                                      usingResponseSerializer:serializer
-                                                                                        error:&responseError];
+    self.authenticationContext = [[ITCAppFactory teamCowboyService] securePostRequestWithMethod:@"Auth_GetUserToken"
+                                                                                    requestBody:requestBody
+                                                                        usingResponseSerializer:serializer
+                                                                                          error:&responseError];
     if ( responseError )
     {
         return responseError;
