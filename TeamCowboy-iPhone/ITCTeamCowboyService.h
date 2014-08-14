@@ -15,7 +15,7 @@
  @param error      If the call results in an error, this value will be set to the error and the return value will be nil.
  @return The service's serialized response.
  */
-- (id)securePostRequestWithMethod:(NSString *)path
+- (id)securePostRequestWithMethod:(NSString *)method
                       requestBody:(NSDictionary *)body
           usingResponseSerializer:(id<ITCObjectSerializer>)serializer
                             error:(NSError **)error;

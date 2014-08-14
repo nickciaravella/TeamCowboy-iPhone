@@ -4,6 +4,7 @@
 //
 
 #import "ITCAuthenticationProviderImp.h"
+#import "ITCTeamCowboyServiceImp.h"
 
 const BOOL shouldUseMocks = YES;
 
@@ -16,7 +17,7 @@ const BOOL shouldUseMocks = YES;
 
 + (id<ITCTeamCowboyService>)teamCowboyService
 {
-    return nil;
+    return [ITCTeamCowboyServiceImp new];
 }
 
 @end

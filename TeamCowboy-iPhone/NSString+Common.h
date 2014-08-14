@@ -17,4 +17,9 @@
  */
 - (BOOL)isOnlyWhitespace;
 
+/**
+ @brief Returns the last character of the array.
+ */
+- (NSString *)lastCharacter;
+
 @end

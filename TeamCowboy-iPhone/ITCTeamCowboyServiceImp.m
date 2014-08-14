@@ -7,36 +7,76 @@
 
 @implementation ITCTeamCowboyServiceImp
 
+#pragma mark - ITCTeamCowboyService
+
 //
 //
-- (id)securePostRequestWithMethod:(NSString *)path
+- (id)securePostRequestWithMethod:(NSString *)method
                       requestBody:(NSDictionary *)body
           usingResponseSerializer:(id<ITCObjectSerializer>)serializer
                             error:(NSError **)error
 {
-    // 1. Add required parameters    
+    // 1. Add required parameters
+    NSString *nonce        = [[NSUUID UUID] UUIDString];
+    NSString *timestamp    = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
+    NSString *httpMethod   = @"POST";
+    
+    NSMutableDictionary *requestParameters = [@{ @"api_key"       : kITCTeamCowboyPublicApiKey,
+                                                 @"method"        : method,
+                                                 @"timestamp"     : timestamp,
+                                                 @"nonce"         : nonce,
+                                                 @"response_type" : @"json" } mutableCopy];
+    [requestParameters addEntriesFromDictionary:body];
 
+    // 2. Sign and create the request string
+    NSString *requestString = [self concatenatedRequestStringFromParameters:requestParameters];
     
-    // 1. Create signed request (need request signer)
+    NSString *signatureInput = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@",
+     kITCTeamCowboyPrivateApiKey, httpMethod, method, timestamp, nonce, [requestString lowercaseString]];
+    NSString *signature = [NSString sha1FromString:signatureInput];
+
+    requestString = [requestString stringByAppendingQueryParameterWithKey:@"sig" value:signature];
     
-    // 2. Serialize request to JSON
+    // 4. Make request
+    NSURL *url = [NSURL URLWithString:@"https://api.teamcowboy.com/v1/"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = httpMethod;
+    request.HTTPBody   = [requestString dataUsingEncoding:NSUTF8StringEncoding];
     
-    // 3. Make request
+    NSHTTPURLResponse *response = nil;
+    NSError *httpError = nil;
+    NSData *responseContent = [NSURLConnection sendSynchronousRequest:request
+                                                    returningResponse:&response
+                                                                error:&httpError];
     
-    // 4. Deserialize response to dictionary
+    // 5. Deserialize response to dictionary
+    NSError *jsonReadingError = nil;
+    NSDictionary *objectDictionary = [NSJSONSerialization JSONObjectWithData:responseContent
+                                                                     options:NSJSONReadingAllowFragments
+                                                                       error:&jsonReadingError];
     
-    // 5. Deserialize response to either entity or error
-    
-    return nil;
+    // 6. Deserialize response to either entity or error
+    NSLog(@"%@", objectDictionary);
+    return objectDictionary;
 }
-    
+
 #pragma mark - Private
 
 //
 //
-- (NSMutableDictionary *)commonParameters
+- (NSString *)concatenatedRequestStringFromParameters:(NSDictionary *)parameters
 {
-    return nil;
+    NSArray *sortedKeys = [[parameters allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    NSString *concatenatedRequest = [NSString string];
+    for (NSString *key in sortedKeys)
+    {
+        NSString *encodedValue = [NSString stringByUrlEncodingString:parameters[key]];
+        concatenatedRequest = [concatenatedRequest stringByAppendingQueryParameterWithKey:key
+                                                                                    value:encodedValue];
+    }
+    
+    return concatenatedRequest;
 }
 
 @end

@@ -1,8 +1,5 @@
 //
 //  NSString+URL.m
-//  TeamCowboy-iPhone
-//
-//  Created by Qian Han on 8/13/14.
 //  Copyright (c) 2014 Nick Ciaravella. All rights reserved.
 //
 
@@ -19,6 +16,21 @@
                                                                                   NULL,
                                                                                   (CFStringRef)@";/?:@&=$+{}<>,",
                                                                                   CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)));
+}
+
+//
+//
+- (NSString *)stringByAppendingQueryParameterWithKey:(NSString *)key
+                                               value:(NSString *)value
+{
+    if ( self.isOnlyWhitespace || [self.lastCharacter isEqualToString:@"&"] )
+    {
+        return [NSString stringWithFormat:@"%@%@=%@", self, key, value];
+    }
+    else
+    {
+        return [NSString stringWithFormat:@"%@&%@=%@", self, key, value];        
+    }
 }
 
 @end

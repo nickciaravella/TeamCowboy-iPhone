@@ -12,7 +12,6 @@
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
 		97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290806199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m */; };
 		9729080A199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290809199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m */; };
-		9729080E199B108900F568A5 /* ITCTeamCowboyRequestSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729080D199B108900F568A5 /* ITCTeamCowboyRequestSigner.m */; };
 		97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290810199BC7CC00F568A5 /* NSString+URL.m */; };
 		9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */; };
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
@@ -53,8 +52,6 @@
 		97290806199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyEntitySerializer.m; sourceTree = "<group>"; };
 		97290808199B0B2300F568A5 /* ITCTeamCowboyServiceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyServiceImp.h; sourceTree = "<group>"; };
 		97290809199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyServiceImp.m; sourceTree = "<group>"; };
-		9729080C199B108900F568A5 /* ITCTeamCowboyRequestSigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyRequestSigner.h; sourceTree = "<group>"; };
-		9729080D199B108900F568A5 /* ITCTeamCowboyRequestSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyRequestSigner.m; sourceTree = "<group>"; };
 		9729080F199BC7CC00F568A5 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
 		97290810199BC7CC00F568A5 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		97290819199C674400F568A5 /* ITCTeamCowboyApiKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyApiKeys.h; sourceTree = "<group>"; };
@@ -105,8 +102,6 @@
 		972907F61999C1B200F568A5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				9729080C199B108900F568A5 /* ITCTeamCowboyRequestSigner.h */,
-				9729080D199B108900F568A5 /* ITCTeamCowboyRequestSigner.m */,
 				972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */,
 				97290808199B0B2300F568A5 /* ITCTeamCowboyServiceImp.h */,
 				97290809199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m */,
@@ -361,7 +356,6 @@
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,
 				97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
-				9729080E199B108900F568A5 /* ITCTeamCowboyRequestSigner.m in Sources */,
 				97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
