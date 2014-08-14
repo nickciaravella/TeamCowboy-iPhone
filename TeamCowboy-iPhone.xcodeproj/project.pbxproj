@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		971104F2199D5BED00C2EF5C /* ITCTeamCowboyError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyError.h; sourceTree = "<group>"; };
+		971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyError.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				972907FA1999C67B00F568A5 /* ITCError.h */,
+				971104F2199D5BED00C2EF5C /* ITCTeamCowboyError.h */,
+				971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */,
 				972907FB1999C7A200F568A5 /* NSError+Common.h */,
 				972907FC1999C7A200F568A5 /* NSError+Common.m */,
 			);
@@ -345,6 +350,7 @@
 				97A0698F1997F90A0094556D /* main.m in Sources */,
 				9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
+				971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
 				9729080A199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m in Sources */,

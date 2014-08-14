@@ -30,12 +30,7 @@
                                                                                     requestBody:requestBody
                                                                         usingResponseSerializer:serializer
                                                                                           error:&responseError];
-    if ( responseError )
-    {
-        return responseError;
-    }
-
-    return nil;
+    return responseError;
 }
 
 @end

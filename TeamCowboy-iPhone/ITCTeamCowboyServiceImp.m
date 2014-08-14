@@ -4,6 +4,8 @@
 //
 
 #import "ITCTeamCowboyServiceImp.h"
+#import "ITCTeamCowboyEntitySerializer.h"
+#import "ITCTeamCowboyError.h"
 
 @implementation ITCTeamCowboyServiceImp
 
@@ -44,20 +46,29 @@
     request.HTTPBody   = [requestString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSHTTPURLResponse *response = nil;
-    NSError *httpError = nil;
     NSData *responseContent = [NSURLConnection sendSynchronousRequest:request
                                                     returningResponse:&response
-                                                                error:&httpError];
+                                                                error:error];
+    if ( *error )
+    {
+        return nil;
+    }    
     
-    // 5. Deserialize response to dictionary
-    NSError *jsonReadingError = nil;
-    NSDictionary *objectDictionary = [NSJSONSerialization JSONObjectWithData:responseContent
-                                                                     options:NSJSONReadingAllowFragments
-                                                                       error:&jsonReadingError];
-    
-    // 6. Deserialize response to either entity or error
-    NSLog(@"%@", objectDictionary);
-    return objectDictionary;
+    // 5. Deserialize response to either entity or error
+    if ( response.statusCode < 400 ) // Success: Use the entity serializer
+    {
+        return [serializer serializedObjectFromData:responseContent error:error];
+    }
+    else // Failure: Use the error serializer
+    {
+        id<ITCObjectSerializer> errorSerializer =  [ITCTeamCowboyEntitySerializer serializerForClass:[ITCTeamCowboyError class]
+                                                                                        isCollection:NO];
+        
+        ITCTeamCowboyError *teamCowboyError = [errorSerializer serializedObjectFromData:responseContent
+                                                                                  error:error];
+        *error = ( *error ) ? *error : teamCowboyError.error;
+        return nil;
+    }
 }
 
 #pragma mark - Private

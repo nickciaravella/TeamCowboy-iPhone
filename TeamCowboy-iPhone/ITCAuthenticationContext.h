@@ -10,7 +10,7 @@
 /**
  @brief The user identifier
  */
-@property (nonatomic, readonly) NSUInteger userId;
+@property (nonatomic, readonly) NSString *userId;
 
 /**
  @brief The user's authentication token.

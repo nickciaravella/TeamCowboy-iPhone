@@ -20,8 +20,8 @@
 {
     if (!(self = [super initWithDictionary:dictionary])) { return nil; }
     
-    _token  = dictionary[@"token"];
-    _userId = [dictionary[@"userId"] unsignedIntegerValue];
+    _token  = dictionary[ @"token" ];
+    _userId = dictionary[ @"userId" ];
     
     return self;
 }

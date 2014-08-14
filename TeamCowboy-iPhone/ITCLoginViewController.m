@@ -71,6 +71,9 @@ replacementString:(NSString *)string
     self.usernameTextField.textColor = textFieldFontColor;
     self.passwordTextField.enabled   = !isLoading;
     self.passwordTextField.textColor = textFieldFontColor;
+    
+    NSString *buttonTitle = ( isLoading ) ? @"Signing in..." : @"Sign in";
+    [self.signInButton setTitle:buttonTitle forState:UIControlStateNormal];
 }
 
 @end
