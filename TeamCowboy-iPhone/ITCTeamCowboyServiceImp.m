@@ -15,6 +15,7 @@
                             error:(NSError **)error
 {
     // 1. Add required parameters    
+
     
     // 1. Create signed request (need request signer)
     
@@ -26,6 +27,15 @@
     
     // 5. Deserialize response to either entity or error
     
+    return nil;
+}
+    
+#pragma mark - Private
+
+//
+//
+- (NSMutableDictionary *)commonParameters
+{
     return nil;
 }
 

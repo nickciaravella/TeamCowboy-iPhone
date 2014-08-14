@@ -18,6 +18,7 @@
 #import "NSError+Common.h"
 #import "NSObject+Concurrency.h"
 #import "NSString+Common.h"
+#import "NSString+URL.h"
 #import "UIViewController+Common.h"
 
 #endif

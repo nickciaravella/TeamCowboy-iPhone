@@ -20,7 +20,7 @@
 + (NSString *)requestSignatureWithPrivateKey:(NSString *)privateKey
                                   httpMethod:(NSString *)httpMethod
                             teamCowboyMethod:(NSString *)teamCowboyMethod
-                                   timestamp:(NSUInteger)timestamp
+                                   timestamp:(NSString *)timestamp
                                        nonce:(NSString *)nonce
                            requestParameters:(NSDictionary *)requestParameters;
 

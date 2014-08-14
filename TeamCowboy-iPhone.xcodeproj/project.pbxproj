@@ -14,6 +14,7 @@
 		9729080A199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290809199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m */; };
 		9729080E199B108900F568A5 /* ITCTeamCowboyRequestSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729080D199B108900F568A5 /* ITCTeamCowboyRequestSigner.m */; };
 		97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290810199BC7CC00F568A5 /* NSString+URL.m */; };
+		9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */; };
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
 		97A069981997F90A0094556D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069961997F90A0094556D /* Main.storyboard */; };
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
@@ -56,6 +57,8 @@
 		9729080D199B108900F568A5 /* ITCTeamCowboyRequestSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyRequestSigner.m; sourceTree = "<group>"; };
 		9729080F199BC7CC00F568A5 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
 		97290810199BC7CC00F568A5 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
+		97290819199C674400F568A5 /* ITCTeamCowboyApiKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyApiKeys.h; sourceTree = "<group>"; };
+		9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyApiKeys.m; sourceTree = "<group>"; };
 		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				97A069B11997FAB60094556D /* ITCAppDelegate.m */,
 				97A069C619988EBE0094556D /* ITCAppFactory.h */,
 				97A069C719988EBE0094556D /* ITCAppFactory.m */,
+				97290819199C674400F568A5 /* ITCTeamCowboyApiKeys.h */,
+				9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */,
 				972907F51999B96E00F568A5 /* Prefix.pch */,
 			);
 			name = App;
@@ -343,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97A0698F1997F90A0094556D /* main.m in Sources */,
+				9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
