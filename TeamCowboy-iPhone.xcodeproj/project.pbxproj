@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */; };
 		971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F8199D6D6700C2EF5C /* ITCAlertingService.m */; };
+		971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104FD199D7B4900C2EF5C /* ITCHttpConnectionImp.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -45,6 +46,9 @@
 		971104F6199D670900C2EF5C /* ITCDiagnosticsMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCDiagnosticsMacros.h; sourceTree = "<group>"; };
 		971104F7199D6D6700C2EF5C /* ITCAlertingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAlertingService.h; sourceTree = "<group>"; };
 		971104F8199D6D6700C2EF5C /* ITCAlertingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAlertingService.m; sourceTree = "<group>"; };
+		971104FB199D79EC00C2EF5C /* ITCHttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCHttpConnection.h; sourceTree = "<group>"; };
+		971104FC199D7B4900C2EF5C /* ITCHttpConnectionImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCHttpConnectionImp.h; sourceTree = "<group>"; };
+		971104FD199D7B4900C2EF5C /* ITCHttpConnectionImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCHttpConnectionImp.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -112,6 +116,16 @@
 				971104F6199D670900C2EF5C /* ITCDiagnosticsMacros.h */,
 			);
 			name = Diagnostic;
+			sourceTree = "<group>";
+		};
+		971104FA199D799D00C2EF5C /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				971104FB199D79EC00C2EF5C /* ITCHttpConnection.h */,
+				971104FC199D7B4900C2EF5C /* ITCHttpConnectionImp.h */,
+				971104FD199D7B4900C2EF5C /* ITCHttpConnectionImp.m */,
+			);
+			name = HTTP;
 			sourceTree = "<group>";
 		};
 		972907F61999C1B200F568A5 /* Service */ = {
@@ -244,6 +258,7 @@
 				971104F5199D66D100C2EF5C /* Diagnostic */,
 				972907F91999C63800F568A5 /* Error */,
 				972907F71999C1C400F568A5 /* Foundation */,
+				971104FA199D799D00C2EF5C /* HTTP */,
 				9729080B199B0B3E00F568A5 /* Serialization */,
 				972907F61999C1B200F568A5 /* Service */,
 				97A069BF199884F00094556D /* UIKit */,
@@ -365,6 +380,7 @@
 				97A0698F1997F90A0094556D /* main.m in Sources */,
 				9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
+				971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */,
 				971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,

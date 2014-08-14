@@ -4,6 +4,7 @@
 //
 
 #import "ITCAuthenticationProviderImp.h"
+#import "ITCHttpConnectionImp.h"
 #import "ITCTeamCowboyServiceImp.h"
 
 const BOOL shouldUseMocks = NO;
@@ -22,6 +23,13 @@ const BOOL shouldUseMocks = NO;
 + (id<ITCAuthenticationProvider>)authenticationProvider
 {
     return [ITCAuthenticationProviderImp new];
+}
+
+//
+//
++ (id<ITCHttpConnection>)httpConnection
+{
+    return [ITCHttpConnectionImp new];
 }
 
 //

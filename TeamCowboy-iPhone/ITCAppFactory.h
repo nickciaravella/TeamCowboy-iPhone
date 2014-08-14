@@ -5,6 +5,7 @@
 
 #import "ITCAlertingService.h"
 #import "ITCAuthenticationProvider.h"
+#import "ITCHttpConnection.h"
 #import "ITCTeamCowboyService.h"
 
 /**
@@ -14,6 +15,7 @@
 
 + (ITCAlertingService *)alertingService;
 + (id<ITCAuthenticationProvider>)authenticationProvider;
++ (id<ITCHttpConnection>)httpConnection;
 + (id<ITCTeamCowboyService>)teamCowboyService;
 
 @end

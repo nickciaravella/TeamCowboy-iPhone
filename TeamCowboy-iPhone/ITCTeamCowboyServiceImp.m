@@ -46,9 +46,9 @@
     request.HTTPBody   = [requestString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSHTTPURLResponse *response = nil;
-    NSData *responseContent = [NSURLConnection sendSynchronousRequest:request
-                                                    returningResponse:&response
-                                                                error:error];
+    NSData *responseContent = [[ITCAppFactory httpConnection] sendRequest:request
+                                                        returningResponse:&response
+                                                                    error:error];
     if ( *error )
     {
         return nil;
