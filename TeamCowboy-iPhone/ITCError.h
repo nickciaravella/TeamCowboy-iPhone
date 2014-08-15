@@ -7,6 +7,8 @@ typedef NS_ENUM(NSUInteger, ITCError)
 {
     ITCErrorUndefined = 1,
     ITCErrorInvalidArgument,
-    ITCErrorObjectSerialization,   // Failure during object serialization
-    ITCErrorGenericTeamCowboyError // Generic error from Team Cowboy service
+    ITCErrorGenericClientError,      // Non-specific 400 level error
+    ITCErrorGenericServerError,      // Non-specific 500 level error
+    ITCErrorObjectSerialization,     // Failure during object serialization
+    ITCErrorGenericTeamCowboyError,  // Generic error from Team Cowboy service
 };

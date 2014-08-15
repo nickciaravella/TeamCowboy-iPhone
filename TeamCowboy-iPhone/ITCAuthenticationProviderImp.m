@@ -33,6 +33,17 @@
                                                                                     requestBody:requestBody
                                                                         usingResponseSerializer:serializer
                                                                                           error:&responseError];
+    
+    // No error, but there is data missing.
+    if ( !responseError &&
+         ( self.authenticationContext.token.length == 0 || self.authenticationContext.userId.length == 0 ))
+    {
+        NSString *message = [NSString stringWithFormat:@"Server did not return a token (%@) or a userId (%@)",
+                             self.authenticationContext.token, self.authenticationContext.userId];
+        responseError = [NSError errorWithCode:ITCErrorGenericServerError message:message];
+        self.authenticationContext = nil;
+    }
+    
     return responseError;
 }
 

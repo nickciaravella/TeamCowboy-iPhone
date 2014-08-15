@@ -26,24 +26,23 @@
     
     *response = self.return_response;
     *error    = self.return_httpError;
-
-    if ( !self.return_authContext )
-    {
-        return nil;
-    }
     
-    return [ITCTeamCowboyHttpDataGenerator
-            dataForSuccessResponseWithEntity:[self authContextDictionaryWithUserId:self.return_authContext.userId
-                                                                             token:self.return_authContext.token]];
+    return self.return_responseData;
 }
 
 - (void)setAuthContextWithUserId:(NSString *)userId
                            token:(NSString *)token
 {
-    self.return_authContext = [[ITCAuthenticationContext alloc]
-                               initWithDictionary:[self authContextDictionaryWithUserId:userId
-                                                                                  token:token]];
+    self.return_responseData = [ITCTeamCowboyHttpDataGenerator
+                                dataForSuccessResponseWithEntity:[self authContextDictionaryWithUserId:userId
+                                                                                                 token:token]];
 }
+
+- (void)setTeamCowboyErrorWithCode:(NSString *)code message:(NSString *)message
+{
+    
+}
+
 
 - (NSDictionary *)authContextDictionaryWithUserId:(NSString *)userId
                                             token:(NSString *)token

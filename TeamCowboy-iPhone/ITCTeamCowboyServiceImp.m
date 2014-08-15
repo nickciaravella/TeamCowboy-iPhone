@@ -64,8 +64,25 @@
         id<ITCObjectSerializer> errorSerializer =  [ITCTeamCowboyEntitySerializer serializerForClass:[ITCTeamCowboyError class]
                                                                                         isCollection:NO];
         
+        NSError *serializationError = nil;
         ITCTeamCowboyError *teamCowboyError = [errorSerializer serializedObjectFromData:responseContent
-                                                                                  error:error];
+                                                                                  error:&serializationError];
+        if ( serializationError )
+        {
+            NSString *message = [NSString stringWithFormat:@"Error during request. method: %@, http status: %li", method, response.statusCode];
+            NSUInteger errorCode = ITCErrorUndefined;
+            if ( response.statusCode >= 400 && response.statusCode < 500 )
+            {
+                errorCode = ITCErrorGenericClientError;
+            }
+            else if ( response.statusCode >= 500 )
+            {
+                errorCode = ITCErrorGenericServerError;
+            }
+            *error = [NSError errorWithCode:errorCode
+                                 childError:serializationError
+                                    message:message];
+        }
         *error = ( *error ) ? *error : teamCowboyError.error;
         return nil;
     }

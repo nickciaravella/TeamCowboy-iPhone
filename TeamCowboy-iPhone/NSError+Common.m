@@ -12,7 +12,21 @@
 + (NSError *)errorWithCode:(NSUInteger)code
                    message:(NSString *)message
 {
-    return [NSError errorWithDomain:@"TeamCowboy-iPhone" code:code userInfo:@{ @"message" : message }];
+    return [NSError errorWithDomain:@"TeamCowboy-iPhone"
+                               code:code
+                           userInfo:@{ @"message" : message }];
+}
+
+//
+//
++ (NSError *)errorWithCode:(NSUInteger)code
+                childError:(NSError *)childError
+                   message:(NSString *)message
+{
+    return [NSError errorWithDomain:@"TeamCowboy-iPhone"
+                               code:code
+                           userInfo:@{ @"message"           : message,
+                                       NSUnderlyingErrorKey : childError }];
 }
 
 @end

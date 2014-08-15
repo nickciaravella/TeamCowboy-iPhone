@@ -17,6 +17,7 @@
 #import "ITCTeamCowboyApiKeys.h"
 
 // Helper categories
+#import "NSDictionary+URL.h"
 #import "NSError+Common.h"
 #import "NSObject+Concurrency.h"
 #import "NSString+Common.h"

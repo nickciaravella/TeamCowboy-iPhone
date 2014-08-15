@@ -45,8 +45,13 @@
 - (id)serializedObjectFromData:(NSData *)objectData
                          error:(NSError **)error
 {
-    if ( !error || !objectData )
+    if ( !error )
     {
+        return nil;
+    }
+    if ( !objectData )
+    {
+        *error = [NSError errorWithCode:ITCErrorObjectSerialization message:@"No object data to be serialized."];
         return nil;
     }
     

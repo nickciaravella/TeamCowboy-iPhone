@@ -17,6 +17,7 @@
 		9711050B199D839C00C2EF5C /* ITCAuthenticationRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711050A199D839C00C2EF5C /* ITCAuthenticationRequestHandler.m */; };
 		9711050E199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711050D199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m */; };
 		97110511199D89D200C2EF5C /* ITCTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110510199D89D200C2EF5C /* ITCTestCase.m */; };
+		97110515199DB08600C2EF5C /* NSDictionary+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110514199DB08600C2EF5C /* NSDictionary+URL.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -67,6 +68,8 @@
 		9711050D199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyHttpDataGenerator.m; sourceTree = "<group>"; };
 		9711050F199D89D200C2EF5C /* ITCTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTestCase.h; sourceTree = "<group>"; };
 		97110510199D89D200C2EF5C /* ITCTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTestCase.m; sourceTree = "<group>"; };
+		97110513199DB08600C2EF5C /* NSDictionary+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+URL.h"; sourceTree = "<group>"; };
+		97110514199DB08600C2EF5C /* NSDictionary+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URL.m"; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 		972907F71999C1C400F568A5 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				97110513199DB08600C2EF5C /* NSDictionary+URL.h */,
+				97110514199DB08600C2EF5C /* NSDictionary+URL.m */,
 				97A069C3199889410094556D /* NSString+Common.h */,
 				97A069C4199889410094556D /* NSString+Common.m */,
 				9729080F199BC7CC00F568A5 /* NSString+URL.h */,
@@ -432,6 +437,7 @@
 				97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */,
 				971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
+				97110515199DB08600C2EF5C /* NSDictionary+URL.m in Sources */,
 				97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
