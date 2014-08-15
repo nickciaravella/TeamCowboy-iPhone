@@ -10,6 +10,13 @@
 		971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */; };
 		971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F8199D6D6700C2EF5C /* ITCAlertingService.m */; };
 		971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104FD199D7B4900C2EF5C /* ITCHttpConnectionImp.m */; };
+		97110501199D7E4100C2EF5C /* ITCHttpConnectionMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110500199D7E4100C2EF5C /* ITCHttpConnectionMock.m */; };
+		97110502199D80B400C2EF5C /* ITCHttpConnectionMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110500199D7E4100C2EF5C /* ITCHttpConnectionMock.m */; };
+		97110504199D815700C2EF5C /* ITCAuthenticationProviderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110503199D815700C2EF5C /* ITCAuthenticationProviderTests.m */; };
+		97110507199D817D00C2EF5C /* ITCHttpConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110506199D817D00C2EF5C /* ITCHttpConnectionDelegate.m */; };
+		9711050B199D839C00C2EF5C /* ITCAuthenticationRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711050A199D839C00C2EF5C /* ITCAuthenticationRequestHandler.m */; };
+		9711050E199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711050D199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m */; };
+		97110511199D89D200C2EF5C /* ITCTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110510199D89D200C2EF5C /* ITCTestCase.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -49,6 +56,17 @@
 		971104FB199D79EC00C2EF5C /* ITCHttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCHttpConnection.h; sourceTree = "<group>"; };
 		971104FC199D7B4900C2EF5C /* ITCHttpConnectionImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCHttpConnectionImp.h; sourceTree = "<group>"; };
 		971104FD199D7B4900C2EF5C /* ITCHttpConnectionImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCHttpConnectionImp.m; sourceTree = "<group>"; };
+		971104FF199D7E4100C2EF5C /* ITCHttpConnectionMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITCHttpConnectionMock.h; path = "TeamCowboy-iPhoneTests/ITCHttpConnectionMock.h"; sourceTree = SOURCE_ROOT; };
+		97110500199D7E4100C2EF5C /* ITCHttpConnectionMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITCHttpConnectionMock.m; path = "TeamCowboy-iPhoneTests/ITCHttpConnectionMock.m"; sourceTree = SOURCE_ROOT; };
+		97110503199D815700C2EF5C /* ITCAuthenticationProviderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAuthenticationProviderTests.m; sourceTree = "<group>"; };
+		97110505199D817D00C2EF5C /* ITCHttpConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCHttpConnectionDelegate.h; sourceTree = "<group>"; };
+		97110506199D817D00C2EF5C /* ITCHttpConnectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCHttpConnectionDelegate.m; sourceTree = "<group>"; };
+		97110509199D839C00C2EF5C /* ITCAuthenticationRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAuthenticationRequestHandler.h; sourceTree = "<group>"; };
+		9711050A199D839C00C2EF5C /* ITCAuthenticationRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAuthenticationRequestHandler.m; sourceTree = "<group>"; };
+		9711050C199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyHttpDataGenerator.h; sourceTree = "<group>"; };
+		9711050D199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyHttpDataGenerator.m; sourceTree = "<group>"; };
+		9711050F199D89D200C2EF5C /* ITCTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTestCase.h; sourceTree = "<group>"; };
+		97110510199D89D200C2EF5C /* ITCTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTestCase.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -124,8 +142,23 @@
 				971104FB199D79EC00C2EF5C /* ITCHttpConnection.h */,
 				971104FC199D7B4900C2EF5C /* ITCHttpConnectionImp.h */,
 				971104FD199D7B4900C2EF5C /* ITCHttpConnectionImp.m */,
+				971104FF199D7E4100C2EF5C /* ITCHttpConnectionMock.h */,
+				97110500199D7E4100C2EF5C /* ITCHttpConnectionMock.m */,
 			);
 			name = HTTP;
+			sourceTree = "<group>";
+		};
+		97110508199D820400C2EF5C /* Mock HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				97110505199D817D00C2EF5C /* ITCHttpConnectionDelegate.h */,
+				97110506199D817D00C2EF5C /* ITCHttpConnectionDelegate.m */,
+				97110509199D839C00C2EF5C /* ITCAuthenticationRequestHandler.h */,
+				9711050A199D839C00C2EF5C /* ITCAuthenticationRequestHandler.m */,
+				9711050C199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.h */,
+				9711050D199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m */,
+			);
+			name = "Mock HTTP";
 			sourceTree = "<group>";
 		};
 		972907F61999C1B200F568A5 /* Service */ = {
@@ -208,7 +241,11 @@
 		97A069A21997F90A0094556D /* TeamCowboy-iPhoneTests */ = {
 			isa = PBXGroup;
 			children = (
+				97110508199D820400C2EF5C /* Mock HTTP */,
 				97A069A31997F90A0094556D /* Supporting Files */,
+				97110503199D815700C2EF5C /* ITCAuthenticationProviderTests.m */,
+				9711050F199D89D200C2EF5C /* ITCTestCase.h */,
+				97110510199D89D200C2EF5C /* ITCTestCase.m */,
 			);
 			path = "TeamCowboy-iPhoneTests";
 			sourceTree = "<group>";
@@ -379,6 +416,7 @@
 			files = (
 				97A0698F1997F90A0094556D /* main.m in Sources */,
 				9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */,
+				97110502199D80B400C2EF5C /* ITCHttpConnectionMock.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */,
 				971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */,
@@ -402,6 +440,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97110504199D815700C2EF5C /* ITCAuthenticationProviderTests.m in Sources */,
+				9711050B199D839C00C2EF5C /* ITCAuthenticationRequestHandler.m in Sources */,
+				97110507199D817D00C2EF5C /* ITCHttpConnectionDelegate.m in Sources */,
+				97110501199D7E4100C2EF5C /* ITCHttpConnectionMock.m in Sources */,
+				97110511199D89D200C2EF5C /* ITCTestCase.m in Sources */,
+				9711050E199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

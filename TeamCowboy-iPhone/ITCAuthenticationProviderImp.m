@@ -15,7 +15,10 @@
 - (NSError *)authenticateUserWithUsername:(NSString *)username
                                  password:(NSString *)password
 {
-    if ( username.length == 0 || password.length == 0 )
+    if ( username.length == 0 ||
+         username.isOnlyWhitespace ||
+         password.length == 0 ||
+         password.isOnlyWhitespace )
     {
         return [NSError errorWithCode:ITCErrorInvalidArgument
                               message:@"Username or password is invalid."];

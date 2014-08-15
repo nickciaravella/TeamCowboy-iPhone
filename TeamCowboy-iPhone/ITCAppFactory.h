@@ -13,6 +13,8 @@
  */
 @interface ITCAppFactory : NSObject
 
++ (void)setShouldUseMocks:(BOOL)shouldUseMocks;
+
 + (ITCAlertingService *)alertingService;
 + (id<ITCAuthenticationProvider>)authenticationProvider;
 + (id<ITCHttpConnection>)httpConnection;
