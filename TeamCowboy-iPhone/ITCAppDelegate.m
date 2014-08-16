@@ -15,7 +15,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     ITCAppTabBarController *tabBarController = [[ITCAppTabBarController alloc] init];
     tabBarController.viewControllers = @[
                                             [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Events"],
-                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Teams"]
+                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Teams"],
+                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Messages"],
+                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"More"]
                                         ];
     self.window.rootViewController = tabBarController;
         

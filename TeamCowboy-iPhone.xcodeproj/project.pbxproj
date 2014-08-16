@@ -26,6 +26,10 @@
 		97110525199EEEA300C2EF5C /* tabBar_teams.png in Resources */ = {isa = PBXBuildFile; fileRef = 97110523199EEEA300C2EF5C /* tabBar_teams.png */; };
 		9711052A199EF29400C2EF5C /* ITCAppTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110529199EF29400C2EF5C /* ITCAppTabBarController.m */; };
 		9711052D199EF43400C2EF5C /* ITCResourceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711052C199EF43400C2EF5C /* ITCResourceService.m */; };
+		97110532199EFCA200C2EF5C /* tabBar_messages@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97110530199EFCA200C2EF5C /* tabBar_messages@2x.png */; };
+		97110533199EFCA200C2EF5C /* tabBar_messages.png in Resources */ = {isa = PBXBuildFile; fileRef = 97110531199EFCA200C2EF5C /* tabBar_messages.png */; };
+		97110535199EFD4A00C2EF5C /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97110534199EFD4A00C2EF5C /* Messages.storyboard */; };
+		97110538199F327600C2EF5C /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97110537199F327600C2EF5C /* More.storyboard */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -87,6 +91,10 @@
 		97110529199EF29400C2EF5C /* ITCAppTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAppTabBarController.m; sourceTree = "<group>"; };
 		9711052B199EF43400C2EF5C /* ITCResourceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCResourceService.h; sourceTree = "<group>"; };
 		9711052C199EF43400C2EF5C /* ITCResourceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCResourceService.m; sourceTree = "<group>"; };
+		97110530199EFCA200C2EF5C /* tabBar_messages@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar_messages@2x.png"; sourceTree = "<group>"; };
+		97110531199EFCA200C2EF5C /* tabBar_messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar_messages.png; sourceTree = "<group>"; };
+		97110534199EFD4A00C2EF5C /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
+		97110537199F327600C2EF5C /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -216,6 +224,32 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		9711052E199EFC0200C2EF5C /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				9711052F199EFC0C00C2EF5C /* Resources */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		9711052F199EFC0C00C2EF5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97110531199EFCA200C2EF5C /* tabBar_messages.png */,
+				97110530199EFCA200C2EF5C /* tabBar_messages@2x.png */,
+				97110534199EFD4A00C2EF5C /* Messages.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		97110536199F324600C2EF5C /* More */ = {
+			isa = PBXGroup;
+			children = (
+				97110537199F327600C2EF5C /* More.storyboard */,
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
 		972907F61999C1B200F568A5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +325,8 @@
 				97A069BB199883AC0094556D /* Common */,
 				97110519199EE8F200C2EF5C /* Events */,
 				97110516199EE8C000C2EF5C /* Teams */,
+				9711052E199EFC0200C2EF5C /* Messages */,
+				97110536199F324600C2EF5C /* More */,
 				97A069991997F90A0094556D /* Images.xcassets */,
 			);
 			path = "TeamCowboy-iPhone";
@@ -457,13 +493,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				97110525199EEEA300C2EF5C /* tabBar_teams.png in Resources */,
+				97110538199F327600C2EF5C /* More.storyboard in Resources */,
 				97110521199EECC100C2EF5C /* tabBar_events.png in Resources */,
 				97110518199EE8E900C2EF5C /* Teams.storyboard in Resources */,
 				9711051B199EE90500C2EF5C /* Events.storyboard in Resources */,
 				97110524199EEEA300C2EF5C /* tabBar_teams@2x.png in Resources */,
+				97110533199EFCA200C2EF5C /* tabBar_messages.png in Resources */,
 				97A0699A1997F90A0094556D /* Images.xcassets in Resources */,
 				97A069BA1998046A0094556D /* Login.storyboard in Resources */,
 				97110520199EECC100C2EF5C /* tabBar_events@2x.png in Resources */,
+				97110532199EFCA200C2EF5C /* tabBar_messages@2x.png in Resources */,
+				97110535199EFD4A00C2EF5C /* Messages.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
