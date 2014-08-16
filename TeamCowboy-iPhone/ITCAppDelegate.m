@@ -3,7 +3,23 @@
 //
 
 #import "ITCAppDelegate.h"
+#import "ITCAppTabBarController.h"
 
 @implementation ITCAppDelegate
+
+//
+//
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    ITCAppTabBarController *tabBarController = [[ITCAppTabBarController alloc] init];
+    tabBarController.viewControllers = @[
+                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Events"],
+                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Teams"]
+                                        ];
+    self.window.rootViewController = tabBarController;
+        
+    return YES;
+}
 
 @end

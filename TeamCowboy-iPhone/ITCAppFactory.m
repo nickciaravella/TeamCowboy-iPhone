@@ -34,7 +34,13 @@ static BOOL shouldUseMocks = NO;
 //
 + (id<ITCAuthenticationProvider>)authenticationProvider
 {
-    return [ITCAuthenticationProviderImp new];
+    // TODO: This should be removed after auth provider persists the token.
+    static ITCAuthenticationProviderImp *singleton = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        singleton = [ITCAuthenticationProviderImp new];
+    });
+    return singleton;
 }
 
 //
@@ -52,6 +58,13 @@ static BOOL shouldUseMocks = NO;
     }
     
     return [ITCHttpConnectionImp new];
+}
+
+//
+//
++ (ITCResourceService *)resourceService
+{
+    return [ITCResourceService new];
 }
 
 //

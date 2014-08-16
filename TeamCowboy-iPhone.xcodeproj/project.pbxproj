@@ -18,6 +18,14 @@
 		9711050E199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711050D199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m */; };
 		97110511199D89D200C2EF5C /* ITCTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110510199D89D200C2EF5C /* ITCTestCase.m */; };
 		97110515199DB08600C2EF5C /* NSDictionary+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110514199DB08600C2EF5C /* NSDictionary+URL.m */; };
+		97110518199EE8E900C2EF5C /* Teams.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97110517199EE8E900C2EF5C /* Teams.storyboard */; };
+		9711051B199EE90500C2EF5C /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9711051A199EE90500C2EF5C /* Events.storyboard */; };
+		97110520199EECC100C2EF5C /* tabBar_events@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9711051E199EECC100C2EF5C /* tabBar_events@2x.png */; };
+		97110521199EECC100C2EF5C /* tabBar_events.png in Resources */ = {isa = PBXBuildFile; fileRef = 9711051F199EECC100C2EF5C /* tabBar_events.png */; };
+		97110524199EEEA300C2EF5C /* tabBar_teams@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 97110522199EEEA300C2EF5C /* tabBar_teams@2x.png */; };
+		97110525199EEEA300C2EF5C /* tabBar_teams.png in Resources */ = {isa = PBXBuildFile; fileRef = 97110523199EEEA300C2EF5C /* tabBar_teams.png */; };
+		9711052A199EF29400C2EF5C /* ITCAppTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97110529199EF29400C2EF5C /* ITCAppTabBarController.m */; };
+		9711052D199EF43400C2EF5C /* ITCResourceService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711052C199EF43400C2EF5C /* ITCResourceService.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -26,7 +34,6 @@
 		97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290810199BC7CC00F568A5 /* NSString+URL.m */; };
 		9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */; };
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
-		97A069981997F90A0094556D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A069961997F90A0094556D /* Main.storyboard */; };
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
 		97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B11997FAB60094556D /* ITCAppDelegate.m */; };
 		97A069B6199803120094556D /* ITCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B5199803120094556D /* ITCLoginViewController.m */; };
@@ -70,6 +77,16 @@
 		97110510199D89D200C2EF5C /* ITCTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTestCase.m; sourceTree = "<group>"; };
 		97110513199DB08600C2EF5C /* NSDictionary+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+URL.h"; sourceTree = "<group>"; };
 		97110514199DB08600C2EF5C /* NSDictionary+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+URL.m"; sourceTree = "<group>"; };
+		97110517199EE8E900C2EF5C /* Teams.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Teams.storyboard; sourceTree = "<group>"; };
+		9711051A199EE90500C2EF5C /* Events.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Events.storyboard; sourceTree = "<group>"; };
+		9711051E199EECC100C2EF5C /* tabBar_events@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar_events@2x.png"; sourceTree = "<group>"; };
+		9711051F199EECC100C2EF5C /* tabBar_events.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar_events.png; sourceTree = "<group>"; };
+		97110522199EEEA300C2EF5C /* tabBar_teams@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar_teams@2x.png"; sourceTree = "<group>"; };
+		97110523199EEEA300C2EF5C /* tabBar_teams.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar_teams.png; sourceTree = "<group>"; };
+		97110528199EF29400C2EF5C /* ITCAppTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAppTabBarController.h; sourceTree = "<group>"; };
+		97110529199EF29400C2EF5C /* ITCAppTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAppTabBarController.m; sourceTree = "<group>"; };
+		9711052B199EF43400C2EF5C /* ITCResourceService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCResourceService.h; sourceTree = "<group>"; };
+		9711052C199EF43400C2EF5C /* ITCResourceService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCResourceService.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -91,7 +108,6 @@
 		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		97A069971997F90A0094556D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97A069991997F90A0094556D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		97A0699F1997F90A0094556D /* TeamCowboy-iPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TeamCowboy-iPhoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A069A41997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +178,42 @@
 				9711050D199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m */,
 			);
 			name = "Mock HTTP";
+			sourceTree = "<group>";
+		};
+		97110516199EE8C000C2EF5C /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				97110527199EF0AD00C2EF5C /* Resources */,
+			);
+			name = Teams;
+			sourceTree = "<group>";
+		};
+		97110519199EE8F200C2EF5C /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				97110526199EF0A100C2EF5C /* Resources */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		97110526199EF0A100C2EF5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9711051F199EECC100C2EF5C /* tabBar_events.png */,
+				9711051E199EECC100C2EF5C /* tabBar_events@2x.png */,
+				9711051A199EE90500C2EF5C /* Events.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		97110527199EF0AD00C2EF5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				97110523199EEEA300C2EF5C /* tabBar_teams.png */,
+				97110522199EEEA300C2EF5C /* tabBar_teams@2x.png */,
+				97110517199EE8E900C2EF5C /* Teams.storyboard */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		972907F61999C1B200F568A5 /* Service */ = {
@@ -237,7 +289,8 @@
 				97A069AF1997FA320094556D /* App */,
 				97A069B3199802E30094556D /* Authentication */,
 				97A069BB199883AC0094556D /* Common */,
-				97A069961997F90A0094556D /* Main.storyboard */,
+				97110519199EE8F200C2EF5C /* Events */,
+				97110516199EE8C000C2EF5C /* Teams */,
 				97A069991997F90A0094556D /* Images.xcassets */,
 			);
 			path = "TeamCowboy-iPhone";
@@ -272,6 +325,8 @@
 				97A069B11997FAB60094556D /* ITCAppDelegate.m */,
 				97A069C619988EBE0094556D /* ITCAppFactory.h */,
 				97A069C719988EBE0094556D /* ITCAppFactory.m */,
+				97110528199EF29400C2EF5C /* ITCAppTabBarController.h */,
+				97110529199EF29400C2EF5C /* ITCAppTabBarController.m */,
 				97290819199C674400F568A5 /* ITCTeamCowboyApiKeys.h */,
 				9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */,
 				972907F51999B96E00F568A5 /* Prefix.pch */,
@@ -306,6 +361,8 @@
 				97A069BF199884F00094556D /* UIKit */,
 				971104F7199D6D6700C2EF5C /* ITCAlertingService.h */,
 				971104F8199D6D6700C2EF5C /* ITCAlertingService.m */,
+				9711052B199EF43400C2EF5C /* ITCResourceService.h */,
+				9711052C199EF43400C2EF5C /* ITCResourceService.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -399,9 +456,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97A069981997F90A0094556D /* Main.storyboard in Resources */,
+				97110525199EEEA300C2EF5C /* tabBar_teams.png in Resources */,
+				97110521199EECC100C2EF5C /* tabBar_events.png in Resources */,
+				97110518199EE8E900C2EF5C /* Teams.storyboard in Resources */,
+				9711051B199EE90500C2EF5C /* Events.storyboard in Resources */,
+				97110524199EEEA300C2EF5C /* tabBar_teams@2x.png in Resources */,
 				97A0699A1997F90A0094556D /* Images.xcassets in Resources */,
 				97A069BA1998046A0094556D /* Login.storyboard in Resources */,
+				97110520199EECC100C2EF5C /* tabBar_events@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,9 +487,11 @@
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */,
 				971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */,
+				9711052D199EF43400C2EF5C /* ITCResourceService.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
 				9729080A199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m in Sources */,
+				9711052A199EF29400C2EF5C /* ITCAppTabBarController.m in Sources */,
 				97A069D21999AE510094556D /* ITCAuthenticationProviderImp.m in Sources */,
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
 				97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */,
@@ -464,17 +528,6 @@
 			targetProxy = 97A069A01997F90A0094556D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		97A069961997F90A0094556D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				97A069971997F90A0094556D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		97A069A71997F90A0094556D /* Debug */ = {

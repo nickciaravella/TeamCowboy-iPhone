@@ -9,6 +9,17 @@
 
 @implementation ITCLoginViewController
 
+#pragma ITCLoginViewController
+
+//
+//
++ (ITCLoginViewController *)loginControllerWithDelegate:(id<ITCLoginViewControllerDelegate>)delegate
+{
+    ITCLoginViewController *controller = [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Login"];
+    controller.delegate = delegate;
+    return controller;
+}
+
 #pragma mark - UITextFieldDelegate
 
 //
@@ -56,8 +67,9 @@ replacementString:(NSString *)string
 
     [self dispatchConcurrentQueueFromUx:^{
         
-        NSError *signInError = [[ITCAppFactory authenticationProvider] authenticateUserWithUsername:self.usernameTextField.text
-                                                                                           password:self.passwordTextField.text];
+        id<ITCAuthenticationProvider> authenticationProvider = [ITCAppFactory authenticationProvider];
+        NSError *signInError = [authenticationProvider authenticateUserWithUsername:self.usernameTextField.text
+                                                                           password:self.passwordTextField.text];
         [self dispatchMainQueue:^{
             [self setViewsForLoading:NO];
         }];
@@ -70,6 +82,11 @@ replacementString:(NSString *)string
                                                        message:@"Make sure that you have entered your username and password correctly, then try again."
                                               acknowledgeBlock:^{}
                                                     retryBlock:nil];
+        }
+        else
+        {
+            ITCLog(@"Login did complete successfully for user with id: %@", authenticationProvider.authenticationContext.userId);
+            [self.delegate loginControllerDidCompleteAuthentication:self];
         }
     }];
 }
