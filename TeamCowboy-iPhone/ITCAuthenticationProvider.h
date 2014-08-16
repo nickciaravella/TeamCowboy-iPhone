@@ -16,6 +16,11 @@
 - (NSError *)authenticateUserWithUsername:(NSString *)username
                                  password:(NSString *)password;
 
+/**
+ Removes the currently logged in user's authentication context.
+ */
+- (void)removeAuthentication;
+
 /** 
  @brief Context for the currently logged in user. 
  */

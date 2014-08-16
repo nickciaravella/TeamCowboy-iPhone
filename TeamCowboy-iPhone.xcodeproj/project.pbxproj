@@ -30,6 +30,7 @@
 		97110533199EFCA200C2EF5C /* tabBar_messages.png in Resources */ = {isa = PBXBuildFile; fileRef = 97110531199EFCA200C2EF5C /* tabBar_messages.png */; };
 		97110535199EFD4A00C2EF5C /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97110534199EFD4A00C2EF5C /* Messages.storyboard */; };
 		97110538199F327600C2EF5C /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97110537199F327600C2EF5C /* More.storyboard */; };
+		9711053B199FCF8E00C2EF5C /* ITCMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711053A199FCF8E00C2EF5C /* ITCMoreTableViewController.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -95,6 +96,8 @@
 		97110531199EFCA200C2EF5C /* tabBar_messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBar_messages.png; sourceTree = "<group>"; };
 		97110534199EFD4A00C2EF5C /* Messages.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
 		97110537199F327600C2EF5C /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		97110539199FCF8E00C2EF5C /* ITCMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCMoreTableViewController.h; sourceTree = "<group>"; };
+		9711053A199FCF8E00C2EF5C /* ITCMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCMoreTableViewController.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -246,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				97110537199F327600C2EF5C /* More.storyboard */,
+				97110539199FCF8E00C2EF5C /* ITCMoreTableViewController.h */,
+				9711053A199FCF8E00C2EF5C /* ITCMoreTableViewController.m */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 				972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */,
 				97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */,
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,
+				9711053B199FCF8E00C2EF5C /* ITCMoreTableViewController.m in Sources */,
 				97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */,
 				971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,

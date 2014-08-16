@@ -4,7 +4,8 @@
 //
 
 #import "ITCLoginViewController.h"
+#import "ITCMoreTableViewController.h"
 
-@interface ITCAppTabBarController : UITabBarController <ITCLoginViewControllerDelegate>
+@interface ITCAppTabBarController : UITabBarController <ITCLoginViewControllerDelegate, ITCMoreTableViewControllerDelegate>
 
 @end

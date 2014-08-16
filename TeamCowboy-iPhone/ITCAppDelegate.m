@@ -17,7 +17,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
                                             [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Events"],
                                             [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Teams"],
                                             [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Messages"],
-                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"More"]
+                                            [ITCMoreTableViewController navigationControllerWithMoreTableViewControllerWithDelegate:tabBarController]
                                         ];
     self.window.rootViewController = tabBarController;
         
