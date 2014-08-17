@@ -5,6 +5,8 @@
 
 #import "ITCAlertingService.h"
 #import "ITCAuthenticationProvider.h"
+#import "ITCCache.h"
+#import "ITCFileService.h"
 #import "ITCHttpConnection.h"
 #import "ITCResourceService.h"
 #import "ITCTeamCowboyService.h"
@@ -18,6 +20,8 @@
 
 + (ITCAlertingService *)alertingService;
 + (id<ITCAuthenticationProvider>)authenticationProvider;
++ (ITCCache *)cache;
++ (id<ITCFileService>)fileService;
 + (id<ITCHttpConnection>)httpConnection;
 + (ITCResourceService *)resourceService;
 + (id<ITCTeamCowboyService>)teamCowboyService;

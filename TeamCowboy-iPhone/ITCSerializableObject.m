@@ -14,4 +14,11 @@
     return self = [super init];
 }
 
+//
+//
+- (NSDictionary *)dictionaryFormat
+{
+    return @{};
+}
+
 @end

@@ -8,6 +8,28 @@
 
 @implementation ITCAuthenticationProviderImp
 
+#pragma mark - NSObject
+
+//
+//
+- (id)init
+{
+    if (!(self = [super init])) { return nil; }
+    
+    NSError *error = nil;
+    NSDictionary *contextDictionary = [[ITCAppFactory fileService] dictionaryFromFile:[self persistedContextPath]
+                                                                                error:&error];
+    if ( error )
+    {
+        ITCLog(@"Failed to read auth context with error: %@", error);
+        return self;
+    }
+    
+    _authenticationContext = [[ITCAuthenticationContext alloc] initWithDictionary:contextDictionary];
+    
+    return self;
+}
+
 #pragma mark - ITCAuthenticationProviderImp
 
 //
@@ -34,7 +56,7 @@
                                                                         usingResponseSerializer:serializer
                                                                                           error:&responseError];
     
-    // No error, but there is data missing.
+    // No error, but there is data missing. Treat it as an error.
     if ( !responseError &&
          ( self.authenticationContext.token.length == 0 || self.authenticationContext.userId.length == 0 ))
     {
@@ -44,7 +66,31 @@
         self.authenticationContext = nil;
     }
     
+    // No error, cache the authentication context
+    if ( !responseError )
+    {
+        [[ITCAppFactory fileService] writeDictionary:[self.authenticationContext dictionaryFormat]
+                                              toFile:[self persistedContextPath]];
+    }
+    
     return responseError;
 }
 
+//
+//
+- (void)removeAuthentication
+{
+    [[ITCAppFactory fileService] deleteFile:[self persistedContextPath]];
+    self.authenticationContext = nil;
+}
+
+#pragma mark - Private
+                                                      
+//
+//
+- (NSURL *)persistedContextPath
+{
+    return [[[ITCAppFactory fileService] applicationSupportDirectory] URLByAppendingPathComponent:@"authenticationContext.plist"];
+}
+                                                      
 @end

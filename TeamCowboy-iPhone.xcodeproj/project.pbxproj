@@ -31,6 +31,8 @@
 		97110535199EFD4A00C2EF5C /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97110534199EFD4A00C2EF5C /* Messages.storyboard */; };
 		97110538199F327600C2EF5C /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97110537199F327600C2EF5C /* More.storyboard */; };
 		9711053B199FCF8E00C2EF5C /* ITCMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711053A199FCF8E00C2EF5C /* ITCMoreTableViewController.m */; };
+		9711053F19A06A0800C2EF5C /* ITCFileServiceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711053E19A06A0800C2EF5C /* ITCFileServiceImp.m */; };
+		9711054719A06FDC00C2EF5C /* ITCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711054619A06FDC00C2EF5C /* ITCCache.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -98,6 +100,11 @@
 		97110537199F327600C2EF5C /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		97110539199FCF8E00C2EF5C /* ITCMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCMoreTableViewController.h; sourceTree = "<group>"; };
 		9711053A199FCF8E00C2EF5C /* ITCMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCMoreTableViewController.m; sourceTree = "<group>"; };
+		9711053C19A0698F00C2EF5C /* ITCFileService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCFileService.h; sourceTree = "<group>"; };
+		9711053D19A06A0800C2EF5C /* ITCFileServiceImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCFileServiceImp.h; sourceTree = "<group>"; };
+		9711053E19A06A0800C2EF5C /* ITCFileServiceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCFileServiceImp.m; sourceTree = "<group>"; };
+		9711054519A06FDC00C2EF5C /* ITCCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCCache.h; sourceTree = "<group>"; };
+		9711054619A06FDC00C2EF5C /* ITCCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCCache.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -255,6 +262,27 @@
 			name = More;
 			sourceTree = "<group>";
 		};
+		9711054019A06EE900C2EF5C /* File */ = {
+			isa = PBXGroup;
+			children = (
+				9711053C19A0698F00C2EF5C /* ITCFileService.h */,
+				9711053D19A06A0800C2EF5C /* ITCFileServiceImp.h */,
+				9711053E19A06A0800C2EF5C /* ITCFileServiceImp.m */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
+		9711054119A06F0400C2EF5C /* Controller Services */ = {
+			isa = PBXGroup;
+			children = (
+				971104F7199D6D6700C2EF5C /* ITCAlertingService.h */,
+				971104F8199D6D6700C2EF5C /* ITCAlertingService.m */,
+				9711052B199EF43400C2EF5C /* ITCResourceService.h */,
+				9711052C199EF43400C2EF5C /* ITCResourceService.m */,
+			);
+			name = "Controller Services";
+			sourceTree = "<group>";
+		};
 		972907F61999C1B200F568A5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,17 +421,17 @@
 		97A069BB199883AC0094556D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9711054119A06F0400C2EF5C /* Controller Services */,
 				971104F5199D66D100C2EF5C /* Diagnostic */,
 				972907F91999C63800F568A5 /* Error */,
+				9711054019A06EE900C2EF5C /* File */,
 				972907F71999C1C400F568A5 /* Foundation */,
 				971104FA199D799D00C2EF5C /* HTTP */,
 				9729080B199B0B3E00F568A5 /* Serialization */,
 				972907F61999C1B200F568A5 /* Service */,
 				97A069BF199884F00094556D /* UIKit */,
-				971104F7199D6D6700C2EF5C /* ITCAlertingService.h */,
-				971104F8199D6D6700C2EF5C /* ITCAlertingService.m */,
-				9711052B199EF43400C2EF5C /* ITCResourceService.h */,
-				9711052C199EF43400C2EF5C /* ITCResourceService.m */,
+				9711054519A06FDC00C2EF5C /* ITCCache.h */,
+				9711054619A06FDC00C2EF5C /* ITCCache.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -531,6 +559,7 @@
 				97110502199D80B400C2EF5C /* ITCHttpConnectionMock.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */,
+				9711053F19A06A0800C2EF5C /* ITCFileServiceImp.m in Sources */,
 				971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */,
 				9711052D199EF43400C2EF5C /* ITCResourceService.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
@@ -546,6 +575,7 @@
 				9711053B199FCF8E00C2EF5C /* ITCMoreTableViewController.m in Sources */,
 				97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */,
 				971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */,
+				9711054719A06FDC00C2EF5C /* ITCCache.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
 				97110515199DB08600C2EF5C /* NSDictionary+URL.m in Sources */,
 				97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */,

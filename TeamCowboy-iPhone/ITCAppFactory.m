@@ -4,6 +4,7 @@
 //
 
 #import "ITCAuthenticationProviderImp.h"
+#import "ITCFileServiceImp.h"
 #import "ITCHttpConnectionImp.h"
 #import "ITCHttpConnectionMock.h"
 #import "ITCTeamCowboyServiceImp.h"
@@ -34,13 +35,26 @@ static BOOL shouldUseMocks = NO;
 //
 + (id<ITCAuthenticationProvider>)authenticationProvider
 {
-    // TODO: This should be removed after auth provider persists the token.
     static ITCAuthenticationProviderImp *singleton = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         singleton = [ITCAuthenticationProviderImp new];
     });
     return singleton;
+}
+
+//
+//
++ (ITCCache *)cache
+{
+    return [ITCCache new];
+}
+
+//
+//
++ (id<ITCFileService>)fileService
+{
+    return [ITCFileServiceImp new];
 }
 
 //

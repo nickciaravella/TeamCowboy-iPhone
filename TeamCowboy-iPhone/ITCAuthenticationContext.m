@@ -26,4 +26,14 @@
     return self;
 }
 
+//
+//
+- (NSDictionary *)dictionaryFormat
+{
+    return @{
+             @"token"  : self.token,
+             @"userId" : self.userId
+             };
+}
+
 @end

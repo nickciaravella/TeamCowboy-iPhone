@@ -16,4 +16,9 @@
  */
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
+/**
+ @brief Deserializes the object to its dictionary format.
+ */
+- (NSDictionary *)dictionaryFormat;
+
 @end
