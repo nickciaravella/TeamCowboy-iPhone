@@ -15,19 +15,30 @@
                         <sections>
                             <tableViewSection id="Zag-dX-3k6">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Lem-aq-vfj" rowHeight="50" style="IBUITableViewCellStyleDefault" id="iks-zz-fHH" userLabel="Sign Out Cell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="iks-zz-fHH" userLabel="Sign Out Cell" customClass="ITCButtonTableViewCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iks-zz-fHH" id="sAr-aQ-3Rv">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sign Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lem-aq-vfj">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Out" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Rp-Xn-T3x">
+                                                    <rect key="frame" x="267" y="14" width="67" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="4qv-Ll-yI3"/>
+                                                        <constraint firstAttribute="width" constant="67" id="haW-0n-w6A"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.82090435610000001" green="0.26935386680000001" blue="0.34543007910000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="7Rp-Xn-T3x" secondAttribute="centerX" id="8TR-9l-PqZ"/>
+                                                <constraint firstAttribute="centerY" secondItem="7Rp-Xn-T3x" secondAttribute="centerY" id="cyH-gL-dxv"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textLabel" destination="7Rp-Xn-T3x" id="zhb-Cx-XaX"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="s" textLabel="AXG-Y4-Odd" style="IBUITableViewCellStyleDefault" id="UpM-iU-GGR" userLabel="Feedback Cell">
                                         <autoresizingMask key="autoresizingMask"/>

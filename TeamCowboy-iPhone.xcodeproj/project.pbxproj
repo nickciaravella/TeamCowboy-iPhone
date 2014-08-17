@@ -33,6 +33,7 @@
 		9711053B199FCF8E00C2EF5C /* ITCMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711053A199FCF8E00C2EF5C /* ITCMoreTableViewController.m */; };
 		9711053F19A06A0800C2EF5C /* ITCFileServiceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711053E19A06A0800C2EF5C /* ITCFileServiceImp.m */; };
 		9711054719A06FDC00C2EF5C /* ITCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711054619A06FDC00C2EF5C /* ITCCache.m */; };
+		9711054A19A0860600C2EF5C /* ITCButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711054919A0860600C2EF5C /* ITCButtonTableViewCell.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -105,6 +106,8 @@
 		9711053E19A06A0800C2EF5C /* ITCFileServiceImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCFileServiceImp.m; sourceTree = "<group>"; };
 		9711054519A06FDC00C2EF5C /* ITCCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCCache.h; sourceTree = "<group>"; };
 		9711054619A06FDC00C2EF5C /* ITCCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCCache.m; sourceTree = "<group>"; };
+		9711054819A0860600C2EF5C /* ITCButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCButtonTableViewCell.h; sourceTree = "<group>"; };
+		9711054919A0860600C2EF5C /* ITCButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCButtonTableViewCell.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -255,6 +258,8 @@
 		97110536199F324600C2EF5C /* More */ = {
 			isa = PBXGroup;
 			children = (
+				9711054819A0860600C2EF5C /* ITCButtonTableViewCell.h */,
+				9711054919A0860600C2EF5C /* ITCButtonTableViewCell.m */,
 				97110537199F327600C2EF5C /* More.storyboard */,
 				97110539199FCF8E00C2EF5C /* ITCMoreTableViewController.h */,
 				9711053A199FCF8E00C2EF5C /* ITCMoreTableViewController.m */,
@@ -560,6 +565,7 @@
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */,
 				9711053F19A06A0800C2EF5C /* ITCFileServiceImp.m in Sources */,
+				9711054A19A0860600C2EF5C /* ITCButtonTableViewCell.m in Sources */,
 				971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */,
 				9711052D199EF43400C2EF5C /* ITCResourceService.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
