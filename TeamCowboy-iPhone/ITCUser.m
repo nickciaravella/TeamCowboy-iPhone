@@ -4,7 +4,8 @@
 //
 
 #import "ITCUser.h"
-#import "ITCTeamCowboyEntitySerializer.h"
+#import "ITCTeam.h"
+#import "ITCTeamCowboyRepository.h"
 
 @implementation ITCUser
 
@@ -48,50 +49,32 @@
 
 //
 //
-+ (ITCUser *)loadCurrentUserWithError:(NSError **)error
++ (ITCUser *)loadCurrentUserBypassingCache:(BOOL)bypassCache
+                                 withError:(NSError **)error
 {
-    if ( !error ) { return nil; }
-    
-    // First try to load the user from the cache.
-    ITCAuthenticationContext *authContext = [ITCAppFactory authenticationProvider].authenticationContext;
-    NSError *cacheReadError = nil;
-    NSDictionary *userDictionary = [[ITCAppFactory cache] dictionaryFromCacheIdentifier:[self cacheIdentifierFromUserId:authContext.userId]
-                                                                                  error:&cacheReadError];
-    if ( !cacheReadError )
-    {
-        return [[ITCUser alloc] initWithDictionary:userDictionary];
-    }
+    NSString *userId = [ITCAppFactory authenticationProvider].authenticationContext.userId;
+    return [ITCTeamCowboyRepository getEntityOfType:[ITCUser class]
+                                withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"user_%@", userId]
+                                   teamCowboyMethod:@"User_Get"
+                                    queryParameters:nil
+                                      cacheDuration:60
+                                              error:error];
+}
 
-    // Otherwise load the user from the service
-    if ( !authContext.token )
-    {
-        *error = [NSError errorWithCode:ITCErrorUserNotAuthenticated message:@"No user is currently authenticated."];
-        return nil;
-    }
-        
-    ITCUser *user =  [[ITCAppFactory teamCowboyService] getRequestWithMethod:@"User_Get"
-                                                             queryParameters:@{ @"userToken" : authContext.token }
-                                                     usingResponseSerializer:[ITCTeamCowboyEntitySerializer serializerForClass:[ITCUser class] isCollection:NO]
-                                                                       error:error];
-    ITCLogAndReturnValueOnError(*error, nil, @"Failed to load the current logged in user.");
-
-    // If successful, add the user to the cache.
-    NSError *cacheWriteError = [[ITCAppFactory cache] addDictionary:[user dictionaryFormat]
-                                                 forNumberOfMinutes:60
-                                                     withIdentifier:[self cacheIdentifierFromUserId:user.userId]];
-    ITCLogError(cacheWriteError, @"Failed to write the user to the cache.");
-    
-    return user;
+//
+//
+- (NSArray *)loadTeamsBypassingCache:(BOOL)bypassCache
+                           withError:(NSError **)error
+{
+    return [ITCTeamCowboyRepository getCollectionOfEntitiesOfType:[ITCTeam class]
+                                              withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"user_%@_teams", self.userId]
+                                                 teamCowboyMethod:@"User_GetTeams"
+                                                  queryParameters:nil
+                                                    cacheDuration:30
+                                                            error:error];
 }
 
 #pragma mark - Private
-
-//
-//
-+ (NSString *)cacheIdentifierFromUserId:(NSString *)userId
-{
-    return [NSString stringWithFormat:@"user_%@", userId];
-}
 
 //
 //

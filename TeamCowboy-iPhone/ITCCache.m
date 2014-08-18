@@ -18,14 +18,14 @@ NSString *const kITCCacheItemBodyKey           = @"body";
 
 //
 //
-- (NSError *)addDictionary:(NSDictionary *)dictionary
-        forNumberOfMinutes:(NSUInteger)duration
-            withIdentifier:(NSString *)identifier
+- (NSError *)addCacheItem:(id)cacheItem
+    forNumberOfMinutes:(NSUInteger)duration
+        withIdentifier:(NSString *)identifier
 {
     NSDate *expirationDate = [NSDate dateWithTimeIntervalSinceNow:( duration * 60 )];
     NSDictionary *cacheDictionary = @{
                                       kITCCacheItemExpirationDateKey : @([expirationDate timeIntervalSince1970]),
-                                      kITCCacheItemBodyKey           : dictionary
+                                      kITCCacheItemBodyKey           : cacheItem
                                       };
     
     return [[ITCAppFactory fileService] writeDictionary:cacheDictionary
@@ -34,8 +34,8 @@ NSString *const kITCCacheItemBodyKey           = @"body";
 
 //
 //
-- (NSDictionary *)dictionaryFromCacheIdentifier:(NSString *)identifier
-                                          error:(NSError **)error
+- (id)cachedItemFromCacheIdentifier:(NSString *)identifier
+                              error:(NSError **)error
 {
     if ( !error )
     {

@@ -36,6 +36,8 @@
 		9711054A19A0860600C2EF5C /* ITCButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711054919A0860600C2EF5C /* ITCButtonTableViewCell.m */; };
 		9711055119A16F2500C2EF5C /* ITCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055019A16F2500C2EF5C /* ITCUser.m */; };
 		9711055419A1794E00C2EF5C /* NSDictionary+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055319A1794E00C2EF5C /* NSDictionary+Common.m */; };
+		9711055719A1876C00C2EF5C /* ITCTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055619A1876C00C2EF5C /* ITCTeam.m */; };
+		9711055A19A189E500C2EF5C /* ITCTeamCowboyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055919A189E500C2EF5C /* ITCTeamCowboyRepository.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -114,6 +116,10 @@
 		9711055019A16F2500C2EF5C /* ITCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCUser.m; sourceTree = "<group>"; };
 		9711055219A1794E00C2EF5C /* NSDictionary+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Common.h"; sourceTree = "<group>"; };
 		9711055319A1794E00C2EF5C /* NSDictionary+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Common.m"; sourceTree = "<group>"; };
+		9711055519A1876C00C2EF5C /* ITCTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeam.h; sourceTree = "<group>"; };
+		9711055619A1876C00C2EF5C /* ITCTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeam.m; sourceTree = "<group>"; };
+		9711055819A189E500C2EF5C /* ITCTeamCowboyRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyRepository.h; sourceTree = "<group>"; };
+		9711055919A189E500C2EF5C /* ITCTeamCowboyRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyRepository.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -211,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				97110527199EF0AD00C2EF5C /* Resources */,
+				9711055519A1876C00C2EF5C /* ITCTeam.h */,
+				9711055619A1876C00C2EF5C /* ITCTeam.m */,
 			);
 			name = Teams;
 			sourceTree = "<group>";
@@ -455,6 +463,8 @@
 				97A069BF199884F00094556D /* UIKit */,
 				9711054519A06FDC00C2EF5C /* ITCCache.h */,
 				9711054619A06FDC00C2EF5C /* ITCCache.m */,
+				9711055819A189E500C2EF5C /* ITCTeamCowboyRepository.h */,
+				9711055919A189E500C2EF5C /* ITCTeamCowboyRepository.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -579,6 +589,7 @@
 			files = (
 				97A0698F1997F90A0094556D /* main.m in Sources */,
 				9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */,
+				9711055A19A189E500C2EF5C /* ITCTeamCowboyRepository.m in Sources */,
 				97110502199D80B400C2EF5C /* ITCHttpConnectionMock.m in Sources */,
 				9711055419A1794E00C2EF5C /* NSDictionary+Common.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
@@ -594,6 +605,7 @@
 				9711052A199EF29400C2EF5C /* ITCAppTabBarController.m in Sources */,
 				97A069D21999AE510094556D /* ITCAuthenticationProviderImp.m in Sources */,
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
+				9711055719A1876C00C2EF5C /* ITCTeam.m in Sources */,
 				97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */,
 				972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */,
 				97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */,

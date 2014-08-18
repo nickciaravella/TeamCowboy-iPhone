@@ -17,10 +17,21 @@ typedef NS_ENUM(NSUInteger, ITCUserGender)
 
 /**
  @brief Gets the current signed in user.
- @param error An error that occurred.
+ @param bypassCache YES if cached values should be ignored.
+ @param error       If an error occurred, it will be put into this parameter.
  @return The current user.
  */
-+ (ITCUser *)loadCurrentUserWithError:(NSError **)error;
++ (ITCUser *)loadCurrentUserBypassingCache:(BOOL)bypassCache
+                                 withError:(NSError **)error;
+
+/**
+ @brief Gets the teams that the user belongs to.
+ @param bypassCache YES if cached values should be ignored.
+ @param error       If an error occurred, it will be put into this parameter.
+ @return An array of ITCTeam objects.
+ */
+- (NSArray *)loadTeamsBypassingCache:(BOOL)bypassCache
+                           withError:(NSError **)error;
 
 //
 // User properties

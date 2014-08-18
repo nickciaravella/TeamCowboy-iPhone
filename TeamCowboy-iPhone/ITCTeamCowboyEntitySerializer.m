@@ -69,24 +69,58 @@
         return nil;
     }
     
-    NSDictionary *body = objectDictionary[ @"body" ];
-    if ( ![body isKindOfClass:[NSDictionary class]] )
+    id body = objectDictionary[ @"body" ];
+    if ( self.isCollection )
     {
-        NSString *message = [NSString stringWithFormat:@"Body element is not a dictionary. It is %@", [body class]];
+        if ( ![body isKindOfClass:[NSArray class]] )
+        {
+            NSString *message = [NSString stringWithFormat:@"Body element is not an array. It is %@", [body class]];
+            *error = [NSError errorWithCode:ITCErrorObjectSerialization message:message];
+            return nil;
+        }
+        
+        NSMutableArray *entities = [NSMutableArray new];
+        for ( id element in body )
+        {
+            id entity = [self entityFromDictionary:element withError:error];
+            if ( *error )
+            {
+                return nil;
+            }
+            [entities addObject:entity];
+        }
+        
+        return entities;
+    }
+    else
+    {
+        return [self entityFromDictionary:body withError:error];
+    }
+}
+
+#pragma mark - Private
+
+//
+//
+- (id)entityFromDictionary:(NSDictionary *)entityDictionary
+                 withError:(NSError **)error
+{
+    if ( ![entityDictionary isKindOfClass:[NSDictionary class]] )
+    {
+        NSString *message = [NSString stringWithFormat:@"Body element is not a dictionary. It is %@", [entityDictionary class]];
         *error = [NSError errorWithCode:ITCErrorObjectSerialization message:message];
         return nil;
     }
     
-    ITCSerializableObject *object = [[self.type alloc] initWithDictionary:body];
+    ITCSerializableObject *object = [[self.type alloc] initWithDictionary:entityDictionary];
     if ( !object )
     {
         NSString *message = [NSString stringWithFormat:@"Failed to serialize object type from dictionary. Type: %@, Dictionary: %@",
-                             self.type, body];
+                             self.type, entityDictionary];
         *error = [NSError errorWithCode:ITCErrorObjectSerialization message:message];
         return nil;
     }
     
-    *error = nil;
     return object;
 }
 
