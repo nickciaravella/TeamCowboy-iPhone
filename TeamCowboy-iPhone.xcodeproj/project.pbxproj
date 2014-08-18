@@ -34,6 +34,8 @@
 		9711053F19A06A0800C2EF5C /* ITCFileServiceImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711053E19A06A0800C2EF5C /* ITCFileServiceImp.m */; };
 		9711054719A06FDC00C2EF5C /* ITCCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711054619A06FDC00C2EF5C /* ITCCache.m */; };
 		9711054A19A0860600C2EF5C /* ITCButtonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711054919A0860600C2EF5C /* ITCButtonTableViewCell.m */; };
+		9711055119A16F2500C2EF5C /* ITCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055019A16F2500C2EF5C /* ITCUser.m */; };
+		9711055419A1794E00C2EF5C /* NSDictionary+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055319A1794E00C2EF5C /* NSDictionary+Common.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -108,6 +110,10 @@
 		9711054619A06FDC00C2EF5C /* ITCCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCCache.m; sourceTree = "<group>"; };
 		9711054819A0860600C2EF5C /* ITCButtonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCButtonTableViewCell.h; sourceTree = "<group>"; };
 		9711054919A0860600C2EF5C /* ITCButtonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCButtonTableViewCell.m; sourceTree = "<group>"; };
+		9711054F19A16F2500C2EF5C /* ITCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCUser.h; sourceTree = "<group>"; };
+		9711055019A16F2500C2EF5C /* ITCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCUser.m; sourceTree = "<group>"; };
+		9711055219A1794E00C2EF5C /* NSDictionary+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Common.h"; sourceTree = "<group>"; };
+		9711055319A1794E00C2EF5C /* NSDictionary+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Common.m"; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -288,6 +294,15 @@
 			name = "Controller Services";
 			sourceTree = "<group>";
 		};
+		9711054B19A16EC900C2EF5C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9711054F19A16F2500C2EF5C /* ITCUser.h */,
+				9711055019A16F2500C2EF5C /* ITCUser.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		972907F61999C1B200F568A5 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +316,8 @@
 		972907F71999C1C400F568A5 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				9711055219A1794E00C2EF5C /* NSDictionary+Common.h */,
+				9711055319A1794E00C2EF5C /* NSDictionary+Common.m */,
 				97110513199DB08600C2EF5C /* NSDictionary+URL.h */,
 				97110514199DB08600C2EF5C /* NSDictionary+URL.m */,
 				97A069C3199889410094556D /* NSString+Common.h */,
@@ -365,6 +382,7 @@
 				97110516199EE8C000C2EF5C /* Teams */,
 				9711052E199EFC0200C2EF5C /* Messages */,
 				97110536199F324600C2EF5C /* More */,
+				9711054B19A16EC900C2EF5C /* User */,
 				97A069991997F90A0094556D /* Images.xcassets */,
 			);
 			path = "TeamCowboy-iPhone";
@@ -562,7 +580,9 @@
 				97A0698F1997F90A0094556D /* main.m in Sources */,
 				9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */,
 				97110502199D80B400C2EF5C /* ITCHttpConnectionMock.m in Sources */,
+				9711055419A1794E00C2EF5C /* NSDictionary+Common.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
+				9711055119A16F2500C2EF5C /* ITCUser.m in Sources */,
 				971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */,
 				9711053F19A06A0800C2EF5C /* ITCFileServiceImp.m in Sources */,
 				9711054A19A0860600C2EF5C /* ITCButtonTableViewCell.m in Sources */,

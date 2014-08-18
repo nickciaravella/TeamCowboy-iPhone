@@ -18,26 +18,10 @@
           usingResponseSerializer:(id<ITCObjectSerializer>)serializer
                             error:(NSError **)error
 {
-    // 1. Add required parameters
-    NSString *nonce        = [[NSUUID UUID] UUIDString];
-    NSString *timestamp    = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
-    NSString *httpMethod   = @"POST";
-    
-    NSMutableDictionary *requestParameters = [@{ @"api_key"       : kITCTeamCowboyPublicApiKey,
-                                                 @"method"        : method,
-                                                 @"timestamp"     : timestamp,
-                                                 @"nonce"         : nonce,
-                                                 @"response_type" : @"json" } mutableCopy];
-    [requestParameters addEntriesFromDictionary:body];
-
-    // 2. Sign and create the request string
-    NSString *requestString = [self concatenatedRequestStringFromParameters:requestParameters];
-    
-    NSString *signatureInput = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@",
-     kITCTeamCowboyPrivateApiKey, httpMethod, method, timestamp, nonce, [requestString lowercaseString]];
-    NSString *signature = [NSString sha1FromString:signatureInput];
-
-    requestString = [requestString stringByAppendingQueryParameterWithKey:@"sig" value:signature];
+    NSString *httpMethod = @"POST";
+    NSString *requestString = [self requestStringForHttpMethod:httpMethod
+                                              teamCowboyMethod:method
+                                                withParameters:body];
     
     // 4. Make request
     NSURL *url = [NSURL URLWithString:@"https://api.teamcowboy.com/v1/"];
@@ -45,6 +29,88 @@
     request.HTTPMethod = httpMethod;
     request.HTTPBody   = [requestString dataUsingEncoding:NSUTF8StringEncoding];
     
+    return [self responseAfterSendingRequest:request
+                                   forMethod:method
+                             usingSerializer:serializer
+                                   withError:error];
+}
+
+//
+//
+- (id)getRequestWithMethod:(NSString *)method
+           queryParameters:(NSDictionary *)parameters
+   usingResponseSerializer:(id<ITCObjectSerializer>)serializer
+                     error:(NSError **)error
+{
+    NSString *httpMethod = @"GET";
+    NSString *requestString = [self requestStringForHttpMethod:httpMethod
+                                              teamCowboyMethod:method
+                                                withParameters:parameters];
+    
+    // 4. Make request
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.teamcowboy.com/v1/?%@", requestString]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = httpMethod;
+    
+    return [self responseAfterSendingRequest:request
+                                   forMethod:method
+                             usingSerializer:serializer
+                                   withError:error];
+}
+
+#pragma mark - Private
+
+//
+//
+- (NSString *)requestStringForHttpMethod:(NSString *)httpMethod
+                        teamCowboyMethod:(NSString *)teamCowboyMethod
+                          withParameters:(NSDictionary *)methodParameters
+{
+    // 1. Add required parameters
+    NSString *nonce        = [[NSUUID UUID] UUIDString];
+    NSString *timestamp    = [NSString stringWithFormat:@"%.0f", [[NSDate date] timeIntervalSince1970]];
+    
+    NSMutableDictionary *requestParameters = [@{ @"api_key"       : kITCTeamCowboyPublicApiKey,
+                                                 @"method"        : teamCowboyMethod,
+                                                 @"timestamp"     : timestamp,
+                                                 @"nonce"         : nonce,
+                                                 @"response_type" : @"json" } mutableCopy];
+    [requestParameters addEntriesFromDictionary:methodParameters];
+    
+    // 2. Sign and create the request string
+    NSString *requestString = [self concatenatedRequestStringFromParameters:requestParameters];
+    
+    NSString *signatureInput = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@",
+                                kITCTeamCowboyPrivateApiKey, httpMethod, teamCowboyMethod, timestamp, nonce, [requestString lowercaseString]];
+    NSString *signature = [NSString sha1FromString:signatureInput];
+    
+    return [requestString stringByAppendingQueryParameterWithKey:@"sig" value:signature];
+}
+
+//
+//
+- (NSString *)concatenatedRequestStringFromParameters:(NSDictionary *)parameters
+{
+    NSArray *sortedKeys = [[parameters allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    NSString *concatenatedRequest = [NSString string];
+    for (NSString *key in sortedKeys)
+    {
+        NSString *encodedValue = [NSString stringByUrlEncodingString:parameters[key]];
+        concatenatedRequest = [concatenatedRequest stringByAppendingQueryParameterWithKey:key
+                                                                                    value:encodedValue];
+    }
+    
+    return concatenatedRequest;
+}
+
+//
+//
+- (id)responseAfterSendingRequest:(NSURLRequest *)request
+                        forMethod:(NSString *)method
+                  usingSerializer:(id<ITCObjectSerializer>)serializer
+                        withError:(NSError **)error
+{
     NSHTTPURLResponse *response = nil;
     NSData *responseContent = [[ITCAppFactory httpConnection] sendRequest:request
                                                         returningResponse:&response
@@ -52,7 +118,7 @@
     if ( *error )
     {
         return nil;
-    }    
+    }
     
     // 5. Deserialize response to either entity or error
     if ( response.statusCode < 400 ) // Success: Use the entity serializer
@@ -86,25 +152,6 @@
         *error = ( *error ) ? *error : teamCowboyError.error;
         return nil;
     }
-}
-
-#pragma mark - Private
-
-//
-//
-- (NSString *)concatenatedRequestStringFromParameters:(NSDictionary *)parameters
-{
-    NSArray *sortedKeys = [[parameters allKeys] sortedArrayUsingSelector:@selector(compare:)];
-    
-    NSString *concatenatedRequest = [NSString string];
-    for (NSString *key in sortedKeys)
-    {
-        NSString *encodedValue = [NSString stringByUrlEncodingString:parameters[key]];
-        concatenatedRequest = [concatenatedRequest stringByAppendingQueryParameterWithKey:key
-                                                                                    value:encodedValue];
-    }
-    
-    return concatenatedRequest;
 }
 
 @end

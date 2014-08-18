@@ -8,6 +8,7 @@ typedef NS_ENUM(NSUInteger, ITCError)
     // General
     ITCErrorUndefined = 1,
     ITCErrorInvalidArgument,
+    ITCErrorUserNotAuthenticated,
     
     // Cache
     ITCErrorCacheItemExpired,
