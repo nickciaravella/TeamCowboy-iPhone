@@ -38,6 +38,7 @@
 		9711055419A1794E00C2EF5C /* NSDictionary+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055319A1794E00C2EF5C /* NSDictionary+Common.m */; };
 		9711055719A1876C00C2EF5C /* ITCTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055619A1876C00C2EF5C /* ITCTeam.m */; };
 		9711055A19A189E500C2EF5C /* ITCTeamCowboyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055919A189E500C2EF5C /* ITCTeamCowboyRepository.m */; };
+		9711055D19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055C19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -120,6 +121,9 @@
 		9711055619A1876C00C2EF5C /* ITCTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeam.m; sourceTree = "<group>"; };
 		9711055819A189E500C2EF5C /* ITCTeamCowboyRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyRepository.h; sourceTree = "<group>"; };
 		9711055919A189E500C2EF5C /* ITCTeamCowboyRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyRepository.m; sourceTree = "<group>"; };
+		9711055B19A2DB6D00C2EF5C /* ITCTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamsTableViewController.h; sourceTree = "<group>"; };
+		9711055C19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamsTableViewController.m; sourceTree = "<group>"; };
+		9711055E19A2DD2900C2EF5C /* ITCAppTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAppTabBarItem.h; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 				97110527199EF0AD00C2EF5C /* Resources */,
 				9711055519A1876C00C2EF5C /* ITCTeam.h */,
 				9711055619A1876C00C2EF5C /* ITCTeam.m */,
+				9711055B19A2DB6D00C2EF5C /* ITCTeamsTableViewController.h */,
+				9711055C19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m */,
 			);
 			name = Teams;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 				97A069C719988EBE0094556D /* ITCAppFactory.m */,
 				97110528199EF29400C2EF5C /* ITCAppTabBarController.h */,
 				97110529199EF29400C2EF5C /* ITCAppTabBarController.m */,
+				9711055E19A2DD2900C2EF5C /* ITCAppTabBarItem.h */,
 				97290819199C674400F568A5 /* ITCTeamCowboyApiKeys.h */,
 				9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */,
 				972907F51999B96E00F568A5 /* Prefix.pch */,
@@ -597,6 +604,7 @@
 				971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */,
 				9711053F19A06A0800C2EF5C /* ITCFileServiceImp.m in Sources */,
 				9711054A19A0860600C2EF5C /* ITCButtonTableViewCell.m in Sources */,
+				9711055D19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m in Sources */,
 				971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */,
 				9711052D199EF43400C2EF5C /* ITCResourceService.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
