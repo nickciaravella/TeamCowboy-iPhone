@@ -16,12 +16,13 @@
 {
     [super viewDidAppear:animated];
 
-    if ( ![ITCAppFactory authenticationProvider].authenticationContext )
+    if ( [ITCAppFactory authenticationProvider].authenticationContext )
     {
-        [self presentLoginController];
+        BOOL didLoadUserData = [self processLoginComplete];
+        if ( didLoadUserData ) return;
     }
     
-    [self processLoginComplete];
+    [self presentLoginController];
 }
 
 #pragma mark - ITCLoginViewControllerDelegate
@@ -30,8 +31,12 @@
 //
 - (void)loginControllerDidCompleteAuthentication:(ITCLoginViewController *)loginController
 {
-    [self processLoginComplete];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    BOOL didLoadUserData = [self processLoginComplete];
+    
+    if ( didLoadUserData )
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark - ITCMoreTableViewControllerDelegate
@@ -58,10 +63,20 @@
 
 //
 //
-- (void)processLoginComplete
+- (BOOL)processLoginComplete
 {
     NSError *error = nil;
     ITCUser *loggedInUser = [ITCUser loadCurrentUserBypassingCache:NO withError:&error];
+    
+    if ( error )
+    {
+        [[ITCAppFactory alertingService] showAlertForError:error
+                                                 withTitle:@"Something Went Wrong"
+                                                   message:@"There was a problem loading your information from Team Cowboy."
+                                          acknowledgeBlock:^{}
+                                                retryBlock:^{ [self processLoginComplete]; }];
+        return NO;
+    }
     
     for (UINavigationController *navController in self.viewControllers)
     {
@@ -72,7 +87,7 @@
         }
     }
     
-    // TODO: Show error if we can't load the user.
+    return YES;
 }
 
 @end
