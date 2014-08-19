@@ -4,11 +4,14 @@
 //
 
 #import "ITCSerializableObject.h"
+#import "ITCActivity.h"
 
 @interface ITCTeam : ITCSerializableObject
 
 @property (nonatomic, readonly) NSString *teamId;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) ITCActivity *activity;
+@property (nonatomic, readonly) NSString *teamMemberType;
 @property (nonatomic, readonly) UIImage  *loadedThumbnailPhoto;
 @property (nonatomic, readonly) BOOL hasThumbnailPhoto;
 

@@ -4,6 +4,7 @@
 //
 
 #import "ITCTeam.h"
+#import "ITCTeamCowboyRepository.h"
 
 #pragma mark - ITCTeam ()
 
@@ -27,6 +28,8 @@
     
     _teamId = dictionary[ @"teamId" ];
     _name   = dictionary[ @"name" ];
+    _activity = [[ITCActivity alloc] initWithDictionary:dictionary[ @"activity" ]];
+    _teamMemberType = dictionary[ @"meta" ][ @"teamMemberType" ][ @"titleShortSingular" ];
     
     NSDictionary *teamPhoto = dictionary[ @"teamPhoto" ];
     if ( teamPhoto[ @"thumbUrl" ] )
@@ -34,7 +37,7 @@
         _hasThumbnailPhoto = YES;
         _thumbnailPhotoUrl = teamPhoto[ @"thumbUrl" ];
     }
-    
+ 
     return self;
 }
 
@@ -45,6 +48,13 @@
     NSMutableDictionary *dictionary = [NSMutableDictionary new];
     [dictionary safeSetValue:self.teamId forKey:@"teamId"];
     [dictionary safeSetValue:self.name forKey:@"name"];
+    [dictionary safeSetValue:[self.activity dictionaryFormat] forKey:@"activity"];
+
+    if ( self.teamMemberType )
+    {
+        [dictionary setValue:@{ @"teamMemberType" : @{ @"titleShortSingular" : self.teamMemberType } }
+                      forKey:@"meta"];
+    }
     
     if ( self.hasThumbnailPhoto && self.thumbnailPhotoUrl )
     {
@@ -60,6 +70,7 @@
 @synthesize name                 = _name;
 @synthesize hasThumbnailPhoto    = _hasThumbnailPhoto;
 @synthesize loadedThumbnailPhoto = _loadedThumbnailPhoto;
+@synthesize teamMemberType       = _teamMemberType;
 
 //
 //

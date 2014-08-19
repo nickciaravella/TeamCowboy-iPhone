@@ -39,6 +39,7 @@
 		9711055719A1876C00C2EF5C /* ITCTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055619A1876C00C2EF5C /* ITCTeam.m */; };
 		9711055A19A189E500C2EF5C /* ITCTeamCowboyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055919A189E500C2EF5C /* ITCTeamCowboyRepository.m */; };
 		9711055D19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711055C19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m */; };
+		9711056219A312E800C2EF5C /* ITCActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9711056119A312E800C2EF5C /* ITCActivity.m */; };
 		972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FC1999C7A200F568A5 /* NSError+Common.m */; };
 		97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 972907FF199AFF0A00F568A5 /* ITCAuthenticationContext.m */; };
 		97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290802199B027F00F568A5 /* ITCSerializableObject.m */; };
@@ -124,6 +125,8 @@
 		9711055B19A2DB6D00C2EF5C /* ITCTeamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamsTableViewController.h; sourceTree = "<group>"; };
 		9711055C19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamsTableViewController.m; sourceTree = "<group>"; };
 		9711055E19A2DD2900C2EF5C /* ITCAppTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCAppTabBarItem.h; sourceTree = "<group>"; };
+		9711056019A312E800C2EF5C /* ITCActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCActivity.h; sourceTree = "<group>"; };
+		9711056119A312E800C2EF5C /* ITCActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCActivity.m; sourceTree = "<group>"; };
 		972907F51999B96E00F568A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		972907F81999C26F00F568A5 /* ITCTeamCowboyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyService.h; sourceTree = "<group>"; };
 		972907FA1999C67B00F568A5 /* ITCError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCError.h; sourceTree = "<group>"; };
@@ -308,13 +311,15 @@
 			name = "Controller Services";
 			sourceTree = "<group>";
 		};
-		9711054B19A16EC900C2EF5C /* User */ = {
+		9711055F19A312C600C2EF5C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				9711054F19A16F2500C2EF5C /* ITCUser.h */,
 				9711055019A16F2500C2EF5C /* ITCUser.m */,
+				9711056019A312E800C2EF5C /* ITCActivity.h */,
+				9711056119A312E800C2EF5C /* ITCActivity.m */,
 			);
-			name = User;
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		972907F61999C1B200F568A5 /* Service */ = {
@@ -396,7 +401,6 @@
 				97110516199EE8C000C2EF5C /* Teams */,
 				9711052E199EFC0200C2EF5C /* Messages */,
 				97110536199F324600C2EF5C /* More */,
-				9711054B19A16EC900C2EF5C /* User */,
 				97A069991997F90A0094556D /* Images.xcassets */,
 			);
 			path = "TeamCowboy-iPhone";
@@ -459,6 +463,7 @@
 		97A069BB199883AC0094556D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				9711055F19A312C600C2EF5C /* Entities */,
 				9711054119A06F0400C2EF5C /* Controller Services */,
 				971104F5199D66D100C2EF5C /* Diagnostic */,
 				972907F91999C63800F568A5 /* Error */,
@@ -615,6 +620,7 @@
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,
 				9711055719A1876C00C2EF5C /* ITCTeam.m in Sources */,
 				97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */,
+				9711056219A312E800C2EF5C /* ITCActivity.m in Sources */,
 				972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */,
 				97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */,
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,

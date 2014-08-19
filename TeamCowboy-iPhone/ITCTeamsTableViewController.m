@@ -32,7 +32,7 @@
     [self dispatchConcurrentQueueFromUx:^{
        
         NSError *loadError = nil;
-        self.teams = [user loadTeamsBypassingCache:YES withError:&loadError];
+        self.teams = [user loadTeamsBypassingCache:NO withError:&loadError];
         self.loadingError = loadError;
         
         [self loadThumbnailPhotos];
@@ -78,6 +78,7 @@
     
     ITCTeam *team = self.teams[ indexPath.row ];
     cell.textLabel.text = team.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", team.activity.name, team.teamMemberType];
     
     if ( team.hasThumbnailPhoto )
     {
