@@ -32,10 +32,10 @@
     _teamMemberType = dictionary[ @"meta" ][ @"teamMemberType" ][ @"titleShortSingular" ];
     
     NSDictionary *teamPhoto = dictionary[ @"teamPhoto" ];
-    if ( teamPhoto[ @"thumbUrl" ] )
+    if ( teamPhoto[ @"smallUrl" ] )
     {
         _hasThumbnailPhoto = YES;
-        _thumbnailPhotoUrl = teamPhoto[ @"thumbUrl" ];
+        _thumbnailPhotoUrl = teamPhoto[ @"smallUrl" ];
     }
  
     return self;
@@ -58,7 +58,7 @@
     
     if ( self.hasThumbnailPhoto && self.thumbnailPhotoUrl )
     {
-        [dictionary setValue:@{ @"thumbUrl" : self.thumbnailPhotoUrl } forKey:@"teamPhoto"];
+        [dictionary setValue:@{ @"smallUrl" : self.thumbnailPhotoUrl } forKey:@"teamPhoto"];
     }
     
     return dictionary;

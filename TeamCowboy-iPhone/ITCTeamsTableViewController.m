@@ -5,6 +5,7 @@
 
 #import "ITCTeamsTableViewController.h"
 #import "ITCTeam.h"
+#import "ITCTeamTableViewCell.h"
 
 #pragma mark - ITCTeamsTableViewController ()
 
@@ -68,7 +69,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"teamCell" forIndexPath:indexPath];
+    ITCTeamTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"teamCell" forIndexPath:indexPath];
     
     if ( self.loadingError )
     {
@@ -77,13 +78,12 @@
     }
     
     ITCTeam *team = self.teams[ indexPath.row ];
-    cell.textLabel.text = team.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", team.activity.name, team.teamMemberType];
+    cell.teamLabel.text = team.name;
+    cell.teamDetailLabel.text = [NSString stringWithFormat:@"%@ - %@", team.activity.name, team.teamMemberType];
     
     if ( team.hasThumbnailPhoto )
     {
-        cell.imageView.image = team.loadedThumbnailPhoto;
-        cell.imageView.backgroundColor = [UIColor grayColor];
+        cell.thumbnailImageView.image = team.loadedThumbnailPhoto;
     }
     else
     {
