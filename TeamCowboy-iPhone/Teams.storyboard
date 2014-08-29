@@ -36,7 +36,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hockey - Full Timer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksa-ZT-qel">
-                                            <rect key="frame" x="108" y="51" width="469" height="20.5"/>
+                                            <rect key="frame" x="108" y="50" width="469" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20.5" id="k34-52-qWo"/>
                                             </constraints>

@@ -19,4 +19,11 @@
     return NO;
 }
 
+//
+//
+- (BOOL)openUrlForMapWithLocation:(NSString *)location
+{
+    return [self openUrlWithAbsoluteString:[NSString stringWithFormat:@"http://maps.apple.com/?q=%@", [NSString stringByUrlEncodingString:location]]];
+}
+
 @end

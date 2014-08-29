@@ -33,6 +33,15 @@ typedef NS_ENUM(NSUInteger, ITCUserGender)
 - (NSArray *)loadTeamsBypassingCache:(BOOL)bypassCache
                            withError:(NSError **)error;
 
+/**
+ @brief Gets the events for the teams that the user belongs to.
+ @param bypassCache YES if cached values should be ignored.
+ @param error       If an error occurred, it will be put into this parameter.
+ @return An array of ITCEvent objects.
+ */
+- (NSArray *)loadTeamEventsBypassingCache:(BOOL)bypassCache
+                                withError:(NSError **)error;
+
 //
 // User properties
 //

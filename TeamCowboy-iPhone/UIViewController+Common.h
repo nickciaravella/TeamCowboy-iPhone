@@ -12,4 +12,11 @@
  */
 - (BOOL)openUrlWithAbsoluteString:(NSString *)urlString;
 
+/**
+ @brief Opens a URL for a location in Apple's maps.
+ @param location The location.
+ @return YES if the URL was successfully opened. NO otherwise.
+ */
+- (BOOL)openUrlForMapWithLocation:(NSString *)location;
+
 @end

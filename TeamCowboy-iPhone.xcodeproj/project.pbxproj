@@ -58,6 +58,9 @@
 		97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069C719988EBE0094556D /* ITCAppFactory.m */; };
 		97A069D21999AE510094556D /* ITCAuthenticationProviderImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069D11999AE510094556D /* ITCAuthenticationProviderImp.m */; };
 		97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069D41999B3360094556D /* NSObject+Concurrency.m */; };
+		97C4F62419AA9A4300E69FCB /* ITCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C4F62319AA9A4300E69FCB /* ITCEvent.m */; };
+		97C4F62719B003FB00E69FCB /* ITCEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C4F62619B003FB00E69FCB /* ITCEventsTableViewController.m */; };
+		97C4F62A19B0056F00E69FCB /* ITCEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C4F62919B0056F00E69FCB /* ITCEventTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +173,12 @@
 		97A069D11999AE510094556D /* ITCAuthenticationProviderImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCAuthenticationProviderImp.m; sourceTree = "<group>"; };
 		97A069D31999B3360094556D /* NSObject+Concurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Concurrency.h"; sourceTree = "<group>"; };
 		97A069D41999B3360094556D /* NSObject+Concurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Concurrency.m"; sourceTree = "<group>"; };
+		97C4F62219AA9A4300E69FCB /* ITCEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEvent.h; sourceTree = "<group>"; };
+		97C4F62319AA9A4300E69FCB /* ITCEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEvent.m; sourceTree = "<group>"; };
+		97C4F62519B003FB00E69FCB /* ITCEventsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventsTableViewController.h; sourceTree = "<group>"; };
+		97C4F62619B003FB00E69FCB /* ITCEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventsTableViewController.m; sourceTree = "<group>"; };
+		97C4F62819B0056F00E69FCB /* ITCEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventTableViewCell.h; sourceTree = "<group>"; };
+		97C4F62919B0056F00E69FCB /* ITCEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +250,12 @@
 			isa = PBXGroup;
 			children = (
 				97110526199EF0A100C2EF5C /* Resources */,
+				97C4F62219AA9A4300E69FCB /* ITCEvent.h */,
+				97C4F62319AA9A4300E69FCB /* ITCEvent.m */,
+				97C4F62519B003FB00E69FCB /* ITCEventsTableViewController.h */,
+				97C4F62619B003FB00E69FCB /* ITCEventsTableViewController.m */,
+				97C4F62819B0056F00E69FCB /* ITCEventTableViewCell.h */,
+				97C4F62919B0056F00E69FCB /* ITCEventTableViewCell.m */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -468,9 +483,9 @@
 		97A069BB199883AC0094556D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9711055F19A312C600C2EF5C /* Entities */,
 				9711054119A06F0400C2EF5C /* Controller Services */,
 				971104F5199D66D100C2EF5C /* Diagnostic */,
+				9711055F19A312C600C2EF5C /* Entities */,
 				972907F91999C63800F568A5 /* Error */,
 				9711054019A06EE900C2EF5C /* File */,
 				972907F71999C1C400F568A5 /* Foundation */,
@@ -606,6 +621,7 @@
 			files = (
 				97A0698F1997F90A0094556D /* main.m in Sources */,
 				9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */,
+				97C4F62719B003FB00E69FCB /* ITCEventsTableViewController.m in Sources */,
 				9711055A19A189E500C2EF5C /* ITCTeamCowboyRepository.m in Sources */,
 				97110502199D80B400C2EF5C /* ITCHttpConnectionMock.m in Sources */,
 				9711055419A1794E00C2EF5C /* NSDictionary+Common.m in Sources */,
@@ -619,6 +635,7 @@
 				971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */,
 				9711052D199EF43400C2EF5C /* ITCResourceService.m in Sources */,
 				97290800199AFF0A00F568A5 /* ITCAuthenticationContext.m in Sources */,
+				97C4F62419AA9A4300E69FCB /* ITCEvent.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
 				9729080A199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m in Sources */,
 				9711052A199EF29400C2EF5C /* ITCAppTabBarController.m in Sources */,
@@ -633,6 +650,7 @@
 				9711053B199FCF8E00C2EF5C /* ITCMoreTableViewController.m in Sources */,
 				97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */,
 				971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */,
+				97C4F62A19B0056F00E69FCB /* ITCEventTableViewCell.m in Sources */,
 				9711054719A06FDC00C2EF5C /* ITCCache.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
 				97110515199DB08600C2EF5C /* NSDictionary+URL.m in Sources */,

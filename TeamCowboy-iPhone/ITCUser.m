@@ -4,6 +4,7 @@
 //
 
 #import "ITCUser.h"
+#import "ITCEvent.h"
 #import "ITCTeam.h"
 #import "ITCTeamCowboyRepository.h"
 
@@ -69,6 +70,19 @@
     return [ITCTeamCowboyRepository getCollectionOfEntitiesOfType:[ITCTeam class]
                                               withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"user_%@_teams", self.userId]
                                                  teamCowboyMethod:@"User_GetTeams"
+                                                  queryParameters:nil
+                                                    cacheDuration:30
+                                                            error:error];
+}
+
+//
+//
+- (NSArray *)loadTeamEventsBypassingCache:(BOOL)bypassCache
+                                 withError:(NSError **)error
+{
+    return [ITCTeamCowboyRepository getCollectionOfEntitiesOfType:[ITCEvent class]
+                                              withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"user_%@_teamEvents", self.userId]
+                                                 teamCowboyMethod:@"User_GetTeamEvents"
                                                   queryParameters:nil
                                                     cacheDuration:30
                                                             error:error];
