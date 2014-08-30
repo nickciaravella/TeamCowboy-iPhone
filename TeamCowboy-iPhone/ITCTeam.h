@@ -8,7 +8,7 @@
 
 @interface ITCTeam : ITCSerializableObject
 
-@property (nonatomic, readonly) NSString *teamId;
+@property (nonatomic, readonly) NSNumber *teamId;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) ITCActivity *activity;
 @property (nonatomic, readonly) NSString *teamMemberType;

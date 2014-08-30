@@ -95,9 +95,9 @@
     NSMutableDictionary *queryParameters = [[NSMutableDictionary alloc] initWithDictionary:@{ @"userToken" : authContext.token }];
     [queryParameters addEntriesFromDictionary:parameters];
     id entity =  [[ITCAppFactory teamCowboyService] getRequestWithMethod:teamCowboyMethod
-                                                                            queryParameters:queryParameters
-                                                                    usingResponseSerializer:[ITCTeamCowboyEntitySerializer serializerForClass:type isCollection:isCollection]
-                                                                                      error:error];
+                                                         queryParameters:queryParameters
+                                                 usingResponseSerializer:[ITCTeamCowboyEntitySerializer serializerForClass:type isCollection:isCollection]
+                                                                   error:error];
     if ( *error ) { return nil; }
     
     // If successful, add the entity to the cache.

@@ -33,7 +33,7 @@
     [self dispatchConcurrentQueueFromUx:^{
         
         NSError *loadError = nil;
-        self.events = [user loadTeamEventsBypassingCache:YES withError:&loadError];
+        self.events = [user loadTeamEventsBypassingCache:NO withError:&loadError];
         self.loadingError = loadError;
         
         [self dispatchMainQueue:^{
@@ -66,7 +66,7 @@
     cell.homeAwayLabel.text     = [self displayStringFromHomeAway:event.homeAway];
     
     [cell.locationButton setTitle:event.locationName forState:UIControlStateNormal];
-    cell.locationButton.layer.borderColor = [[UIColor blackColor] CGColor];
+    cell.locationButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     cell.locationButton.layer.borderWidth = 1;
     cell.locationButton.tag = indexPath.row;
     [cell.locationButton addTarget:self action:@selector(onLocationClicked:) forControlEvents:UIControlEventTouchUpInside];

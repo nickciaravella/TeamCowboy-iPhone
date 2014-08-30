@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, ITCUserGender)
 //
 // User properties
 //
-@property (nonatomic, readonly) NSString *userId;
+@property (nonatomic, readonly) NSNumber *userId;
 @property (nonatomic, readonly) NSString *fullName;
 @property (nonatomic, readonly) ITCUserGender gender;
 @property (nonatomic, readonly) NSString *phoneNumber;

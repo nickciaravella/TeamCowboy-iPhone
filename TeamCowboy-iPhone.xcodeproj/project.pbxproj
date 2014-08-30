@@ -61,6 +61,7 @@
 		97C4F62419AA9A4300E69FCB /* ITCEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C4F62319AA9A4300E69FCB /* ITCEvent.m */; };
 		97C4F62719B003FB00E69FCB /* ITCEventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C4F62619B003FB00E69FCB /* ITCEventsTableViewController.m */; };
 		97C4F62A19B0056F00E69FCB /* ITCEventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C4F62919B0056F00E69FCB /* ITCEventTableViewCell.m */; };
+		97C4F62D19B150F800E69FCB /* ITCEventRsvp.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C4F62C19B150F800E69FCB /* ITCEventRsvp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,8 @@
 		97C4F62619B003FB00E69FCB /* ITCEventsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventsTableViewController.m; sourceTree = "<group>"; };
 		97C4F62819B0056F00E69FCB /* ITCEventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventTableViewCell.h; sourceTree = "<group>"; };
 		97C4F62919B0056F00E69FCB /* ITCEventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventTableViewCell.m; sourceTree = "<group>"; };
+		97C4F62B19B150F800E69FCB /* ITCEventRsvp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventRsvp.h; sourceTree = "<group>"; };
+		97C4F62C19B150F800E69FCB /* ITCEventRsvp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventRsvp.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +255,8 @@
 				97110526199EF0A100C2EF5C /* Resources */,
 				97C4F62219AA9A4300E69FCB /* ITCEvent.h */,
 				97C4F62319AA9A4300E69FCB /* ITCEvent.m */,
+				97C4F62B19B150F800E69FCB /* ITCEventRsvp.h */,
+				97C4F62C19B150F800E69FCB /* ITCEventRsvp.m */,
 				97C4F62519B003FB00E69FCB /* ITCEventsTableViewController.h */,
 				97C4F62619B003FB00E69FCB /* ITCEventsTableViewController.m */,
 				97C4F62819B0056F00E69FCB /* ITCEventTableViewCell.h */,
@@ -627,6 +632,7 @@
 				9711055419A1794E00C2EF5C /* NSDictionary+Common.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
 				9711056519A43D6E00C2EF5C /* ITCTeamTableViewCell.m in Sources */,
+				97C4F62D19B150F800E69FCB /* ITCEventRsvp.m in Sources */,
 				9711055119A16F2500C2EF5C /* ITCUser.m in Sources */,
 				971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */,
 				9711053F19A06A0800C2EF5C /* ITCFileServiceImp.m in Sources */,
