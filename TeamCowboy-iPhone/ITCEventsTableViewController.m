@@ -6,13 +6,13 @@
 #import "ITCEventsTableViewController.h"
 #import "ITCEvent.h"
 #import "ITCEventTableViewCell.h"
+#import "ITCEventsTableViewDataSource.h"
 
 #pragma mark - ITCEventsTableViewController ()
 
-@interface ITCEventsTableViewController ()
+@interface ITCEventsTableViewController () <ITCEventsTableViewDataSourceDelegate>
 
-@property (nonatomic, strong) NSArray *events;
-@property (nonatomic, strong) NSError *loadingError;
+@property (nonatomic, strong) ITCEventsTableViewDataSource *dataSource;
 
 @end
 
@@ -20,27 +20,28 @@
 
 @implementation ITCEventsTableViewController
 
+#pragma mark - NSCoding
+
+//
+//
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (!(self = [super initWithCoder:aDecoder])) { return nil; }
+    
+    _dataSource = [ITCEventsTableViewDataSource new];
+    _dataSource.delegate = self;
+    
+    return self;
+}
+
 #pragma mark - ITCAppTabBarItem
 
 //
 //
 - (void)startLoadingDataForUser:(ITCUser *)user
 {
-    self.events = nil;
-    self.loadingError = nil;
     [self.tableView reloadData];
-    
-    [self dispatchConcurrentQueueFromUx:^{
-        
-        NSError *loadError = nil;
-        self.events = [user loadTeamEventsBypassingCache:NO withError:&loadError];
-        self.loadingError = loadError;
-
-        [self dispatchMainQueue:^{
-            [self.tableView reloadData];
-        }];
-        
-    }];
+    [self.dataSource reloadObjectsForUser:user bypassingCache:NO];
 }
 
 #pragma mark - UITableViewDelegate
@@ -52,15 +53,16 @@
 {
     ITCEventTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"eventCell" forIndexPath:indexPath];
     
-    if ( self.loadingError )
+    if ( self.dataSource.loadingError )
     {
         // TODO: handle showing error view
         return cell;
     }
     
     // TODO: Add default text if any properties are missing.
+    ITCEvent *event = [self.dataSource objectAtIndexPath:indexPath];
+    cell.locationButton.tag = [self.dataSource tagForObjectAtIndexPath:indexPath];
     
-    ITCEvent *event = self.events[ indexPath.row ];
     cell.teamNameLabel.text     = event.teamName;
     cell.opponentNameLabel.text = event.opponentName;
     cell.homeAwayLabel.text     = [self displayStringFromHomeAway:event.homeAway];
@@ -68,7 +70,6 @@
     [cell.locationButton setTitle:event.locationName forState:UIControlStateNormal];
     cell.locationButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     cell.locationButton.layer.borderWidth = 1;
-    cell.locationButton.tag = indexPath.row;
     [cell.locationButton addTarget:self action:@selector(onLocationClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     NSDateFormatter *formatter = [NSDateFormatter new];
@@ -87,7 +88,7 @@
 //
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return ( self.dataSource.loadingError ) ? 1 : [self.dataSource numberOfSections];
 }
 
 //
@@ -95,7 +96,27 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return ( self.loadingError ) ? 1 : [self.events count];
+    return ( self.dataSource.loadingError ) ? 1 : [self.dataSource numberOfObjectsInSection:section];
+}
+
+#pragma mark - ITCEventsTableViewDataSourceDelegate
+
+//
+//
+- (void)dataSource:(ITCEventsTableViewDataSource *)source didUpdateObjectsAtIndexPaths:(NSArray *)indexPaths
+{
+    [self dispatchMainQueueIfNeeded:^{
+        [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+    }];
+}
+
+//
+//
+- (void)dataSourceDidCompleteLoadingObjects:(ITCEventsTableViewDataSource *)source
+{
+    [self dispatchMainQueueIfNeeded:^{
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - Private
@@ -119,7 +140,7 @@
 //
 - (void)onLocationClicked:(UIButton *)sender
 {
-    ITCEvent *event = self.events[ sender.tag ];
+    ITCEvent *event = [self.dataSource objectForTag:sender.tag];
     [self openUrlForMapWithLocation:event.locationAddress];
 }
 

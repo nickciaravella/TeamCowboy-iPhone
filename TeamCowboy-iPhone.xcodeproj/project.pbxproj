@@ -51,6 +51,7 @@
 		978C72C319B233E4003C817F /* ITCEventAttendanceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72C219B233E4003C817F /* ITCEventAttendanceList.m */; };
 		978C72C519B2AA9B003C817F /* ITCSerializableObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72C419B2AA9B003C817F /* ITCSerializableObjectTests.m */; };
 		978C72C819B3D955003C817F /* NSArray+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72C719B3D955003C817F /* NSArray+Common.m */; };
+		978C72CB19B3E2F0003C817F /* ITCEventsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72CA19B3E2F0003C817F /* ITCEventsTableViewDataSource.m */; };
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
 		97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B11997FAB60094556D /* ITCAppDelegate.m */; };
@@ -160,6 +161,8 @@
 		978C72C419B2AA9B003C817F /* ITCSerializableObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCSerializableObjectTests.m; sourceTree = "<group>"; };
 		978C72C619B3D955003C817F /* NSArray+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Common.h"; sourceTree = "<group>"; };
 		978C72C719B3D955003C817F /* NSArray+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Common.m"; sourceTree = "<group>"; };
+		978C72C919B3E2F0003C817F /* ITCEventsTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventsTableViewDataSource.h; sourceTree = "<group>"; };
+		978C72CA19B3E2F0003C817F /* ITCEventsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventsTableViewDataSource.m; sourceTree = "<group>"; };
 		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 				97C4F62619B003FB00E69FCB /* ITCEventsTableViewController.m */,
 				97C4F62819B0056F00E69FCB /* ITCEventTableViewCell.h */,
 				97C4F62919B0056F00E69FCB /* ITCEventTableViewCell.m */,
+				978C72C919B3E2F0003C817F /* ITCEventsTableViewDataSource.h */,
+				978C72CA19B3E2F0003C817F /* ITCEventsTableViewDataSource.m */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 				9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */,
 				97C4F62719B003FB00E69FCB /* ITCEventsTableViewController.m in Sources */,
 				9711055A19A189E500C2EF5C /* ITCTeamCowboyRepository.m in Sources */,
+				978C72CB19B3E2F0003C817F /* ITCEventsTableViewDataSource.m in Sources */,
 				97110502199D80B400C2EF5C /* ITCHttpConnectionMock.m in Sources */,
 				9711055419A1794E00C2EF5C /* NSDictionary+Common.m in Sources */,
 				97A069C2199885080094556D /* UIViewController+Common.m in Sources */,
