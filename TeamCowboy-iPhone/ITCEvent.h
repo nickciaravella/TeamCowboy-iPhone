@@ -4,6 +4,7 @@
 //
 
 #import "ITCSerializableObject.h"
+#import "ITCEventAttendanceList.h"
 #import "ITCEventRsvp.h"
 
 @interface ITCEvent : ITCSerializableObject
@@ -25,5 +26,14 @@
  */
 - (ITCEvent *)loadCurrentRsvpStatusBypassingCache:(BOOL)bypassCache
                                         withError:(NSError **)error;
+
+/**
+ @brief Loads the attendance list for an event.
+ @param bypassCache YES if cached values should be ignored.
+ @param error If an error occurs, it will be put into this variable.
+ @return A new event attendance list object.
+ */
+- (ITCEventAttendanceList *)loadAttendanceListBypassingCache:(BOOL)bypassCache
+                                                   withError:(NSError **)error;
 
 @end

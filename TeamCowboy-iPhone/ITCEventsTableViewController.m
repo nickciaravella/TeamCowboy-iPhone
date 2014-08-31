@@ -35,7 +35,7 @@
         NSError *loadError = nil;
         self.events = [user loadTeamEventsBypassingCache:NO withError:&loadError];
         self.loadingError = loadError;
-        
+
         [self dispatchMainQueue:^{
             [self.tableView reloadData];
         }];

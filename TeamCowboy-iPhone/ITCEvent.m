@@ -60,7 +60,8 @@
     
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    [dictionary safeSetValue:[formatter stringFromDate:self.eventDate] forKey:@"eventId"];
+    [dictionary safeSetValue:@{ @"startDateTimeLocal" : [formatter stringFromDate:self.eventDate] }
+                      forKey:@"dateTimeInfo"];
     
     return dictionary;
 }
@@ -79,6 +80,22 @@
                                                       @"eventId" : [self.eventId description],
                                                       @"teamId"  : [self.teamId description],
                                                       @"includeRSVPInfo" : @"true"                                                      
+                                                      }
+                                      cacheDuration:60
+                                              error:error];
+}
+
+//
+//
+- (ITCEventAttendanceList *)loadAttendanceListBypassingCache:(BOOL)bypassCache
+                                                   withError:(NSError **)error
+{
+    return [ITCTeamCowboyRepository getEntityOfType:[ITCEvent class]
+                                withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"eventAttendanceList_%@", self.eventId]
+                                   teamCowboyMethod:@"Event_GetAttendanceList"
+                                    queryParameters:@{
+                                                      @"eventId" : [self.eventId description],
+                                                      @"teamId"  : [self.teamId description]
                                                       }
                                       cacheDuration:60
                                               error:error];
