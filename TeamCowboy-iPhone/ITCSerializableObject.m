@@ -24,15 +24,17 @@
         id value = [dictionary valueForKeyPath:mapping[property]];
         if ( !value ) continue;        
         
-        if ([embeddedObjects containsObject:property])
+        if ( [value isKindOfClass:[NSArray class]] && [embeddedObjects containsObject:property] )
         {
-            if ( ![value isKindOfClass:[NSDictionary class]] ) continue;
-            
             Class type = NSClassFromString(embeddedObjectMapping[property]);
-            id embeddedObject = [[type alloc] initWithDictionary:value];
-            [self setValue:embeddedObject forKey:property];
-        
-            continue;
+            value = [value arrayByTransformingElementsUsingBlock:^id(NSDictionary *element) {
+                return [[type alloc] initWithDictionary:element];
+            }];
+        }
+        else if ([embeddedObjects containsObject:property])
+        {
+            Class type = NSClassFromString(embeddedObjectMapping[property]);
+            value = [[type alloc] initWithDictionary:value];
         }
 
         [self setValue:value forKey:property];
@@ -56,10 +58,15 @@
         id value = [self valueForKey:property];
         if ( !value ) continue;
         
-        if ([embeddedObjects containsObject:property])
+        if ( [value isKindOfClass:[NSArray class]] && [embeddedObjects containsObject:property] )
         {
-            ITCSerializableObject *embeddedObject = [self valueForKey:property];
-            value = [embeddedObject dictionaryFormat];
+            value = [value arrayByTransformingElementsUsingBlock:^id(ITCSerializableObject *element) {
+                return [element dictionaryFormat];
+            }];
+        }
+        else if ([embeddedObjects containsObject:property])
+        {
+            value = [value dictionaryFormat];
         }
         
         [self addObject:value toDictionary:dictionaryFormat forKeyPath:mapping[property]];
@@ -68,6 +75,8 @@
     return dictionaryFormat;
 }
 
+//
+//
 - (void)addObject:(id)object toDictionary:(NSMutableDictionary *)dictionary forKeyPath:(NSString *)keyPath
 {
     NSArray *keys = [keyPath componentsSeparatedByString:@"."];

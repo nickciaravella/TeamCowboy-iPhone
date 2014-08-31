@@ -18,6 +18,7 @@
 #import "ITCTeamCowboyApiKeys.h"
 
 // Helper categories
+#import "NSArray+Common.h"
 #import "NSDictionary+Common.h"
 #import "NSDictionary+URL.h"
 #import "NSError+Common.h"

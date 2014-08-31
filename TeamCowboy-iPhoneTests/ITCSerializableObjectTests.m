@@ -10,6 +10,8 @@
 @property (nonatomic, strong) NSString *flatProperty;
 @property (nonatomic, strong) NSString *nestedProperty;
 @property (nonatomic, strong) ITCMockObject *embeddedProperty;
+@property (nonatomic, strong) NSArray *arrayProperty; // Of ITCMockObject
+@property (nonatomic, strong) NSArray *stringArrayProperty; // Of NSString
 
 @end
 
@@ -17,14 +19,17 @@
 
 + (NSDictionary *)propertyToKeyPathMapping
 {
-    return @{ @"flatProperty"     : @"property1",
-              @"nestedProperty"   : @"anotherDictionary.nestedProperty",
-              @"embeddedProperty" : @"serializableProperty" };
+    return @{ @"flatProperty"        : @"property1",
+              @"nestedProperty"      : @"anotherDictionary.nestedProperty",
+              @"embeddedProperty"    : @"serializableProperty",
+              @"arrayProperty"       : @"arrayProperty",
+              @"stringArrayProperty" : @"stringArrayProperty"};
 }
 
 + (NSDictionary *)embeddedObjectPropertyToClassMapping
 {
-    return @{ @"embeddedProperty" : @"ITCMockObject" };
+    return @{ @"embeddedProperty" : @"ITCMockObject",
+              @"arrayProperty"    : @"ITCMockObject" };
 }
 
 @end
@@ -54,6 +59,35 @@
     ITCMockObject *object = [[ITCMockObject alloc] initWithDictionary:@{ @"serializableProperty" : @{ @"property1" : @"something" } }];
     XCTAssertEqualObjects(object.embeddedProperty.flatProperty, @"something");
 }
+
+- (void)testSerializationOfArrayProperty
+{
+    // Setup
+    NSDictionary *inputDictionary = @{ @"arrayProperty" : @[ @{ @"property1" : @"something1" }, @{ @"property1" : @"something2" } ] };
+    
+    // Act
+    ITCMockObject *object = [[ITCMockObject alloc] initWithDictionary:inputDictionary];
+    
+    // Asserts
+    XCTAssertEqual([object.arrayProperty count], 2U);
+    XCTAssertEqualObjects([object.arrayProperty[0] flatProperty], @"something1");
+    XCTAssertEqualObjects([object.arrayProperty[1] flatProperty], @"something2");
+}
+
+- (void)testSerializationOfStringArrayProperty
+{
+    // Setup
+    NSDictionary *inputDictionary = @{ @"stringArrayProperty" : @[ @"something1", @"something2" ] };
+    
+    // Act
+    ITCMockObject *object = [[ITCMockObject alloc] initWithDictionary:inputDictionary];
+    
+    // Asserts
+    XCTAssertEqual([object.stringArrayProperty count], 2U);
+    XCTAssertEqualObjects(object.stringArrayProperty[0], @"something1");
+    XCTAssertEqualObjects(object.stringArrayProperty[1], @"something2");
+}
+
 
 - (void)testMissingPropertiesSetToNil
 {
@@ -121,6 +155,41 @@
     // Asserts
     NSDictionary *expectedDictionary = @{ @"property1" : @"something",
                                           @"anotherDictionary" : @{ @"nestedProperty" : @"something2" } };
+    XCTAssertEqualObjects(dictionary, expectedDictionary);
+}
+
+- (void)testDictionaryWithArrayProperty
+{
+    // Setup
+    ITCMockObject *object = [[ITCMockObject alloc] init];
+    
+    ITCMockObject *arrayObject1 = [[ITCMockObject alloc] init];
+    arrayObject1.flatProperty = @"something1";
+    
+    ITCMockObject *arrayObject2 = [[ITCMockObject alloc] init];
+    arrayObject2.flatProperty = @"something2";
+    
+    object.arrayProperty = @[ arrayObject1, arrayObject2 ];
+    
+    // Act
+    NSDictionary *dictionary = [object dictionaryFormat];
+    
+    // Asserts
+    NSDictionary *expectedDictionary = @{ @"arrayProperty" : @[ @{ @"property1" : @"something1" }, @{ @"property1" : @"something2" } ] };
+    XCTAssertEqualObjects(dictionary, expectedDictionary);
+}
+
+- (void)testDictionaryWithStringArrayProperty
+{
+    // Setup
+    ITCMockObject *object = [[ITCMockObject alloc] init];
+    object.stringArrayProperty = @[ @"something1", @"something2" ];
+    
+    // Act
+    NSDictionary *dictionary = [object dictionaryFormat];
+    
+    // Asserts
+    NSDictionary *expectedDictionary = @{ @"stringArrayProperty" : @[ @"something1", @"something2" ] };
     XCTAssertEqualObjects(dictionary, expectedDictionary);
 }
 
