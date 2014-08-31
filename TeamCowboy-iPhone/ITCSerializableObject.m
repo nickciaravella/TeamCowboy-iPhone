@@ -7,6 +7,8 @@
 
 @implementation ITCSerializableObject
 
+#pragma mark - ITCSerializableObject
+
 //
 //
 - (id)initWithDictionary:(NSDictionary *)dictionary
@@ -85,6 +87,15 @@
     }
     
     [lastDictionary setObject:object forKey:[keys lastObject]];
+}
+
+#pragma mark - NSObject
+
+//
+//
+- (NSString *)description
+{
+    return [[self dictionaryFormat] description];
 }
 
 #pragma mark - Override in subclass

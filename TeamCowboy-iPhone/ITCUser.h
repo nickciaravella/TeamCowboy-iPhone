@@ -13,6 +13,9 @@ typedef NS_ENUM(NSUInteger, ITCUserGender)
     ITCUserGenderFemale
 };
 
+/**
+ @brief A user. Depending on how the user is retrieved, different properties may be available.
+ */
 @interface ITCUser : ITCSerializableObject
 
 /**

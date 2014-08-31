@@ -6,6 +6,9 @@
 #import "ITCSerializableObject.h"
 #import "ITCActivity.h"
 
+/**
+ @brief A team.
+ */
 @interface ITCTeam : ITCSerializableObject
 
 @property (nonatomic, readonly) NSNumber *teamId;

@@ -5,6 +5,9 @@
 
 #import "ITCSerializableObject.h"
 
+/**
+ @brief An RSVP status
+ */
 typedef NS_ENUM(NSInteger, ITCEventRsvpStatus)
 {
     ITCEventRsvpStatusUnknown = 0,
@@ -15,6 +18,9 @@ typedef NS_ENUM(NSInteger, ITCEventRsvpStatus)
     ITCEventRsvpStatusNoResponse,
 };
 
+/**
+ @brief An RSVP given by a user.
+ */
 @interface ITCEventRsvp : ITCSerializableObject
 
 @property (nonatomic, readonly) NSString *userId;

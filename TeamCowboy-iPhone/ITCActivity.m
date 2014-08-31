@@ -7,27 +7,16 @@
 
 @implementation ITCActivity
 
-@synthesize activityId = _activityId;
-@synthesize name       = _name;
-
 #pragma mark - ITCSerializableObject
 
-- (id)initWithDictionary:(NSDictionary *)dictionary
+//
+//
++ (NSDictionary *)propertyToKeyPathMapping
 {
-    if (!(self = [super initWithDictionary:dictionary])) { return nil; }
-    
-    _activityId = dictionary[ @"activityId" ];
-    _name       = dictionary[ @"name" ];
-    
-    return self;
-}
-
-- (NSDictionary *)dictionaryFormat
-{
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    [dictionary safeSetValue:self.activityId forKey:@"activityId"];
-    [dictionary safeSetValue:self.name       forKey:@"name"];
-    return dictionary;
+    return @{
+             @"activityId" : @"activityId",
+             @"name"       : @"name"
+             };
 }
 
 @end

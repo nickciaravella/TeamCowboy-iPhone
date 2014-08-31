@@ -244,8 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				97110527199EF0AD00C2EF5C /* Resources */,
-				9711055519A1876C00C2EF5C /* ITCTeam.h */,
-				9711055619A1876C00C2EF5C /* ITCTeam.m */,
 				9711055B19A2DB6D00C2EF5C /* ITCTeamsTableViewController.h */,
 				9711055C19A2DB6D00C2EF5C /* ITCTeamsTableViewController.m */,
 				9711056319A43D6E00C2EF5C /* ITCTeamTableViewCell.h */,
@@ -258,12 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				97110526199EF0A100C2EF5C /* Resources */,
-				97C4F62219AA9A4300E69FCB /* ITCEvent.h */,
-				97C4F62319AA9A4300E69FCB /* ITCEvent.m */,
-				978C72C119B233E4003C817F /* ITCEventAttendanceList.h */,
-				978C72C219B233E4003C817F /* ITCEventAttendanceList.m */,
-				97C4F62B19B150F800E69FCB /* ITCEventRsvp.h */,
-				97C4F62C19B150F800E69FCB /* ITCEventRsvp.m */,
 				97C4F62519B003FB00E69FCB /* ITCEventsTableViewController.h */,
 				97C4F62619B003FB00E69FCB /* ITCEventsTableViewController.m */,
 				97C4F62819B0056F00E69FCB /* ITCEventTableViewCell.h */,
@@ -346,10 +338,18 @@
 		9711055F19A312C600C2EF5C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				9711054F19A16F2500C2EF5C /* ITCUser.h */,
-				9711055019A16F2500C2EF5C /* ITCUser.m */,
 				9711056019A312E800C2EF5C /* ITCActivity.h */,
 				9711056119A312E800C2EF5C /* ITCActivity.m */,
+				97C4F62219AA9A4300E69FCB /* ITCEvent.h */,
+				97C4F62319AA9A4300E69FCB /* ITCEvent.m */,
+				978C72C119B233E4003C817F /* ITCEventAttendanceList.h */,
+				978C72C219B233E4003C817F /* ITCEventAttendanceList.m */,
+				97C4F62B19B150F800E69FCB /* ITCEventRsvp.h */,
+				97C4F62C19B150F800E69FCB /* ITCEventRsvp.m */,
+				9711055519A1876C00C2EF5C /* ITCTeam.h */,
+				9711055619A1876C00C2EF5C /* ITCTeam.m */,
+				9711054F19A16F2500C2EF5C /* ITCUser.h */,
+				9711055019A16F2500C2EF5C /* ITCUser.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";

@@ -8,6 +8,16 @@
 #import "ITCTeam.h"
 #import "ITCTeamCowboyRepository.h"
 
+#pragma mark - ITCUser ()
+
+@interface ITCUser ()
+
+@property (nonatomic, readonly) NSString *serverGender;
+
+@end
+
+#pragma mark - ITCUser (implementation)
+
 @implementation ITCUser
 
 #pragma mark - ITCSerializableObject
@@ -17,36 +27,26 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary
 {
     if (!(self = [super initWithDictionary:dictionary])) { return nil; }
-    
-    _userId       = dictionary[ @"userId" ];
-    _fullName     = dictionary[ @"fullName" ];
-    _phoneNumber  = dictionary[ @"phoneNumber1" ];
-    _emailAddress = dictionary[ @"emailAddress1" ];
-    _gender       = [self genderFromServiceGender:dictionary[ @"gender" ]];
+
+    _gender = [self genderFromServiceGender:self.serverGender];
     
     return self;
 }
 
 //
 //
-- (NSDictionary *)dictionaryFormat
++ (NSDictionary *)propertyToKeyPathMapping
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    [dictionary safeSetValue:self.userId       forKey:@"userId"];
-    [dictionary safeSetValue:self.fullName     forKey:@"fullName"];
-    [dictionary safeSetValue:self.phoneNumber  forKey:@"phoneNumber1"];
-    [dictionary safeSetValue:self.emailAddress forKey:@"emailAddress1"];
-    [dictionary safeSetValue:[self serviceGenderFromGender:self.gender] forKey:@"gender"];
-    return dictionary;
+    return @{
+             @"userId"       : @"userId",
+             @"fullName"     : @"fullName",
+             @"phoneNumber"  : @"phoneNumber1",
+             @"emailAddress" : @"emailAddress1",
+             @"serverGender" : @"gender"
+             };
 }
 
 #pragma mark - ITCUser
-
-@synthesize userId       = _userId;
-@synthesize fullName     = _fullName;
-@synthesize phoneNumber  = _phoneNumber;
-@synthesize emailAddress = _emailAddress;
-@synthesize gender       = _gender;
 
 //
 //

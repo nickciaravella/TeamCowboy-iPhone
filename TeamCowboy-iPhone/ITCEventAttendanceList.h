@@ -5,6 +5,9 @@
 
 #import "ITCSerializableObject.h"
 
+/**
+ @brief
+ */
 @interface ITCEventAttendanceList : ITCSerializableObject
 
 @end

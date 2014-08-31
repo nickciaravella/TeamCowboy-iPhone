@@ -7,32 +7,15 @@
 
 @implementation ITCAuthenticationContext
 
-#pragma mark - ITCAuthenticationContext
-
-@synthesize token  = _token;
-@synthesize userId = _userId;
-
 #pragma mark - ITCSerializableObject overrides
 
 //
 //
-- (id)initWithDictionary:(NSDictionary *)dictionary
-{
-    if (!(self = [super initWithDictionary:dictionary])) { return nil; }
-    
-    _token  = dictionary[ @"token" ];
-    _userId = dictionary[ @"userId" ];
-    
-    return self;
-}
-
-//
-//
-- (NSDictionary *)dictionaryFormat
++ (NSDictionary *)propertyToKeyPathMapping
 {
     return @{
-             @"token"  : self.token,
-             @"userId" : self.userId
+             @"token"  : @"token",
+             @"userId" : @"userId"
              };
 }
 

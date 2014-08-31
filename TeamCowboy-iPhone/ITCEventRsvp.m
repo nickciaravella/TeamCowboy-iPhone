@@ -5,35 +5,45 @@
 
 #import "ITCEventRsvp.h"
 
+#pragma mark - ITCEventRsvp ()
+
 @interface ITCEventRsvp ()
 
 @property (nonatomic, readonly) NSString *serverStatus;
 
 @end
 
+#pragma mark - ITCEventRsvp (implementation)
+
 @implementation ITCEventRsvp
 
+#pragma mark - ITCSerializableObject
+
+//
+//
 - (id)initWithDictionary:(NSDictionary *)dictionary
 {
     if (!(self = [super initWithDictionary:dictionary])) { return nil; }
-    
-    _userId       = dictionary[ @"userId" ];
-    _serverStatus = dictionary[ @"rsvpDetails" ][ @"status" ];
+
     _status       = [self statusFromServerStatus:_serverStatus];
     
     return self;
 }
 
-- (NSDictionary *)dictionaryFormat
+//
+//
++ (NSDictionary *)propertyToKeyPathMapping
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    
-    [dictionary safeSetValue:self.userId forKey:@"userId"];
-    [dictionary safeSetValue:@{ @"status" : self.serverStatus } forKey:@"rsvpDetails"];
-    
-    return dictionary;
+    return @{
+             @"userId"       : @"userId",
+             @"serverStatus" : @"rsvpDetails.status"
+             };
 }
 
+#pragma mark - Private
+
+//
+//
 - (ITCEventRsvpStatus)statusFromServerStatus:(NSString *)serverStatus
 {
     if      ([serverStatus isEqualToString:@"yes"])        return ITCEventRsvpStatusYes;

@@ -7,6 +7,9 @@
 #import "ITCEventAttendanceList.h"
 #import "ITCEventRsvp.h"
 
+/**
+ @brief An event, such as a game, practice or meetup.
+ */
 @interface ITCEvent : ITCSerializableObject
 
 @property (nonatomic, readonly) NSNumber *eventId;
