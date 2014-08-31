@@ -12,6 +12,7 @@
 
 @property (nonatomic, readonly) NSNumber *teamId;
 @property (nonatomic, readonly) NSArray  *rsvps; // ITCEventRsvp
+@property (nonatomic, readonly) NSString *serverEventDate;
 
 @end
 
@@ -27,43 +28,39 @@
 {
     if (!(self = [super initWithDictionary:dictionary])) { return nil; }
     
-    _eventId         = dictionary[ @"eventId" ];
-    _teamName        = dictionary[ @"team" ][ @"name" ];
-    _teamId          = dictionary[ @"team" ][ @"teamId" ];
-    _opponentName    = dictionary[ @"title" ];
-    _homeAway        = dictionary[ @"homeAway" ];
-    _locationAddress = dictionary[ @"location" ][ @"address" ][ @"displaySingleLine" ];
-    _locationName    = dictionary[ @"location" ][ @"name" ];
-    _rsvps           = [self rsvpsFromDictionaries:dictionary[ @"rsvpInstances" ]];
-    
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    _eventDate = [dateFormatter dateFromString:dictionary[ @"dateTimeInfo" ][ @"startDateTimeLocal" ]];
-        
+    _eventDate = [dateFormatter dateFromString:_serverEventDate];
+    
+    _currentRsvp = [_rsvps firstObject];
+    
     return self;
 }
 
 //
 //
-- (NSDictionary *)dictionaryFormat
++ (NSDictionary *)propertyToKeyPathMapping
 {
-    NSMutableDictionary *dictionary = [NSMutableDictionary new];
-    
-    [dictionary safeSetValue:self.eventId forKey:@"eventId"];
-    [dictionary safeSetValue:@{ @"name"   : self.teamName,
-                                @"teamId" : self.teamId } forKey:@"team"];
-    [dictionary safeSetValue:self.opponentName forKey:@"title"];
-    [dictionary safeSetValue:self.homeAway forKey:@"homeAway"];
-    [dictionary safeSetValue:@{ @"address" : @{ @"displaySingleLine" : self.locationAddress },
-                                @"name"    : self.locationName }
-                      forKey:@"location"];
-    
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    [dictionary safeSetValue:@{ @"startDateTimeLocal" : [formatter stringFromDate:self.eventDate] }
-                      forKey:@"dateTimeInfo"];
-    
-    return dictionary;
+    return @{
+             @"eventId"         : @"eventId",
+             @"teamName"        : @"team.name",
+             @"teamId"          : @"team.teamId",
+             @"opponentName"    : @"title",
+             @"homeAway"        : @"homeAway",
+             @"locationAddress" : @"location.address.displaySingleLine",
+             @"locationName"    : @"location.name",
+             @"rsvps"           : @"rsvpInstances",
+             @"serverEventDate" : @"dateTimeInfo.startDateTimeLocal"
+             };
+}
+
+//
+//
++ (NSDictionary *)embeddedObjectPropertyToClassMapping
+{
+    return @{
+             @"rsvps" : NSStringFromClass([ITCEventRsvp class])
+             };
 }
 
 #pragma mark - ITCEvent
@@ -99,27 +96,6 @@
                                                       }
                                       cacheDuration:60
                                               error:error];
-}
-
-//
-//
-- (ITCEventRsvp *)currentRsvp
-{
-    return [self.rsvps firstObject];
-}
-
-#pragma mark - Private
-
-//
-//
-- (NSArray *)rsvpsFromDictionaries:(NSArray *)rsvpDictionaries
-{
-    NSMutableArray *rsvps = [NSMutableArray new];
-    for (NSDictionary *rsvpDictionary in rsvpDictionaries)
-    {
-        [rsvps addObject:[[ITCEventRsvp alloc] initWithDictionary:rsvpDictionary]];
-    }
-    return rsvps;
 }
 
 @end
