@@ -49,6 +49,7 @@
 		97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 97290810199BC7CC00F568A5 /* NSString+URL.m */; };
 		9729081B199C677400F568A5 /* ITCTeamCowboyApiKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */; };
 		978C72C319B233E4003C817F /* ITCEventAttendanceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72C219B233E4003C817F /* ITCEventAttendanceList.m */; };
+		978C72C519B2AA9B003C817F /* ITCSerializableObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72C419B2AA9B003C817F /* ITCSerializableObjectTests.m */; };
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
 		97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B11997FAB60094556D /* ITCAppDelegate.m */; };
@@ -155,6 +156,7 @@
 		9729081A199C677400F568A5 /* ITCTeamCowboyApiKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyApiKeys.m; sourceTree = "<group>"; };
 		978C72C119B233E4003C817F /* ITCEventAttendanceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventAttendanceList.h; sourceTree = "<group>"; };
 		978C72C219B233E4003C817F /* ITCEventAttendanceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventAttendanceList.m; sourceTree = "<group>"; };
+		978C72C419B2AA9B003C817F /* ITCSerializableObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCSerializableObjectTests.m; sourceTree = "<group>"; };
 		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				97110503199D815700C2EF5C /* ITCAuthenticationProviderTests.m */,
 				9711050F199D89D200C2EF5C /* ITCTestCase.h */,
 				97110510199D89D200C2EF5C /* ITCTestCase.m */,
+				978C72C419B2AA9B003C817F /* ITCSerializableObjectTests.m */,
 			);
 			path = "TeamCowboy-iPhoneTests";
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				97110507199D817D00C2EF5C /* ITCHttpConnectionDelegate.m in Sources */,
 				97110501199D7E4100C2EF5C /* ITCHttpConnectionMock.m in Sources */,
 				97110511199D89D200C2EF5C /* ITCTestCase.m in Sources */,
+				978C72C519B2AA9B003C817F /* ITCSerializableObjectTests.m in Sources */,
 				9711050E199D86E400C2EF5C /* ITCTeamCowboyHttpDataGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
