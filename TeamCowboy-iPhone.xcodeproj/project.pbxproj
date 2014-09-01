@@ -52,6 +52,7 @@
 		978C72C819B3D955003C817F /* NSArray+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72C719B3D955003C817F /* NSArray+Common.m */; };
 		978C72CB19B3E2F0003C817F /* ITCEventsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72CA19B3E2F0003C817F /* ITCEventsTableViewDataSource.m */; };
 		978C72D119B3F25B003C817F /* ITCEventAttendanceList.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72D019B3F25B003C817F /* ITCEventAttendanceList.m */; };
+		978C72D419B4075F003C817F /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 978C72D319B4075F003C817F /* UIColor+AppColors.m */; };
 		97A0698F1997F90A0094556D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A0698E1997F90A0094556D /* main.m */; };
 		97A0699A1997F90A0094556D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A069991997F90A0094556D /* Images.xcassets */; };
 		97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A069B11997FAB60094556D /* ITCAppDelegate.m */; };
@@ -163,6 +164,8 @@
 		978C72CA19B3E2F0003C817F /* ITCEventsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventsTableViewDataSource.m; sourceTree = "<group>"; };
 		978C72CF19B3F25B003C817F /* ITCEventAttendanceList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventAttendanceList.h; sourceTree = "<group>"; };
 		978C72D019B3F25B003C817F /* ITCEventAttendanceList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventAttendanceList.m; sourceTree = "<group>"; };
+		978C72D219B4075F003C817F /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
+		978C72D319B4075F003C817F /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
 		97A069891997F90A0094556D /* TeamCowboy-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TeamCowboy-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A0698D1997F90A0094556D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97A0698E1997F90A0094556D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -527,6 +530,8 @@
 		97A069BF199884F00094556D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				978C72D219B4075F003C817F /* UIColor+AppColors.h */,
+				978C72D319B4075F003C817F /* UIColor+AppColors.m */,
 				97A069C0199885080094556D /* UIViewController+Common.h */,
 				97A069C1199885080094556D /* UIViewController+Common.m */,
 			);
@@ -681,6 +686,7 @@
 				9711054719A06FDC00C2EF5C /* ITCCache.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
 				97110515199DB08600C2EF5C /* NSDictionary+URL.m in Sources */,
+				978C72D419B4075F003C817F /* UIColor+AppColors.m in Sources */,
 				97A069D51999B3360094556D /* NSObject+Concurrency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,13 @@
  */
 - (NSArray *)filteredArrayUsingBlock:(BOOL (^)(id element))block;
 
+/**
+ @brief Finds the first object matching the condition in a block.
+ @param block The block that determines if an element is the desired element. The parameter is the element and the return value is YES if the desired element was found, NO otherwise.
+ @return The first object found in the array.
+ */
+- (id)firstObjectUsingBlock:(BOOL (^)(id element))block;
+
 @end
 
 @interface NSMutableArray (Common)

@@ -77,7 +77,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-sl-gyG" userLabel="Green">
                                                     <rect key="frame" x="0.0" y="8" width="10" height="10"/>
-                                                    <color key="backgroundColor" red="0.26283961150000001" green="0.83222853539999997" blue="0.31537975540000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.2627450980392157" green="0.83137254901960789" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="SuA-4O-d37"/>
                                                         <constraint firstAttribute="width" constant="10" id="aCC-g7-B04"/>

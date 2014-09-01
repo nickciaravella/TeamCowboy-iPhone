@@ -7,12 +7,14 @@
 #import "ITCEvent.h"
 #import "ITCEventTableViewCell.h"
 #import "ITCEventsTableViewDataSource.h"
+#import "UIColor+AppColors.h"
 
 #pragma mark - ITCEventsTableViewController ()
 
 @interface ITCEventsTableViewController () <ITCEventsTableViewDataSourceDelegate>
 
 @property (nonatomic, strong) ITCEventsTableViewDataSource *dataSource;
+@property (nonatomic, strong) ITCUser *currentUser;
 
 @end
 
@@ -40,6 +42,7 @@
 //
 - (void)startLoadingDataForUser:(ITCUser *)user
 {
+    self.currentUser = user;
     [self.tableView reloadData];
     [self.dataSource reloadObjectsForUser:user bypassingCache:NO];
 }
@@ -89,6 +92,8 @@
     
     NSUInteger maybeResponses = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusMaybe];
     cell.maybeRSVPLabel.text  = [NSString stringWithFormat:@"%lu", maybeResponses];
+    
+    cell.currentUserRSVPStatusView.backgroundColor = [self colorOfCurrentUserRsvpInAttendanceList:event.attendanceList];
     
     return cell;
 }
@@ -145,6 +150,23 @@
         return @"vs.";
     }
     return nil;
+}
+
+//
+//
+- (UIColor *)colorOfCurrentUserRsvpInAttendanceList:(ITCEventAttendanceList *)attendance
+{
+    ITCEventRsvp *rsvp = [attendance.rsvps firstObjectUsingBlock:^BOOL(ITCEventRsvp *element) {
+        return ( element.user.userId == self.currentUser.userId );
+    }];
+    
+    switch (rsvp.status)
+    {
+        case ITCEventRsvpStatusYes:   return [UIColor attendingColor];
+        case ITCEventRsvpStatusMaybe: return [UIColor maybeAttendingColor];
+        case ITCEventRsvpStatusNo:    return [UIColor notAttendingColor];
+        default:                      return [UIColor clearColor];
+    }
 }
 
 //

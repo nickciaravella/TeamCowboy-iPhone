@@ -38,6 +38,21 @@
     return filteredArray;
 }
 
+//
+//
+- (id)firstObjectUsingBlock:(BOOL (^)(id))block
+{
+    for (id element in self)
+    {
+        BOOL isFound = block(element);
+        if ( isFound )
+        {
+            return element;
+        }
+    }
+    return nil;
+}
+
 @end
 
 #pragma mark - NSMutableArray (Common)
