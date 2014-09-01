@@ -26,7 +26,7 @@
         self.loadingError = loadError;
         [self.delegate dataSourceDidCompleteLoadingObjects:self];
         
-        [self loadAttendanceListForEachEvent];
+        [self loadAttendanceListForEachEventBypassingCache:bypassCache];
         
     }];
 }
@@ -66,16 +66,14 @@
 
 //
 //
-- (void)loadAttendanceListForEachEvent
+- (void)loadAttendanceListForEachEventBypassingCache:(BOOL)bypassCache
 {
     NSArray *events = [self.events copy];
     for (int i = 0; i < [events count]; ++i)
     {
         [self dispatchConcurrentQueueFromUx:^{
             
-            NSError *error = nil;
-            [events[i] loadAttendanceListBypassingCache:NO withError:&error];
-            
+            NSError *error = [events[i] loadAttendanceListBypassingCache:bypassCache];
             if ( error )
             {
                 ITCLogError( error, @"Failed to load attendance list for event: %@", events[i] );

@@ -6,6 +6,19 @@
 @interface ITCTeamCowboyRepository : NSObject
 
 /**
+ @brief Posts an action to the Team Cowboy service.
+ @param type             The response type from the server.
+ @param teamCowboyMethod The method bing performed.
+ @param parameters       The parameters to the method
+ @param error            If an error occurs, it will be put into this object.
+ @return The response entity.
+ */
++ (id)postEntityWithResultingType:(Class)type
+              forTeamCowboyMethod:(NSString *)teamCowboyMethod
+                   withParameters:(NSDictionary *)parameters
+                            error:(NSError **)error;
+
+/**
  @brief Gets an entity from either a cache or the Team Cowboy service.
  @param type             The type of entity. It should be a subclass of ITCSerializableObject.
  @param cacheIdentifier  The identifier of the cached item.

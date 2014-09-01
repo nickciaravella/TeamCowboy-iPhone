@@ -12,6 +12,30 @@
 
 //
 //
++ (id)postEntityWithResultingType:(Class)type
+              forTeamCowboyMethod:(NSString *)teamCowboyMethod
+                   withParameters:(NSDictionary *)parameters
+                            error:(NSError **)error
+{
+    if ( !error ) { return nil; }
+
+    ITCAuthenticationContext *authContext = [ITCAppFactory authenticationProvider].authenticationContext;
+    if ( !authContext.token )
+    {
+        *error = [NSError errorWithCode:ITCErrorUserNotAuthenticated message:@"No user is currently authenticated."];
+        return nil;
+    }
+    
+    NSMutableDictionary *bodyParameters = [[NSMutableDictionary alloc] initWithDictionary:@{ @"userToken" : authContext.token }];
+    [bodyParameters addEntriesFromDictionary:parameters];
+    return [[ITCAppFactory teamCowboyService] postRequestWithMethod:teamCowboyMethod
+                                                        requestBody:bodyParameters
+                                            usingResponseSerializer:[ITCTeamCowboyEntitySerializer serializerForClass:type isCollection:NO]
+                                                              error:error];
+}
+
+//
+//
 + (id)getEntityOfType:(Class)type
    withCacheIdentifier:(NSString *)cacheIdentifier
       teamCowboyMethod:(NSString *)teamCowboyMethod
@@ -59,7 +83,6 @@
                   error:(NSError **)error
 {
     if ( !error ) { return nil; }
-    ITCAuthenticationContext *authContext = [ITCAppFactory authenticationProvider].authenticationContext;
     
     if ( cacheIdentifier )
     {
@@ -86,6 +109,7 @@
     }
     
     // Otherwise load the entity from the service
+    ITCAuthenticationContext *authContext = [ITCAppFactory authenticationProvider].authenticationContext;
     if ( !authContext.token )
     {
         *error = [NSError errorWithCode:ITCErrorUserNotAuthenticated message:@"No user is currently authenticated."];

@@ -24,9 +24,21 @@
 /**
  @brief Loads the RSVPs for an event. After this call, if there is no error, the "attendanceList" property will be populated.
  @param bypassCache YES if cached values should be ignored.
- @param error If an error occurs, it will be put into this variable.
+ @return An error if one occurs.
  */
-- (void)loadAttendanceListBypassingCache:(BOOL)bypassCache
-                               withError:(NSError **)error;
+- (NSError *)loadAttendanceListBypassingCache:(BOOL)bypassCache;
+
+/**
+ @brief Saves an RSVP for the event for the current user.
+ @param status The status to save for the user.
+ @param additionalMales The number of additional males to include.
+ @param additionalFemales The number of additional females to include.
+ @param comments Comments for the RSVP. This is limited to 150 characters.
+ @return An error if one occurs.
+ */
+- (NSError *)rsvpWithStatus:(ITCEventRsvpStatus)status
+            additionalMales:(NSUInteger)additionalMales
+          additionalFemales:(NSUInteger)additionalFemales
+                   comments:(NSString *)comments;
 
 @end

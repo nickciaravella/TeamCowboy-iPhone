@@ -4,6 +4,7 @@
 //
 
 #import "ITCEvent.h"
+#import "ITCSaveRsvpResponse.h"
 #import "ITCTeamCowboyRepository.h"
 
 #pragma mark - ITCEvent ()
@@ -81,9 +82,9 @@
 
 //
 //
-- (void)loadAttendanceListBypassingCache:(BOOL)bypassCache
-                               withError:(NSError **)error
+- (NSError *)loadAttendanceListBypassingCache:(BOOL)bypassCache
 {
+    NSError *error = nil;
     _attendanceList = [ITCTeamCowboyRepository getEntityOfType:[ITCEventAttendanceList class]
                                            withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"eventAttendanceList_%@", self.eventId]
                                               teamCowboyMethod:@"Event_GetAttendanceList"
@@ -92,7 +93,53 @@
                                                                  @"teamId"  : [self.teamId description]
                                                                  }
                                                  cacheDuration:60
-                                                         error:error];
+                                                         error:&error];
+    return error;
+}
+
+//
+//
+- (NSError *)rsvpWithStatus:(ITCEventRsvpStatus)status
+            additionalMales:(NSUInteger)additionalMales
+          additionalFemales:(NSUInteger)additionalFemales
+                   comments:(NSString *)comments
+{
+    NSError *error = nil;
+    ITCSaveRsvpResponse *response = [ITCTeamCowboyRepository postEntityWithResultingType:[ITCSaveRsvpResponse class]
+                                                                     forTeamCowboyMethod:@"Event_SaveRSVP"
+                                                                          withParameters:@{
+                                                                                           @"eventId"    : [self.eventId description],
+                                                                                           @"teamId"     : [self.teamId description],
+                                                                                           @"status"     : [self serverRsvpStatusFromStatus:status],
+                                                                                           @"addlMale"   : [NSString stringWithFormat:@"%lu", additionalMales],
+                                                                                           @"addlFemale" : [NSString stringWithFormat:@"%lu", additionalFemales],
+                                                                                           @"comments"   : ( comments ) ? comments : [NSString string]
+                                                                                           }
+                                                                                   error:&error];
+    if ( !response.isRsvpSaved )
+    {
+        NSString *message = [NSString stringWithFormat:@"RSVP failed to save with status code: %@", response.statusCode];
+        error = [NSError errorWithCode:ITCErrorGenericTeamCowboyError message:message];
+    }
+    
+    return error;
+}
+
+#pragma mark - Private
+
+//
+//
+- (NSString *)serverRsvpStatusFromStatus:(ITCEventRsvpStatus)status
+{
+    switch (status)
+    {
+        case ITCEventRsvpStatusYes:        return @"yes";
+        case ITCEventRsvpStatusNo:         return @"no";
+        case ITCEventRsvpStatusAvailable:  return @"available";
+        case ITCEventRsvpStatusMaybe:      return @"maybe";
+        case ITCEventRsvpStatusNoResponse:
+        default:                           return @"noresponse";
+    }
 }
 
 @end

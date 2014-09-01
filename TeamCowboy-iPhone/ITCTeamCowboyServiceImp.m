@@ -37,6 +37,30 @@
 
 //
 //
+- (id)postRequestWithMethod:(NSString *)method
+                requestBody:(NSDictionary *)body
+    usingResponseSerializer:(id<ITCObjectSerializer>)serializer
+                      error:(NSError **)error
+{
+    NSString *httpMethod = @"POST";
+    NSString *requestString = [self requestStringForHttpMethod:httpMethod
+                                              teamCowboyMethod:method
+                                                withParameters:body];
+    
+    // 4. Make request
+    NSURL *url = [NSURL URLWithString:@"http://api.teamcowboy.com/v1/"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = httpMethod;
+    request.HTTPBody   = [requestString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    return [self responseAfterSendingRequest:request
+                                   forMethod:method
+                             usingSerializer:serializer
+                                   withError:error];
+}
+
+//
+//
 - (id)getRequestWithMethod:(NSString *)method
            queryParameters:(NSDictionary *)parameters
    usingResponseSerializer:(id<ITCObjectSerializer>)serializer

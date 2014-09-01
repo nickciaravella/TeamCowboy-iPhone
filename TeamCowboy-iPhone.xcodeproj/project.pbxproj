@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9700DD4419B446BD007D52AD /* ITCSaveRsvpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700DD4319B446BD007D52AD /* ITCSaveRsvpResponse.m */; };
 		971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */; };
 		971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F8199D6D6700C2EF5C /* ITCAlertingService.m */; };
 		971104FE199D7B4900C2EF5C /* ITCHttpConnectionImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104FD199D7B4900C2EF5C /* ITCHttpConnectionImp.m */; };
@@ -80,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9700DD4219B446BD007D52AD /* ITCSaveRsvpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCSaveRsvpResponse.h; sourceTree = "<group>"; };
+		9700DD4319B446BD007D52AD /* ITCSaveRsvpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCSaveRsvpResponse.m; sourceTree = "<group>"; };
 		971104F2199D5BED00C2EF5C /* ITCTeamCowboyError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyError.h; sourceTree = "<group>"; };
 		971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTeamCowboyError.m; sourceTree = "<group>"; };
 		971104F6199D670900C2EF5C /* ITCDiagnosticsMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITCDiagnosticsMacros.h; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 				978C72D019B3F25B003C817F /* ITCEventAttendanceList.m */,
 				97C4F62B19B150F800E69FCB /* ITCEventRsvp.h */,
 				97C4F62C19B150F800E69FCB /* ITCEventRsvp.m */,
+				9700DD4219B446BD007D52AD /* ITCSaveRsvpResponse.h */,
+				9700DD4319B446BD007D52AD /* ITCSaveRsvpResponse.m */,
 				9711055519A1876C00C2EF5C /* ITCTeam.h */,
 				9711055619A1876C00C2EF5C /* ITCTeam.m */,
 				9711054F19A16F2500C2EF5C /* ITCUser.h */,
@@ -676,6 +681,7 @@
 				9711055719A1876C00C2EF5C /* ITCTeam.m in Sources */,
 				97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */,
 				9711056219A312E800C2EF5C /* ITCActivity.m in Sources */,
+				9700DD4419B446BD007D52AD /* ITCSaveRsvpResponse.m in Sources */,
 				972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */,
 				97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */,
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,
