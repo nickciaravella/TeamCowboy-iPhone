@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E04886819B4DDDA00E82020 /* ITCBasicButtonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04886719B4DDDA00E82020 /* ITCBasicButtonInfo.m */; };
 		9700DD4419B446BD007D52AD /* ITCSaveRsvpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700DD4319B446BD007D52AD /* ITCSaveRsvpResponse.m */; };
 		971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */; };
 		971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F8199D6D6700C2EF5C /* ITCAlertingService.m */; };
@@ -81,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E04886619B4DDDA00E82020 /* ITCBasicButtonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCBasicButtonInfo.h; sourceTree = "<group>"; };
+		3E04886719B4DDDA00E82020 /* ITCBasicButtonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCBasicButtonInfo.m; sourceTree = "<group>"; };
 		9700DD4219B446BD007D52AD /* ITCSaveRsvpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCSaveRsvpResponse.h; sourceTree = "<group>"; };
 		9700DD4319B446BD007D52AD /* ITCSaveRsvpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCSaveRsvpResponse.m; sourceTree = "<group>"; };
 		971104F2199D5BED00C2EF5C /* ITCTeamCowboyError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyError.h; sourceTree = "<group>"; };
@@ -523,7 +526,7 @@
 				971104FA199D799D00C2EF5C /* HTTP */,
 				9729080B199B0B3E00F568A5 /* Serialization */,
 				972907F61999C1B200F568A5 /* Service */,
-				97A069BF199884F00094556D /* UIKit */,
+				97A069BF199884F00094556D /* UX */,
 				9711054519A06FDC00C2EF5C /* ITCCache.h */,
 				9711054619A06FDC00C2EF5C /* ITCCache.m */,
 				9711055819A189E500C2EF5C /* ITCTeamCowboyRepository.h */,
@@ -532,15 +535,17 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
-		97A069BF199884F00094556D /* UIKit */ = {
+		97A069BF199884F00094556D /* UX */ = {
 			isa = PBXGroup;
 			children = (
+				3E04886619B4DDDA00E82020 /* ITCBasicButtonInfo.h */,
+				3E04886719B4DDDA00E82020 /* ITCBasicButtonInfo.m */,
 				978C72D219B4075F003C817F /* UIColor+AppColors.h */,
 				978C72D319B4075F003C817F /* UIColor+AppColors.m */,
 				97A069C0199885080094556D /* UIViewController+Common.h */,
 				97A069C1199885080094556D /* UIViewController+Common.m */,
 			);
-			name = UIKit;
+			name = UX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -674,6 +679,7 @@
 				97C4F62419AA9A4300E69FCB /* ITCEvent.m in Sources */,
 				97A069B6199803120094556D /* ITCLoginViewController.m in Sources */,
 				9729080A199B0B2300F568A5 /* ITCTeamCowboyServiceImp.m in Sources */,
+				3E04886819B4DDDA00E82020 /* ITCBasicButtonInfo.m in Sources */,
 				9711052A199EF29400C2EF5C /* ITCAppTabBarController.m in Sources */,
 				97A069D21999AE510094556D /* ITCAuthenticationProviderImp.m in Sources */,
 				97A069B21997FAB60094556D /* ITCAppDelegate.m in Sources */,

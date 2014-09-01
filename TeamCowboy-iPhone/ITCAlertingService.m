@@ -18,8 +18,8 @@ static NSMutableArray *alertingServices;
 
 @interface ITCAlertingService () <UIAlertViewDelegate>
 
-@property (nonatomic, strong) void (^acknowledgeBlock)();
-@property (nonatomic, strong) void (^retryBlock)();
+@property (nonatomic, strong) ITCBasicButtonInfo *cancelButtonInfo;
+@property (nonatomic, strong) NSArray *buttonsInfo;
 
 @end
 
@@ -38,9 +38,6 @@ static NSMutableArray *alertingServices;
                retryBlock:(void (^)())retryBlock
 {
     [[self class] holdAlertingService:self];
-    
-    self.acknowledgeBlock = acknowledgeBlock;
-    self.retryBlock = retryBlock;
     
     // Show standard text for connection issues.
     if ( [error.domain isEqualToString:NSURLErrorDomain] )
@@ -62,21 +59,51 @@ static NSMutableArray *alertingServices;
         }
     }
     
+    ITCBasicButtonInfo *cancelButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Ok"
+                                                                        action:acknowledgeBlock];
+    NSMutableArray *otherButtons = [NSMutableArray new];
+    if (retryBlock)
+    {
+        [otherButtons addObject:[ITCBasicButtonInfo buttonInfoWithTitle:@"Try again"
+                                                                 action:retryBlock]];
+    }
+    
+    [self showAlertWithTitle:title
+                     message:message
+                cancelButton:cancelButton
+                otherButtons:otherButtons];
+}
+
+//
+//
+- (void)showAlertWithTitle:(NSString *)title
+                   message:(NSString *)message
+              cancelButton:(ITCBasicButtonInfo *)cancelButton
+              otherButtons:(NSArray *)otherButtons
+{
+    [[self class] holdAlertingService:self];
+    self.cancelButtonInfo = cancelButton;
+    self.buttonsInfo = otherButtons;
+    
     [self dispatchMainQueueIfNeeded:^{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
                                                         message:message
                                                        delegate:self
-                                              cancelButtonTitle:@"Ok"
+                                              cancelButtonTitle:self.cancelButtonInfo.title
                                               otherButtonTitles:nil];
-        if (retryBlock)
+        
+        for (ITCBasicButtonInfo *buttonInfo in self.buttonsInfo)
         {
-            [alert addButtonWithTitle:@"Try again"];
+            NSInteger buttonIndex = [alert addButtonWithTitle:buttonInfo.title];
+            buttonInfo.tag = buttonIndex;
         }
         
         ITCLog(@"Showing alert view: %@", alert);
         [alert show];
     }];
+    
 }
+
 
 #pragma mark - UIAlertViewDelegate
 
@@ -86,16 +113,19 @@ static NSMutableArray *alertingServices;
 {
     ITCLog(@"Alert view button was clicked at index: %li alerView: %@", buttonIndex, alertView);
     
-    [[self class] removeHeldAlertingService:alertView.delegate];
-    
     if ( buttonIndex == alertView.cancelButtonIndex )
     {
-        if ( self.acknowledgeBlock ) self.acknowledgeBlock();
+        self.cancelButtonInfo.actionBlock();
     }
     else
     {
-         if (self.retryBlock) self.retryBlock();
+        ITCBasicButtonInfo *buttonInfo = [self.buttonsInfo firstObjectUsingBlock:^BOOL(ITCBasicButtonInfo *element) {
+            return ( element.tag == buttonIndex );
+        }];
+        buttonInfo.actionBlock();
     }
+    
+    [[self class] removeHeldAlertingService:alertView.delegate];
 }
 
 #pragma mark - Private class methods

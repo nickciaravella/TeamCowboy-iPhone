@@ -176,6 +176,7 @@
                                     <outlet property="maybeRSVPLabel" destination="Qls-hC-sWL" id="7IQ-gW-av5"/>
                                     <outlet property="noRSVPLabel" destination="RT0-r3-bZE" id="io3-Re-rw0"/>
                                     <outlet property="opponentNameLabel" destination="awz-n7-UxY" id="EMO-yf-emV"/>
+                                    <outlet property="rsvpButton" destination="41E-qa-4Lj" id="wcd-Rp-95U"/>
                                     <outlet property="teamNameLabel" destination="3Vf-LO-4vp" id="urN-69-yVL"/>
                                     <outlet property="timeLabel" destination="lH2-HL-5WD" id="2Lz-CO-4FJ"/>
                                     <outlet property="yesRSVPLabel" destination="nRB-GK-KSN" id="9i8-lu-eru"/>

@@ -63,13 +63,16 @@
     }
     
     // TODO: Add default text if any properties are missing.
-    ITCEvent *event = [self.dataSource objectAtIndexPath:indexPath];
+    ITCEvent *event         = [self.dataSource objectAtIndexPath:indexPath];
     cell.locationButton.tag = [self.dataSource tagForObjectAtIndexPath:indexPath];
+    cell.rsvpButton.tag     = [self.dataSource tagForObjectAtIndexPath:indexPath];
     
+    // Team and opponent
     cell.teamNameLabel.text     = event.teamName;
     cell.opponentNameLabel.text = event.opponentName;
     cell.homeAwayLabel.text     = [self displayStringFromHomeAway:event.homeAway];
     
+    // Location
     [cell.locationButton setTitle:event.locationName forState:UIControlStateNormal];
     cell.locationButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     cell.locationButton.layer.borderWidth = 1;
@@ -94,6 +97,7 @@
     cell.maybeRSVPLabel.text  = [NSString stringWithFormat:@"%lu", maybeResponses];
     
     cell.currentUserRSVPStatusView.backgroundColor = [self colorOfCurrentUserRsvpInAttendanceList:event.attendanceList];
+    [cell.rsvpButton addTarget:self action:@selector(onRsvpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -175,6 +179,30 @@
 {
     ITCEvent *event = [self.dataSource objectForTag:sender.tag];
     [self openUrlForMapWithLocation:event.locationAddress];
+}
+
+//
+//
+- (void)onRsvpButtonClicked:(UIButton *)sender
+{
+    ITCBasicButtonInfo *attendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Attending" action:^{
+        ITCLog(@"Attending clicked!");
+    }];
+    ITCBasicButtonInfo *notAttendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Not Attending" action:^{
+        ITCLog(@"Not Attending clicked!");
+    }];
+    ITCBasicButtonInfo *maybeAttendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"More Options" action:^{
+        ITCLog(@"More Options clicked!");
+    }];
+    
+    [[ITCAppFactory alertingService] showAlertWithTitle:@"RSVP"
+                                                message:nil
+                                           cancelButton:[ITCBasicButtonInfo buttonInfoWithTitle:@"Cancel" action:nil]
+                                           otherButtons:@[
+                                                          attendingButton,
+                                                          notAttendingButton,
+                                                          maybeAttendingButton
+                                                          ]];
 }
 
 @end

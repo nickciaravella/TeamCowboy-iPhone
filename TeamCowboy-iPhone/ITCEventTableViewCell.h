@@ -18,9 +18,10 @@
 @property (nonatomic, weak) IBOutlet UIButton *locationButton;
 
 // RSVP status
-@property (nonatomic, weak) IBOutlet UILabel *yesRSVPLabel;
-@property (nonatomic, weak) IBOutlet UILabel *noRSVPLabel;
-@property (nonatomic, weak) IBOutlet UILabel *maybeRSVPLabel;
-@property (nonatomic, weak) IBOutlet UIView  *currentUserRSVPStatusView;
+@property (nonatomic, weak) IBOutlet UILabel  *yesRSVPLabel;
+@property (nonatomic, weak) IBOutlet UILabel  *noRSVPLabel;
+@property (nonatomic, weak) IBOutlet UILabel  *maybeRSVPLabel;
+@property (nonatomic, weak) IBOutlet UIView   *currentUserRSVPStatusView;
+@property (nonatomic, weak) IBOutlet UIButton *rsvpButton;
 
 @end
