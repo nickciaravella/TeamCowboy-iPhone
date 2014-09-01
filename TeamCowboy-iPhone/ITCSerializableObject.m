@@ -22,7 +22,7 @@
     for (NSString *property in [mapping allKeys])
     {
         id value = [dictionary valueForKeyPath:mapping[property]];
-        if ( !value ) continue;        
+        if ( !value || [value isEqual:[NSNull null]] ) continue;
         
         if ( [value isKindOfClass:[NSArray class]] && [embeddedObjects containsObject:property] )
         {

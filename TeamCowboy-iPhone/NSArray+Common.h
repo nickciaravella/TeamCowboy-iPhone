@@ -14,6 +14,13 @@
  */
 - (NSArray *)arrayByTransformingElementsUsingBlock:(id (^)(id element))block;
 
+/**
+ @brief Filters an array using a block.
+ @param block The block that determines if an element should be present in the filtered array. The parameter is the element and the return value is YES if it should be present in the array, NO otherwise.
+ @return The filtered array.
+ */
+- (NSArray *)filteredArrayUsingBlock:(BOOL (^)(id element))block;
+
 @end
 
 @interface NSMutableArray (Common)

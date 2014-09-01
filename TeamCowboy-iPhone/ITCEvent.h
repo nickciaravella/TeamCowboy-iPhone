@@ -19,24 +19,14 @@
 @property (nonatomic, readonly) NSString *locationAddress;
 @property (nonatomic, readonly) NSDate   *eventDate;
 @property (nonatomic, readonly) NSString *homeAway;
-@property (nonatomic, readonly) ITCEventRsvp *currentRsvp;
+@property (nonatomic, readonly) ITCEventAttendanceList *attendanceList;
 
 /**
- @brief Loads the event, including the current user's RSVP status.
+ @brief Loads the RSVPs for an event. After this call, if there is no error, the "attendanceList" property will be populated.
  @param bypassCache YES if cached values should be ignored.
  @param error If an error occurs, it will be put into this variable.
- @return A new event object.
  */
-- (ITCEvent *)loadCurrentRsvpStatusBypassingCache:(BOOL)bypassCache
-                                        withError:(NSError **)error;
-
-/**
- @brief Loads the attendance list for an event.
- @param bypassCache YES if cached values should be ignored.
- @param error If an error occurs, it will be put into this variable.
- @return A new event attendance list object.
- */
-- (ITCEventAttendanceList *)loadAttendanceListBypassingCache:(BOOL)bypassCache
-                                                   withError:(NSError **)error;
+- (void)loadAttendanceListBypassingCache:(BOOL)bypassCache
+                               withError:(NSError **)error;
 
 @end

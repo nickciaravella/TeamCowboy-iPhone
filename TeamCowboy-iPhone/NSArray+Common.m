@@ -22,6 +22,22 @@
     return transformedArray;
 }
 
+//
+//
+- (NSArray *)filteredArrayUsingBlock:(BOOL (^)(id))block
+{
+    NSMutableArray *filteredArray = [NSMutableArray new];
+    for (id element in self)
+    {
+        BOOL shouldInclude = block(element);
+        if ( shouldInclude )
+        {
+            [filteredArray safeAddObject:element];
+        }
+    }
+    return filteredArray;
+}
+
 @end
 
 #pragma mark - NSMutableArray (Common)

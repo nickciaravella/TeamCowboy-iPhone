@@ -35,8 +35,17 @@
 + (NSDictionary *)propertyToKeyPathMapping
 {
     return @{
-             @"userId"       : @"userId",
-             @"serverStatus" : @"rsvpDetails.status"
+             @"user"         : @"user",
+             @"serverStatus" : @"rsvpInfo.status"
+             };
+}
+
+//
+//
++ (NSDictionary *)embeddedObjectPropertyToClassMapping
+{
+    return @{
+             @"user" : NSStringFromClass([ITCUser class])
              };
 }
 

@@ -72,12 +72,23 @@
     cell.locationButton.layer.borderWidth = 1;
     [cell.locationButton addTarget:self action:@selector(onLocationClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    // Date and time
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateFormat = @"MMMM d";
     cell.dateLabel.text = [formatter stringFromDate:event.eventDate];
     
     formatter.dateFormat = @"h:mm a";
     cell.timeLabel.text = [formatter stringFromDate:event.eventDate];
+    
+    // RSVPs
+    NSUInteger yesResponses   = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusYes];
+    cell.yesRSVPLabel.text    = [NSString stringWithFormat:@"%lu", yesResponses];
+    
+    NSUInteger noResponses    = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusNo];
+    cell.noRSVPLabel.text     = [NSString stringWithFormat:@"%lu", noResponses];
+    
+    NSUInteger maybeResponses = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusMaybe];
+    cell.maybeRSVPLabel.text  = [NSString stringWithFormat:@"%lu", maybeResponses];
     
     return cell;
 }

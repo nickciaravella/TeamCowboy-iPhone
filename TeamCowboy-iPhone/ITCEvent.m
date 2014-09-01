@@ -32,8 +32,6 @@
     dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     _eventDate = [dateFormatter dateFromString:_serverEventDate];
     
-    _currentRsvp = [_rsvps firstObject];
-    
     return self;
 }
 
@@ -49,7 +47,6 @@
              @"homeAway"        : @"homeAway",
              @"locationAddress" : @"location.address.displaySingleLine",
              @"locationName"    : @"location.name",
-             @"rsvps"           : @"rsvpInstances",
              @"serverEventDate" : @"dateTimeInfo.startDateTimeLocal"
              };
 }
@@ -84,18 +81,18 @@
 
 //
 //
-- (ITCEventAttendanceList *)loadAttendanceListBypassingCache:(BOOL)bypassCache
-                                                   withError:(NSError **)error
+- (void)loadAttendanceListBypassingCache:(BOOL)bypassCache
+                               withError:(NSError **)error
 {
-    return [ITCTeamCowboyRepository getEntityOfType:[ITCEvent class]
-                                withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"eventAttendanceList_%@", self.eventId]
-                                   teamCowboyMethod:@"Event_GetAttendanceList"
-                                    queryParameters:@{
-                                                      @"eventId" : [self.eventId description],
-                                                      @"teamId"  : [self.teamId description]
-                                                      }
-                                      cacheDuration:60
-                                              error:error];
+    _attendanceList = [ITCTeamCowboyRepository getEntityOfType:[ITCEventAttendanceList class]
+                                           withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"eventAttendanceList_%@", self.eventId]
+                                              teamCowboyMethod:@"Event_GetAttendanceList"
+                                               queryParameters:@{
+                                                                 @"eventId" : [self.eventId description],
+                                                                 @"teamId"  : [self.teamId description]
+                                                                 }
+                                                 cacheDuration:60
+                                                         error:error];
 }
 
 @end

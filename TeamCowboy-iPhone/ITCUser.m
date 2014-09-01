@@ -40,7 +40,7 @@
     return @{
              @"userId"       : @"userId",
              @"fullName"     : @"fullName",
-             @"phoneNumber"  : @"phoneNumber1",
+             @"phoneNumber"  : @"phone1",
              @"emailAddress" : @"emailAddress1",
              @"serverGender" : @"gender"
              };
