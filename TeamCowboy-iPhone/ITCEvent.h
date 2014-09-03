@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) NSString *locationName;
 @property (nonatomic, readonly) NSString *locationAddress;
 @property (nonatomic, readonly) NSDate   *eventDate;
+@property (nonatomic, readonly) BOOL      isTimeTBD;
 @property (nonatomic, readonly) NSString *homeAway;
 @property (nonatomic, readonly) ITCEventAttendanceList *attendanceList;
 

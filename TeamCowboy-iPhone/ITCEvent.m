@@ -48,7 +48,8 @@
              @"homeAway"        : @"homeAway",
              @"locationAddress" : @"location.address.displaySingleLine",
              @"locationName"    : @"location.name",
-             @"serverEventDate" : @"dateTimeInfo.startDateTimeLocal"
+             @"serverEventDate" : @"dateTimeInfo.startDateTimeLocal",
+             @"isTimeTBD"       : @"dateTimeInfo.startTimeTBD"
              };
 }
 

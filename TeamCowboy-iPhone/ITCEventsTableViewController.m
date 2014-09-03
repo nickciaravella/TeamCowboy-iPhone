@@ -77,14 +77,15 @@
     cell.locationButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     cell.locationButton.layer.borderWidth = 1;
     [cell.locationButton addTarget:self action:@selector(onLocationClicked:) forControlEvents:UIControlEventTouchUpInside];
+    cell.locationButton.enabled = ( event.locationAddress.length > 0 );
     
     // Date and time
     NSDateFormatter *formatter = [NSDateFormatter new];
-    formatter.dateFormat = @"MMMM d";
+    formatter.dateFormat = @"EEEE, MMM. d";
     cell.dateLabel.text = [formatter stringFromDate:event.eventDate];
     
     formatter.dateFormat = @"h:mm a";
-    cell.timeLabel.text = [formatter stringFromDate:event.eventDate];
+    cell.timeLabel.text = ( event.isTimeTBD ) ? nil : [formatter stringFromDate:event.eventDate];
     
     // RSVPs
     NSUInteger yesResponses   = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusYes];
