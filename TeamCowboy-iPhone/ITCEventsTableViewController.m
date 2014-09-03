@@ -139,6 +139,40 @@
     }];
 }
 
+#pragma mark - Button actions
+
+//
+//
+- (void)onLocationClicked:(UIButton *)sender
+{
+    ITCEvent *event = [self.dataSource objectForTag:sender.tag];
+    [self openUrlForMapWithLocation:event.locationAddress];
+}
+
+//
+//
+- (void)onRsvpButtonClicked:(UIButton *)sender
+{
+    ITCBasicButtonInfo *attendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Attending" action:^{
+        [self.dataSource rsvpForEventWithTag:sender.tag withStatus:ITCEventRsvpStatusYes];
+    }];
+    ITCBasicButtonInfo *notAttendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Not Attending" action:^{
+        [self.dataSource rsvpForEventWithTag:sender.tag withStatus:ITCEventRsvpStatusNo];
+    }];
+    ITCBasicButtonInfo *moreOptionsButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"More Options" action:^{
+        ITCLog(@"More Options button clicked.");
+    }];
+    
+    [[ITCAppFactory alertingService] showAlertWithTitle:@"RSVP"
+                                                message:nil
+                                           cancelButton:[ITCBasicButtonInfo buttonInfoWithTitle:@"Cancel" action:nil]
+                                           otherButtons:@[
+                                                          attendingButton,
+                                                          notAttendingButton,
+                                                          moreOptionsButton
+                                                          ]];
+}
+
 #pragma mark - Private
 
 //
@@ -171,38 +205,6 @@
         case ITCEventRsvpStatusNo:    return [UIColor notAttendingColor];
         default:                      return [UIColor clearColor];
     }
-}
-
-//
-//
-- (void)onLocationClicked:(UIButton *)sender
-{
-    ITCEvent *event = [self.dataSource objectForTag:sender.tag];
-    [self openUrlForMapWithLocation:event.locationAddress];
-}
-
-//
-//
-- (void)onRsvpButtonClicked:(UIButton *)sender
-{
-    ITCBasicButtonInfo *attendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Attending" action:^{
-        ITCLog(@"Attending clicked!");
-    }];
-    ITCBasicButtonInfo *notAttendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Not Attending" action:^{
-        ITCLog(@"Not Attending clicked!");
-    }];
-    ITCBasicButtonInfo *maybeAttendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"More Options" action:^{
-        ITCLog(@"More Options clicked!");
-    }];
-    
-    [[ITCAppFactory alertingService] showAlertWithTitle:@"RSVP"
-                                                message:nil
-                                           cancelButton:[ITCBasicButtonInfo buttonInfoWithTitle:@"Cancel" action:nil]
-                                           otherButtons:@[
-                                                          attendingButton,
-                                                          notAttendingButton,
-                                                          maybeAttendingButton
-                                                          ]];
 }
 
 @end

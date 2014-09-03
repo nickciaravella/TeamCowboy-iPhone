@@ -57,9 +57,35 @@
     return indexPath.row;
 }
 
+//
+//
 - (id)objectForTag:(NSInteger)tag
 {
     return self.events[ tag ];
+}
+
+//
+//
+- (void)rsvpForEventWithTag:(NSInteger)tag
+                 withStatus:(ITCEventRsvpStatus)status
+{
+    [self dispatchConcurrentQueueFromUx:^{
+        
+        ITCEvent *event = [self objectForTag:tag];
+        NSError *rsvpError = [event rsvpWithStatus:status
+                                   additionalMales:0
+                                 additionalFemales:0
+                                          comments:nil];
+        // TODO: Call delegate with error.
+        ITCLogAndReturnOnError(rsvpError, @"Failed to send RSVP for event. RSVP: %@, Event: %@", NSStringFromRsvpStatus(status), event);
+        
+        NSError *reloadEventError = [event loadAttendanceListBypassingCache:YES];
+        ITCLogAndReturnOnError(reloadEventError, @"Failed to reload event attendance list after RSVP. Event: %@", event);
+        
+        [self.delegate dataSource:self
+     didUpdateObjectsAtIndexPaths:@[ [self indexPathForEventAtIndex:tag] ]];
+        
+    }];
 }
 
 #pragma mark - Private
@@ -81,11 +107,18 @@
             else
             {
                 [self.delegate dataSource:self
-             didUpdateObjectsAtIndexPaths:@[ [NSIndexPath indexPathForRow:i inSection:0] ]];
+             didUpdateObjectsAtIndexPaths:@[ [self indexPathForEventAtIndex:i] ]];
             }
             
         }];
     }
+}
+
+//
+//
+- (NSIndexPath *)indexPathForEventAtIndex:(NSUInteger)index
+{
+    return [NSIndexPath indexPathForRow:index inSection:0];
 }
 
 @end

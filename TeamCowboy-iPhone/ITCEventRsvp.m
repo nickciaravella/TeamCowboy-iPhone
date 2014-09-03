@@ -5,6 +5,24 @@
 
 #import "ITCEventRsvp.h"
 
+#pragma mark - NSStringFromRsvpStatus
+
+//
+//
+NSString *NSStringFromRsvpStatus(ITCEventRsvpStatus status)
+{
+    switch (status)
+    {
+        case ITCEventRsvpStatusAvailable:  return @"Available";
+        case ITCEventRsvpStatusMaybe:      return @"Maybe";
+        case ITCEventRsvpStatusNo:         return @"No";
+        case ITCEventRsvpStatusNoResponse: return @"No Response";
+        case ITCEventRsvpStatusYes:        return @"Yes";
+        case ITCEventRsvpStatusUnknown:    return @"Unknown";
+        default:                           return @"*** Invalid Status ***";
+    }
+}
+
 #pragma mark - ITCEventRsvp ()
 
 @interface ITCEventRsvp ()

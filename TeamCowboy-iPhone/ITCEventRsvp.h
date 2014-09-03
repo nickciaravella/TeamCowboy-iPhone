@@ -20,6 +20,11 @@ typedef NS_ENUM(NSInteger, ITCEventRsvpStatus)
 };
 
 /**
+ @brief Helper method for converting a status to a log-friendly string.
+ */
+NSString *NSStringFromRsvpStatus(ITCEventRsvpStatus status);
+
+/**
  @brief An RSVP given by a user.
  */
 @interface ITCEventRsvp : ITCSerializableObject
