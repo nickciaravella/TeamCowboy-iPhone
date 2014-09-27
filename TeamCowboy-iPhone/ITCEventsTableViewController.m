@@ -73,9 +73,8 @@
     cell.homeAwayLabel.text     = [self displayStringFromHomeAway:event.homeAway];
     
     // Location
-    [cell.locationButton setTitle:event.locationName forState:UIControlStateNormal];
-    cell.locationButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    cell.locationButton.layer.borderWidth = 1;
+    NSString *locationButtonText = ( event.locationAddress.length > 0 ) ? event.locationName : @"Location not available";
+    [cell.locationButton setTitle:locationButtonText forState:UIControlStateNormal];
     [cell.locationButton addTarget:self action:@selector(onLocationClicked:) forControlEvents:UIControlEventTouchUpInside];
     cell.locationButton.enabled = ( event.locationAddress.length > 0 );
     
