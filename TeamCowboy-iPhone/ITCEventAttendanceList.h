@@ -20,4 +20,11 @@
  */
 - (NSUInteger)numberOfResponsesMatchingStatus:(ITCEventRsvpStatus)status;
 
+/**
+ @brief Finds all the RSVPs that match a given status.
+ @param status The status
+ @return An array of ITCEventRsvp objects
+ */
+- (NSArray *)rsvpsMatchingStatus:(ITCEventRsvpStatus)status;
+
 @end

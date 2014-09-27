@@ -200,7 +200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="iDM-da-NHe" imageView="7a2-Tz-LDH" style="IBUITableViewCellStyleDefault" id="DnY-IH-EZX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PersonCell" textLabel="iDM-da-NHe" imageView="7a2-Tz-LDH" style="IBUITableViewCellStyleDefault" id="DnY-IH-EZX">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DnY-IH-EZX" id="vbZ-1d-oI1">
                                     <autoresizingMask key="autoresizingMask"/>

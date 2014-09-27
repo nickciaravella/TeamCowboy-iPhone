@@ -33,9 +33,16 @@
 //
 - (NSUInteger)numberOfResponsesMatchingStatus:(ITCEventRsvpStatus)status
 {
-    return [[self.rsvps filteredArrayUsingBlock:^BOOL(ITCEventRsvp *element) {
+    return [[self rsvpsMatchingStatus:status] count];
+}
+
+//
+//
+- (NSArray *)rsvpsMatchingStatus:(ITCEventRsvpStatus)status
+{
+    return [self.rsvps filteredArrayUsingBlock:^BOOL(ITCEventRsvp *element) {
         return ( element.status == status );
-    }] count];
+    }];
 }
 
 @end
