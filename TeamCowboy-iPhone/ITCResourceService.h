@@ -12,4 +12,13 @@
  */
 - (id)initialControllerFromStoryboard:(NSString *)storyboardName;
 
+/**
+ @brief Gets the controller from the storyboard in the main bundle with the given identifier.
+ @param storyboardName Name of the storyboard.
+ @param storyboardId   The ID of the controller in the storyboard.
+ @return The instantiated controller.
+ */
+- (id)controllerFromStoryboard:(NSString *)storyboardName
+                withIdentifier:(NSString *)storyboardId;
+
 @end

@@ -15,4 +15,13 @@
                                       bundle:[NSBundle mainBundle]] instantiateInitialViewController];
 }
 
+//
+//
+- (id)controllerFromStoryboard:(NSString *)storyboardName
+                withIdentifier:(NSString *)storyboardId
+{
+    return [[UIStoryboard storyboardWithName:storyboardName
+                                      bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:storyboardId];
+}
+
 @end

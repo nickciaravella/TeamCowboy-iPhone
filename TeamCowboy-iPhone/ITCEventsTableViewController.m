@@ -5,6 +5,7 @@
 
 #import "ITCEventsTableViewController.h"
 #import "ITCEvent.h"
+#import "ITCEventAttendanceTableViewController.h"
 #import "ITCEventTableViewCell.h"
 #import "ITCEventsTableViewDataSource.h"
 #import "UIColor+AppColors.h"
@@ -55,6 +56,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ITCEventTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"eventCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if ( self.dataSource.loadingError )
     {
@@ -137,6 +139,20 @@
     [self dispatchMainQueueIfNeeded:^{
         [self.tableView reloadData];
     }];
+}
+
+#pragma mark - UITableViewDelegate
+
+//
+//
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ITCEvent *event = [self.dataSource objectAtIndexPath:indexPath];
+    ITCEventAttendanceTableViewController *attendanceListController = [ITCEventAttendanceTableViewController eventAttendanceListForEvent:event];
+    
+    [self.navigationController pushViewController:attendanceListController animated:YES];
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 #pragma mark - Button actions
