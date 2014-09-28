@@ -195,27 +195,42 @@
         <scene sceneID="qiD-Fj-s1N">
             <objects>
                 <tableViewController storyboardIdentifier="AttendanceList" id="KOu-vX-y9s" customClass="ITCEventAttendanceTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="65P-Au-KWt">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="40" sectionFooterHeight="22" id="65P-Au-KWt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PersonCell" textLabel="iDM-da-NHe" imageView="7a2-Tz-LDH" style="IBUITableViewCellStyleDefault" id="DnY-IH-EZX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PersonCell" rowHeight="69" id="DnY-IH-EZX" customClass="ITCEventAttendanceTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DnY-IH-EZX" id="vbZ-1d-oI1">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Nick Ciaravella" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iDM-da-NHe">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPerson.png" translatesAutoresizingMaskIntoConstraints="NO" id="LdE-1Z-vh4">
+                                            <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="6bu-5n-0HP"/>
+                                                <constraint firstAttribute="height" constant="50" id="gm9-7q-5p3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nick Ciaravella" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0H3-k5-nbM">
+                                            <rect key="frame" x="68" y="22" width="114.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="defaultPerson.png" id="7a2-Tz-LDH">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="LdE-1Z-vh4" firstAttribute="leading" secondItem="vbZ-1d-oI1" secondAttribute="leadingMargin" id="cKT-lc-2qT"/>
+                                        <constraint firstItem="0H3-k5-nbM" firstAttribute="leading" secondItem="LdE-1Z-vh4" secondAttribute="trailing" constant="10" id="jIO-80-fzr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LdE-1Z-vh4" secondAttribute="bottom" constant="2.5" id="sgE-qR-9Yn"/>
+                                        <constraint firstItem="LdE-1Z-vh4" firstAttribute="top" secondItem="vbZ-1d-oI1" secondAttribute="topMargin" id="tgm-la-PLS"/>
+                                        <constraint firstItem="LdE-1Z-vh4" firstAttribute="centerY" secondItem="0H3-k5-nbM" secondAttribute="centerY" id="ygJ-DU-5xb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userImageView" destination="LdE-1Z-vh4" id="QQs-ep-ZR5"/>
+                                    <outlet property="userNameLabel" destination="0H3-k5-nbM" id="5Tz-PU-qOT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -227,7 +242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aw8-rP-Vlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168" y="337"/>
+            <point key="canvasLocation" x="1168" y="336"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="u2R-pt-9a3">

@@ -4,6 +4,7 @@
 //
 
 #import "ITCEventAttendanceTableViewController.h"
+#import "ITCEventAttendanceTableViewCell.h"
 #import "ITCEventAttendanceTableViewDataSource.h"
 
 #pragma mark - ITCEventAttendanceTableViewController ()
@@ -51,10 +52,18 @@
 //
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PersonCell" forIndexPath:indexPath];
+    ITCEventAttendanceTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PersonCell"
+                                                                                 forIndexPath:indexPath];
     ITCEventRsvp *rsvp = [self.dataSource objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = rsvp.user.fullName;
+    cell.userNameLabel.text = rsvp.user.fullName;
+    
+    if (indexPath.row == 0)
+        cell.userMessageLabel.text = nil;
+    if (indexPath.row == 1)
+        cell.userMessageLabel.text = @"Something short";
+    if (indexPath.row == 2)
+        cell.userMessageLabel.text = @"Soemthing very afskljsadf;lkjsda;fkjasdfl;jsdaflsdlajflsad;jfkl;sadjf long.";
     
     return cell;
 }
