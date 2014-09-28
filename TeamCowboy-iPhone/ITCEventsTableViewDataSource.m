@@ -45,6 +45,7 @@
     return 1;
 }
 
+//
 - (NSInteger)numberOfObjectsInSection:(NSInteger)section
 {
     return [self.events count];

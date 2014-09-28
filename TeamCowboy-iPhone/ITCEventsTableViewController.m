@@ -12,7 +12,7 @@
 
 #pragma mark - ITCEventsTableViewController ()
 
-@interface ITCEventsTableViewController () <ITCEventsTableViewDataSourceDelegate>
+@interface ITCEventsTableViewController () <ITCTableViewDataSourceDelegate>
 
 @property (nonatomic, strong) ITCEventsTableViewDataSource *dataSource;
 @property (nonatomic, strong) ITCUser *currentUser;

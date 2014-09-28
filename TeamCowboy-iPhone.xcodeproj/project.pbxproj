@@ -10,6 +10,7 @@
 		3E04886819B4DDDA00E82020 /* ITCBasicButtonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04886719B4DDDA00E82020 /* ITCBasicButtonInfo.m */; };
 		3EC42F1119D740D000E2388F /* defaultPerson.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC42F1019D740D000E2388F /* defaultPerson.png */; };
 		3EC42F1419D741C500E2388F /* ITCEventAttendanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC42F1319D741C500E2388F /* ITCEventAttendanceTableViewController.m */; };
+		3EC42F1A19D75F2500E2388F /* ITCTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC42F1919D75F2500E2388F /* ITCTableViewDataSource.m */; };
 		9700DD4419B446BD007D52AD /* ITCSaveRsvpResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9700DD4319B446BD007D52AD /* ITCSaveRsvpResponse.m */; };
 		971104F4199D5BED00C2EF5C /* ITCTeamCowboyError.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F3199D5BED00C2EF5C /* ITCTeamCowboyError.m */; };
 		971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 971104F8199D6D6700C2EF5C /* ITCAlertingService.m */; };
@@ -89,6 +90,9 @@
 		3EC42F1019D740D000E2388F /* defaultPerson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPerson.png; sourceTree = "<group>"; };
 		3EC42F1219D741C500E2388F /* ITCEventAttendanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventAttendanceTableViewController.h; sourceTree = "<group>"; };
 		3EC42F1319D741C500E2388F /* ITCEventAttendanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventAttendanceTableViewController.m; sourceTree = "<group>"; };
+		3EC42F1819D75F2500E2388F /* ITCTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTableViewDataSource.h; sourceTree = "<group>"; };
+		3EC42F1919D75F2500E2388F /* ITCTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCTableViewDataSource.m; sourceTree = "<group>"; };
+		3EC42F1B19D7C8B300E2388F /* ITCTableViewDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTableViewDataSourceDelegate.h; sourceTree = "<group>"; };
 		9700DD4219B446BD007D52AD /* ITCSaveRsvpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCSaveRsvpResponse.h; sourceTree = "<group>"; };
 		9700DD4319B446BD007D52AD /* ITCSaveRsvpResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCSaveRsvpResponse.m; sourceTree = "<group>"; };
 		971104F2199D5BED00C2EF5C /* ITCTeamCowboyError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCTeamCowboyError.h; sourceTree = "<group>"; };
@@ -247,6 +251,16 @@
 				3EC42F1319D741C500E2388F /* ITCEventAttendanceTableViewController.m */,
 			);
 			name = "Attendance List";
+			sourceTree = "<group>";
+		};
+		3EC42F1719D75E9900E2388F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3EC42F1819D75F2500E2388F /* ITCTableViewDataSource.h */,
+				3EC42F1919D75F2500E2388F /* ITCTableViewDataSource.m */,
+				3EC42F1B19D7C8B300E2388F /* ITCTableViewDataSourceDelegate.h */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		971104F5199D66D100C2EF5C /* Diagnostic */ = {
@@ -541,6 +555,7 @@
 		97A069BB199883AC0094556D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3EC42F1719D75E9900E2388F /* Controller */,
 				9711054119A06F0400C2EF5C /* Controller Services */,
 				971104F5199D66D100C2EF5C /* Diagnostic */,
 				9711055F19A312C600C2EF5C /* Entities */,
@@ -720,6 +735,7 @@
 				9711053B199FCF8E00C2EF5C /* ITCMoreTableViewController.m in Sources */,
 				97290803199B027F00F568A5 /* ITCSerializableObject.m in Sources */,
 				971104F9199D6D6700C2EF5C /* ITCAlertingService.m in Sources */,
+				3EC42F1A19D75F2500E2388F /* ITCTableViewDataSource.m in Sources */,
 				97C4F62A19B0056F00E69FCB /* ITCEventTableViewCell.m in Sources */,
 				9711054719A06FDC00C2EF5C /* ITCCache.m in Sources */,
 				97A069C819988EBE0094556D /* ITCAppFactory.m in Sources */,
