@@ -191,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="726" y="337"/>
         </scene>
-        <!--Event Attendance Table View Controller-->
+        <!--Attendance-->
         <scene sceneID="qiD-Fj-s1N">
             <objects>
                 <tableViewController storyboardIdentifier="AttendanceList" id="KOu-vX-y9s" customClass="ITCEventAttendanceTableViewController" sceneMemberID="viewController">
@@ -205,15 +205,15 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DnY-IH-EZX" id="vbZ-1d-oI1">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultPerson.png" translatesAutoresizingMaskIntoConstraints="NO" id="LdE-1Z-vh4">
-                                            <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LdE-1Z-vh4">
+                                            <rect key="frame" x="8" y="13" width="42" height="42.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="6bu-5n-0HP"/>
-                                                <constraint firstAttribute="height" constant="50" id="gm9-7q-5p3"/>
+                                                <constraint firstAttribute="height" constant="42.5" id="5lt-GZ-UxN"/>
+                                                <constraint firstAttribute="width" constant="42" id="oVi-0T-t4g"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nick Ciaravella" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0H3-k5-nbM">
-                                            <rect key="frame" x="68" y="22" width="114.5" height="20.5"/>
+                                            <rect key="frame" x="60" y="24" width="114.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -222,8 +222,8 @@
                                     <constraints>
                                         <constraint firstItem="LdE-1Z-vh4" firstAttribute="leading" secondItem="vbZ-1d-oI1" secondAttribute="leadingMargin" id="cKT-lc-2qT"/>
                                         <constraint firstItem="0H3-k5-nbM" firstAttribute="leading" secondItem="LdE-1Z-vh4" secondAttribute="trailing" constant="10" id="jIO-80-fzr"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="LdE-1Z-vh4" secondAttribute="bottom" constant="2.5" id="sgE-qR-9Yn"/>
-                                        <constraint firstItem="LdE-1Z-vh4" firstAttribute="top" secondItem="vbZ-1d-oI1" secondAttribute="topMargin" id="tgm-la-PLS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LdE-1Z-vh4" secondAttribute="bottom" constant="5" id="sgE-qR-9Yn"/>
+                                        <constraint firstItem="LdE-1Z-vh4" firstAttribute="top" secondItem="vbZ-1d-oI1" secondAttribute="topMargin" constant="5" id="tgm-la-PLS"/>
                                         <constraint firstItem="LdE-1Z-vh4" firstAttribute="centerY" secondItem="0H3-k5-nbM" secondAttribute="centerY" id="ygJ-DU-5xb"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -238,6 +238,8 @@
                             <outlet property="delegate" destination="KOu-vX-y9s" id="lg9-rH-aEU"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Attendance" id="bBA-49-vwL"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aw8-rP-Vlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -265,7 +267,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="defaultPerson.png" width="153" height="153"/>
         <image name="tabBar_events.png" width="21" height="20"/>
     </resources>
 </document>

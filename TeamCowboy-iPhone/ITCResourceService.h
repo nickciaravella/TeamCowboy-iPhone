@@ -21,4 +21,13 @@
 - (id)controllerFromStoryboard:(NSString *)storyboardName
                 withIdentifier:(NSString *)storyboardId;
 
+/**
+ @brief Gets an image from the main bundle.
+ @param imageName The name of the image.
+ @param extension The extension of the image.
+ @return An image object. Nil on error.
+ */
+- (UIImage *)imageWithName:(NSString *)imageName
+                 extension:(NSString *)extension;
+
 @end

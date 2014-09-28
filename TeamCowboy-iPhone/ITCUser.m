@@ -13,6 +13,7 @@
 @interface ITCUser ()
 
 @property (nonatomic, readonly) NSString *serverGender;
+@property (nonatomic, readonly) NSString *thumbnailPhotoUrl;
 
 @end
 
@@ -38,11 +39,12 @@
 + (NSDictionary *)propertyToKeyPathMapping
 {
     return @{
-             @"userId"       : @"userId",
-             @"fullName"     : @"fullName",
-             @"phoneNumber"  : @"phone1",
-             @"emailAddress" : @"emailAddress1",
-             @"serverGender" : @"gender"
+             @"userId"            : @"userId",
+             @"fullName"          : @"fullName",
+             @"phoneNumber"       : @"phone1",
+             @"emailAddress"      : @"emailAddress1",
+             @"serverGender"      : @"gender",
+             @"thumbnailPhotoUrl" : @"profilePhoto.smallUrl"
              };
 }
 
@@ -86,6 +88,25 @@
                                                   queryParameters:nil
                                                     cacheDuration:30
                                                             error:error];
+}
+
+//
+//
+- (BOOL)hasThumbnailPhoto
+{
+    return self.thumbnailPhotoUrl.length > 0;
+}
+
+//
+//
+- (NSData *)loadThumbnailPhotoWithError:(NSError **)error
+{
+    NSData * photoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.thumbnailPhotoUrl]
+                                               options:NSDataReadingMappedIfSafe
+                                                 error:error];
+    
+    _loadedThumbnailPhoto = [UIImage imageWithData:photoData];
+    return photoData;
 }
 
 #pragma mark - Private

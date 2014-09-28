@@ -45,6 +45,13 @@ typedef NS_ENUM(NSUInteger, ITCUserGender)
 - (NSArray *)loadTeamEventsBypassingCache:(BOOL)bypassCache
                                 withError:(NSError **)error;
 
+/**
+ @brief Loads the thumbnail photo for the team. Once complete, the loadedThumbnailPhoto property will be initialized.
+ @param error If an error occurs, it will be put into this variable.
+ @return The data for the thumbnail photo.
+ */
+- (NSData *)loadThumbnailPhotoWithError:(NSError **)error;
+
 //
 // User properties
 //
@@ -53,5 +60,9 @@ typedef NS_ENUM(NSUInteger, ITCUserGender)
 @property (nonatomic, readonly) ITCUserGender gender;
 @property (nonatomic, readonly) NSString *phoneNumber;
 @property (nonatomic, readonly) NSString *emailAddress;
+
+@property (nonatomic, readonly) BOOL hasThumbnailPhoto;
+@property (nonatomic, readonly) UIImage *loadedThumbnailPhoto;
+
 
 @end

@@ -24,4 +24,13 @@
                                       bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:storyboardId];
 }
 
+//
+//
+- (UIImage *)imageWithName:(NSString *)imageName
+                 extension:(NSString *)extension
+{
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageName ofType:extension];
+    return [UIImage imageWithContentsOfFile:imagePath];
+}
+
 @end

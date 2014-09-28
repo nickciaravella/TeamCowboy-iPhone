@@ -58,12 +58,14 @@
     
     cell.userNameLabel.text = rsvp.user.fullName;
     
-    if (indexPath.row == 0)
-        cell.userMessageLabel.text = nil;
-    if (indexPath.row == 1)
-        cell.userMessageLabel.text = @"Something short";
-    if (indexPath.row == 2)
-        cell.userMessageLabel.text = @"Soemthing very afskljsadf;lkjsda;fkjasdfl;jsdaflsdlajflsad;jfkl;sadjf long.";
+    if (rsvp.user.hasThumbnailPhoto)
+    {
+        cell.userImageView.image = rsvp.user.loadedThumbnailPhoto;
+    }
+    else
+    {
+        cell.userImageView.image = [self defaultImageThumbnailForUser:rsvp.user];
+    }
     
     return cell;
 }
@@ -93,6 +95,30 @@
     [self dispatchMainQueueIfNeeded:^{
         [self.tableView reloadData];
     }];
+}
+
+#pragma mark - Private
+
+//
+//
+- (UIImage *)defaultImageThumbnailForUser:(ITCUser *)user
+{
+    static UIImage *femaleImage = nil;
+    static UIImage *maleImage   = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
+        maleImage   = [[ITCAppFactory resourceService] imageWithName:@"defaultUserThumbnail_Male"   extension:@"png"];
+        femaleImage = [[ITCAppFactory resourceService] imageWithName:@"defaultUserThumbnail_Female" extension:@"png"];
+        
+    });
+    
+    switch (user.gender)
+    {
+        case ITCUserGenderFemale: return femaleImage;
+        case ITCUserGenderMale:
+        default:                  return maleImage;
+    }
 }
 
 @end
