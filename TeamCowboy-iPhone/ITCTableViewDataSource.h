@@ -21,6 +21,14 @@
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
+ @brief Gets an object that represents a section for the table
+ @example If it is only for a title, this could return an NSString object.
+ @param section The section number
+ @return The object.
+ */
+- (id)objectForSection:(NSUInteger)section;
+
+/**
  @brief Returns the number of sections of data.
  */
 - (NSInteger)numberOfSections;

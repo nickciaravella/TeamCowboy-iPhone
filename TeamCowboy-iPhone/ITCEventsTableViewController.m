@@ -125,7 +125,7 @@
 
 //
 //
-- (void)dataSource:(ITCEventsTableViewDataSource *)source didUpdateObjectsAtIndexPaths:(NSArray *)indexPaths
+- (void)dataSource:(ITCTableViewDataSource *)source didUpdateObjectsAtIndexPaths:(NSArray *)indexPaths
 {
     [self dispatchMainQueueIfNeeded:^{
         [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
@@ -134,7 +134,7 @@
 
 //
 //
-- (void)dataSourceDidCompleteLoadingObjects:(ITCEventsTableViewDataSource *)source
+- (void)dataSourceDidCompleteLoadingObjects:(ITCTableViewDataSource *)source
 {
     [self dispatchMainQueueIfNeeded:^{
         [self.tableView reloadData];

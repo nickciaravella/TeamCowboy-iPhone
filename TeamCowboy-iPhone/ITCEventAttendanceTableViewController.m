@@ -4,12 +4,14 @@
 //
 
 #import "ITCEventAttendanceTableViewController.h"
+#import "ITCEventAttendanceTableViewDataSource.h"
 
 #pragma mark - ITCEventAttendanceTableViewController ()
 
-@interface ITCEventAttendanceTableViewController ()
+@interface ITCEventAttendanceTableViewController () <ITCTableViewDataSourceDelegate>
 
 @property (nonatomic, strong) ITCEvent *event;
+@property (nonatomic, strong) ITCEventAttendanceTableViewDataSource *dataSource;
 
 @end
 
@@ -24,30 +26,25 @@
     ITCEventAttendanceTableViewController *controller = [[ITCAppFactory resourceService] controllerFromStoryboard:@"Events"
                                                                                                    withIdentifier:@"AttendanceList"];
     controller.event = event;
+    controller.dataSource = [ITCEventAttendanceTableViewDataSource dataSourceWithEvent:event delegate:controller];
     
     return controller;
 }
+
+#pragma mark - UITableViewDataSource
 
 //
 //
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return [self.dataSource numberOfSections];
 }
 
 //
 //
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section)
-    {
-        case 0: return [self.event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusYes];
-        case 1: return [self.event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusMaybe];
-        case 2: return [self.event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusNo];
-        case 3:
-        default:
-            return [self.event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusNoResponse];
-    }
+    return [self.dataSource numberOfObjectsInSection:section];
 }
 
 //
@@ -55,19 +52,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PersonCell" forIndexPath:indexPath];
+    ITCEventRsvp *rsvp = [self.dataSource objectAtIndexPath:indexPath];
     
-    NSArray *listOfUsers = nil;
-    switch (indexPath.section)
-    {
-        case 0: listOfUsers = [self.event.attendanceList rsvpsMatchingStatus:ITCEventRsvpStatusYes]; break;
-        case 1: listOfUsers = [self.event.attendanceList rsvpsMatchingStatus:ITCEventRsvpStatusMaybe]; break;
-        case 2: listOfUsers = [self.event.attendanceList rsvpsMatchingStatus:ITCEventRsvpStatusNo]; break;
-        case 3:
-        default:
-            listOfUsers = [self.event.attendanceList rsvpsMatchingStatus:ITCEventRsvpStatusNoResponse]; break;
-    }
-    
-    ITCEventRsvp *rsvp = listOfUsers[indexPath.row];
     cell.textLabel.text = rsvp.user.fullName;
     
     return cell;
@@ -77,15 +63,27 @@
 //
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    switch (section)
-    {
-        case 0: return @"Attending";
-        case 1: return @"Maybe Attending";
-        case 2: return @"Not Attending";
-        case 3:
-        default:
-            return @"No Response";
-    }
+    return [self.dataSource objectForSection:section];
+}
+
+#pragma mark - ITCEventsTableViewDataSourceDelegate
+
+//
+//
+- (void)dataSource:(ITCTableViewDataSource *)source didUpdateObjectsAtIndexPaths:(NSArray *)indexPaths
+{
+    [self dispatchMainQueueIfNeeded:^{
+        [self.tableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+    }];
+}
+
+//
+//
+- (void)dataSourceDidCompleteLoadingObjects:(ITCTableViewDataSource *)source
+{
+    [self dispatchMainQueueIfNeeded:^{
+        [self.tableView reloadData];
+    }];
 }
 
 @end

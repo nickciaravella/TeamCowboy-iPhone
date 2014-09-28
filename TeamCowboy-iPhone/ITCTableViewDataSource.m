@@ -16,6 +16,13 @@
 
 //
 //
+- (id)objectForSection:(NSUInteger)section
+{
+    return nil;
+}
+
+//
+//
 - (NSInteger)numberOfSections
 {
     return 0;
