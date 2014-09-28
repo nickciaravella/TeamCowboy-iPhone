@@ -39,6 +39,29 @@ replacementString:(NSString *)string
     return YES;
 }
 
+//
+//
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ( textField == self.usernameTextField )
+    {
+        [self.passwordTextField becomeFirstResponder];
+        return YES;
+    }
+    else if ( textField == self.passwordTextField )
+    {
+        if ( self.signInButton.isEnabled )
+        {
+            [self onSignInButtonClicked:nil];
+            return YES;
+        }
+        
+        return NO;
+    }
+
+    return NO;
+}
+
 #pragma mark - Actions
 
 //
@@ -63,6 +86,8 @@ replacementString:(NSString *)string
 {
     ITCLog(@"User clicked the 'Sign in' button.");
     
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
     [self setViewsForLoading:YES];
 
     [self dispatchConcurrentQueueFromUx:^{
