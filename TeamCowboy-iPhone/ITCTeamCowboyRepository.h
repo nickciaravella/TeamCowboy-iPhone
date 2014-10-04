@@ -20,16 +20,18 @@
 
 /**
  @brief Gets an entity from either a cache or the Team Cowboy service.
- @param type             The type of entity. It should be a subclass of ITCSerializableObject.
- @param cacheIdentifier  The identifier of the cached item.
- @param teamCowboyMethod The method to call in the Team Cowboy service.
- @param parameters       Parameters to the Team Cowboy method.
- @param duration         The length to store the item in the cache.
- @param error            If an error occurs, it will be put into this object.
+ @param type              The type of entity. It should be a subclass of ITCSerializableObject.
+ @param cacheIdentifier   The identifier of the cached item.
+ @param shouldBypassCache YES if the cache should be bypassed when loading data.
+ @param teamCowboyMethod  The method to call in the Team Cowboy service.
+ @param parameters        Parameters to the Team Cowboy method.
+ @param duration          The length to store the item in the cache.
+ @param error             If an error occurs, it will be put into this object.
  @return The entity.
  */
 + (id)getEntityOfType:(Class)type
   withCacheIdentifier:(NSString *)cacheIdentifier
+    shouldBypassCache:(BOOL)shouldBypassCache
      teamCowboyMethod:(NSString *)teamCowboyMethod
       queryParameters:(NSDictionary *)parameters
         cacheDuration:(NSUInteger)duration
@@ -37,16 +39,18 @@
 
 /**
  @brief Gets a collection of entities from either a cache or the Team Cowboy service.
- @param type             The type of entity in the collection. It should be a subclass of ITCSerializableObject.
- @param cacheIdentifier  The identifier of the cached item.
- @param teamCowboyMethod The method to call in the Team Cowboy service.
- @param parameters       Parameters to the Team Cowboy method.
- @param duration         The length to store the item in the cache.
- @param error            If an error occurs, it will be put into this object.
+ @param type              The type of entity in the collection. It should be a subclass of ITCSerializableObject.
+ @param cacheIdentifier   The identifier of the cached item.
+ @param shouldBypassCache YES if the cache should be bypassed when loading data.
+ @param teamCowboyMethod  The method to call in the Team Cowboy service.
+ @param parameters        Parameters to the Team Cowboy method.
+ @param duration          The length to store the item in the cache.
+ @param error             If an error occurs, it will be put into this object.
  @return The entity.
  */
 + (id)getCollectionOfEntitiesOfType:(Class)type
                 withCacheIdentifier:(NSString *)cacheIdentifier
+                  shouldBypassCache:(BOOL)shouldBypassCache
                    teamCowboyMethod:(NSString *)teamCowboyMethod
                     queryParameters:(NSDictionary *)parameters
                       cacheDuration:(NSUInteger)duration

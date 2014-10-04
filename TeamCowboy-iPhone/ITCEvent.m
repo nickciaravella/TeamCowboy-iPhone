@@ -70,7 +70,8 @@
                                         withError:(NSError **)error
 {
     return [ITCTeamCowboyRepository getEntityOfType:[ITCEvent class]
-                                withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"event_%@", self.eventId]
+                                withCacheIdentifier:[NSString stringWithFormat:@"event_%@", self.eventId]
+                                  shouldBypassCache:bypassCache
                                    teamCowboyMethod:@"Event_Get"
                                     queryParameters:@{
                                                       @"eventId" : [self.eventId description],
@@ -87,7 +88,8 @@
 {
     NSError *error = nil;
     _attendanceList = [ITCTeamCowboyRepository getEntityOfType:[ITCEventAttendanceList class]
-                                           withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"eventAttendanceList_%@", self.eventId]
+                                           withCacheIdentifier:[NSString stringWithFormat:@"eventAttendanceList_%@", self.eventId]
+                                             shouldBypassCache:bypassCache
                                               teamCowboyMethod:@"Event_GetAttendanceList"
                                                queryParameters:@{
                                                                  @"eventId" : [self.eventId description],

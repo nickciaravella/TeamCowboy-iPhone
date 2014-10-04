@@ -57,7 +57,8 @@
 {
     NSString *userId = [ITCAppFactory authenticationProvider].authenticationContext.userId;
     return [ITCTeamCowboyRepository getEntityOfType:[ITCUser class]
-                                withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"user_%@", userId]
+                                withCacheIdentifier:[NSString stringWithFormat:@"user_%@", userId]
+                                  shouldBypassCache:bypassCache
                                    teamCowboyMethod:@"User_Get"
                                     queryParameters:nil
                                       cacheDuration:60
@@ -70,7 +71,8 @@
                            withError:(NSError **)error
 {
     return [ITCTeamCowboyRepository getCollectionOfEntitiesOfType:[ITCTeam class]
-                                              withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"user_%@_teams", self.userId]
+                                              withCacheIdentifier:[NSString stringWithFormat:@"user_%@_teams", self.userId]
+                                                shouldBypassCache:bypassCache
                                                  teamCowboyMethod:@"User_GetTeams"
                                                   queryParameters:nil
                                                     cacheDuration:30
@@ -83,7 +85,8 @@
                                  withError:(NSError **)error
 {
     return [ITCTeamCowboyRepository getCollectionOfEntitiesOfType:[ITCEvent class]
-                                              withCacheIdentifier:bypassCache ? nil : [NSString stringWithFormat:@"user_%@_teamEvents", self.userId]
+                                              withCacheIdentifier:[NSString stringWithFormat:@"user_%@_teamEvents", self.userId]
+                                                shouldBypassCache:bypassCache
                                                  teamCowboyMethod:@"User_GetTeamEvents"
                                                   queryParameters:nil
                                                     cacheDuration:30

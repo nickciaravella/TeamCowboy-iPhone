@@ -38,6 +38,7 @@
 //
 + (id)getEntityOfType:(Class)type
    withCacheIdentifier:(NSString *)cacheIdentifier
+    shouldBypassCache:(BOOL)shouldBypassCache
       teamCowboyMethod:(NSString *)teamCowboyMethod
       queryParameters:(NSDictionary *)parameters
          cacheDuration:(NSUInteger)duration
@@ -46,6 +47,7 @@
     return [self getEntitiesOfType:type
                       isCollection:NO
                withCacheIdentifier:cacheIdentifier
+                 shouldBypassCache:shouldBypassCache
                   teamCowboyMethod:teamCowboyMethod
                    queryParameters:parameters
                      cacheDuration:duration
@@ -56,6 +58,7 @@
 //
 + (id)getCollectionOfEntitiesOfType:(Class)type
                 withCacheIdentifier:(NSString *)cacheIdentifier
+                  shouldBypassCache:(BOOL)shouldBypassCache
                    teamCowboyMethod:(NSString *)teamCowboyMethod
                     queryParameters:(NSDictionary *)parameters
                       cacheDuration:(NSUInteger)duration
@@ -64,6 +67,7 @@
     return [self getEntitiesOfType:type
                       isCollection:YES
                withCacheIdentifier:cacheIdentifier
+                 shouldBypassCache:shouldBypassCache
                   teamCowboyMethod:teamCowboyMethod
                    queryParameters:parameters
                      cacheDuration:duration
@@ -77,14 +81,16 @@
 + (id)getEntitiesOfType:(Class)type
            isCollection:(BOOL)isCollection
     withCacheIdentifier:(NSString *)cacheIdentifier
+      shouldBypassCache:(BOOL)shouldBypassCache
        teamCowboyMethod:(NSString *)teamCowboyMethod
         queryParameters:(NSDictionary *)parameters
           cacheDuration:(NSUInteger)duration
                   error:(NSError **)error
 {
     if ( !error ) { return nil; }
+    ITCAssert( cacheIdentifier.length > 0, @"Entity must have a cache identifier." );
     
-    if ( cacheIdentifier )
+    if ( !shouldBypassCache )
     {
         // First try to load the entity from the cache.
         NSError *cacheReadError = nil;
