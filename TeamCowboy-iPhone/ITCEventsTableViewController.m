@@ -37,6 +37,21 @@
     return self;
 }
 
+#pragma mark - UIViewController
+
+//
+//
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.refreshControl = [UIRefreshControl new];
+    [self.refreshControl addTarget:self
+                            action:@selector(onRefreshControlActivated)
+                  forControlEvents:UIControlEventValueChanged];
+    
+}
+
 #pragma mark - ITCAppTabBarItem
 
 //
@@ -137,7 +152,10 @@
 - (void)dataSourceDidCompleteLoadingObjects:(ITCTableViewDataSource *)source
 {
     [self dispatchMainQueueIfNeeded:^{
+        
         [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+        
     }];
 }
 
@@ -230,6 +248,13 @@ didFailToRsvpForEventWithTag:(NSInteger)eventTag
                                                               notAttendingButton
                                                               ]];
     }
+}
+
+//
+//
+- (void)onRefreshControlActivated
+{
+    [self.dataSource reloadObjectsForUser:self.currentUser bypassingCache:YES];
 }
 
 #pragma mark - Private
