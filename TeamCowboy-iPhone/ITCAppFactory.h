@@ -17,6 +17,7 @@
 @interface ITCAppFactory : NSObject
 
 + (void)setShouldUseMocks:(BOOL)shouldUseMocks;
++ (BOOL)isVNextApp;
 
 + (ITCAlertingService *)alertingService;
 + (id<ITCAuthenticationProvider>)authenticationProvider;

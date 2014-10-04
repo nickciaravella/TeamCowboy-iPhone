@@ -22,6 +22,13 @@ static BOOL shouldUseMocks = NO;
     shouldUseMocks = useMocks;
 }
 
+//
+//
++ (BOOL)isVNextApp
+{
+    return NO;
+}
+
 #pragma mark - Objects
 
 //

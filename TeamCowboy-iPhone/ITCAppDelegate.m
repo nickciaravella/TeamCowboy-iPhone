@@ -13,12 +13,24 @@
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     ITCAppTabBarController *tabBarController = [[ITCAppTabBarController alloc] init];
-    tabBarController.viewControllers = @[
-                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Events"],
-                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Teams"],
-                                            [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Messages"],
-                                            [ITCMoreTableViewController navigationControllerWithMoreTableViewControllerWithDelegate:tabBarController]
-                                        ];
+    
+    if ([ITCAppFactory isVNextApp])
+    {
+        tabBarController.viewControllers = @[
+                                             [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Events"],
+                                             [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Teams"],
+                                             [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Messages"],
+                                             [ITCMoreTableViewController navigationControllerWithMoreTableViewControllerWithDelegate:tabBarController]
+                                             ];
+    }
+    else
+    {
+        tabBarController.viewControllers = @[
+                                             [[ITCAppFactory resourceService] initialControllerFromStoryboard:@"Events"],
+                                             [ITCMoreTableViewController navigationControllerWithMoreTableViewControllerWithDelegate:tabBarController]
+                                             ];
+    }
+
     self.window.rootViewController = tabBarController;
         
     return YES;
