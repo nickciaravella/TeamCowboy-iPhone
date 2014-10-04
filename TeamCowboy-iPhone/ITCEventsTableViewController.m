@@ -175,18 +175,37 @@
     ITCBasicButtonInfo *notAttendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Not Attending" action:^{
         [self.dataSource rsvpForEventWithTag:sender.tag withStatus:ITCEventRsvpStatusNo];
     }];
-    ITCBasicButtonInfo *moreOptionsButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"More Options" action:^{
-        ITCLog(@"More Options button clicked.");
-    }];
     
-    [[ITCAppFactory alertingService] showAlertWithTitle:@"RSVP"
-                                                message:nil
-                                           cancelButton:[ITCBasicButtonInfo buttonInfoWithTitle:@"Cancel" action:nil]
-                                           otherButtons:@[
-                                                          attendingButton,
-                                                          notAttendingButton,
-                                                          moreOptionsButton
-                                                          ]];
+    if ( [ITCAppFactory isVNextApp] )
+    {
+        ITCBasicButtonInfo *moreOptionsButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"More Options" action:^{
+            ITCLog(@"More Options button clicked.");
+        }];
+        
+        [[ITCAppFactory alertingService] showAlertWithTitle:@"RSVP"
+                                                    message:nil
+                                               cancelButton:[ITCBasicButtonInfo buttonInfoWithTitle:@"Cancel" action:nil]
+                                               otherButtons:@[
+                                                              attendingButton,
+                                                              notAttendingButton,
+                                                              moreOptionsButton
+                                                              ]];
+    }
+    else
+    {
+        ITCBasicButtonInfo *maybeAttendingButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Maybe Attending" action:^{
+            [self.dataSource rsvpForEventWithTag:sender.tag withStatus:ITCEventRsvpStatusMaybe];
+        }];
+        
+        [[ITCAppFactory alertingService] showAlertWithTitle:@"RSVP"
+                                                    message:nil
+                                               cancelButton:[ITCBasicButtonInfo buttonInfoWithTitle:@"Cancel" action:nil]
+                                               otherButtons:@[
+                                                              attendingButton,
+                                                              maybeAttendingButton,
+                                                              notAttendingButton
+                                                              ]];
+    }
 }
 
 #pragma mark - Private
