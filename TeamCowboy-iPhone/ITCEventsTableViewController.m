@@ -12,7 +12,7 @@
 
 #pragma mark - ITCEventsTableViewController ()
 
-@interface ITCEventsTableViewController () <ITCTableViewDataSourceDelegate>
+@interface ITCEventsTableViewController () <ITCEventsTableViewDataSourceDelegate>
 
 @property (nonatomic, strong) ITCEventsTableViewDataSource *dataSource;
 @property (nonatomic, strong) ITCUser *currentUser;
@@ -139,6 +139,30 @@
     [self dispatchMainQueueIfNeeded:^{
         [self.tableView reloadData];
     }];
+}
+
+//
+//
+- (void)dataSource:(ITCEventsTableViewDataSource *)source
+didFailToRsvpForEventWithTag:(NSInteger)eventTag
+         forStatus:(ITCEventRsvpStatus)status
+         withError:(NSError *)error
+{
+    ITCEvent *event = [self.dataSource objectForTag:eventTag];
+    
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    formatter.dateFormat = @"EEEE, MMM. d";
+    NSString *errorMessage = [NSString stringWithFormat:@"There was a problem submitting your RSVP for the event with the %@ on %@.",
+                              event.opponentName, [formatter stringFromDate:event.eventDate]];
+    
+    ITCBasicButtonInfo *retryButton = [ITCBasicButtonInfo buttonInfoWithTitle:@"Retry" action:^{
+        [self.dataSource rsvpForEventWithTag:eventTag withStatus:status];
+    }];
+    
+    [[ITCAppFactory alertingService] showAlertWithTitle:@"Something Went Wrong"
+                                                message:errorMessage
+                                           cancelButton:[ITCBasicButtonInfo buttonInfoWithTitle:@"Ok" action:nil]
+                                           otherButtons:@[ retryButton ]];
 }
 
 #pragma mark - UITableViewDelegate

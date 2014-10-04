@@ -77,8 +77,16 @@
                                    additionalMales:0
                                  additionalFemales:0
                                           comments:nil];
-        // TODO: Call delegate with error.
-        ITCLogAndReturnOnError(rsvpError, @"Failed to send RSVP for event. RSVP: %@, Event: %@", NSStringFromRsvpStatus(status), event);
+        if ( rsvpError )
+        {
+            ITCLogError(rsvpError, @"Failed to send RSVP for event. RSVP: %@, Event: %@", NSStringFromRsvpStatus(status), event);
+            
+            [self.delegate dataSource:self
+         didFailToRsvpForEventWithTag:tag
+                            forStatus:status
+                            withError:rsvpError];
+            return;
+        }
         
         NSError *reloadEventError = [event loadAttendanceListBypassingCache:YES];
         ITCLogAndReturnOnError(reloadEventError, @"Failed to reload event attendance list after RSVP. Event: %@", event);
