@@ -40,9 +40,10 @@
 {
     [super viewDidLoad];
     
+    self.tableView.estimatedRowHeight = 70;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     if ( !self.dataSource.isAttendanceListAvailable )
     {
-        self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
 }
@@ -83,12 +84,14 @@
                                                     forIndexPath:indexPath];
     }
     
-    ITCEventAttendanceTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PersonCell"
-                                                                                 forIndexPath:indexPath];
     ITCEventRsvp *rsvp = [self.dataSource objectAtIndexPath:indexPath];
     
-    cell.userNameLabel.text = rsvp.user.fullName;
+    NSString *reuseId = ( rsvp.comments.length > 0 ) ? @"PersonWithCommentCell" : @"PersonCell";
+    ITCEventAttendanceTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:reuseId
+                                                                                 forIndexPath:indexPath];
     
+    cell.userNameLabel.text = rsvp.user.fullName;
+    cell.userMessageLabel.text = rsvp.comments;
     if (rsvp.user.hasThumbnailPhoto)
     {
         cell.userImageView.image = rsvp.user.loadedThumbnailPhoto;
@@ -97,7 +100,7 @@
     {
         cell.userImageView.image = [self defaultImageThumbnailForUser:rsvp.user];
     }
-    
+
     return cell;
 }
 

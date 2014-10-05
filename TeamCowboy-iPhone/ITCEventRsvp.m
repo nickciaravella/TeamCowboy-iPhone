@@ -54,7 +54,8 @@ NSString *NSStringFromRsvpStatus(ITCEventRsvpStatus status)
 {
     return @{
              @"user"         : @"user",
-             @"serverStatus" : @"rsvpInfo.status"
+             @"serverStatus" : @"rsvpInfo.status",
+             @"comments"     : @"rsvpInfo.comments"
              };
 }
 

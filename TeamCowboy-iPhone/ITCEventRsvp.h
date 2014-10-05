@@ -31,5 +31,6 @@ NSString *NSStringFromRsvpStatus(ITCEventRsvpStatus status);
 
 @property (nonatomic, readonly) ITCUser *user;
 @property (nonatomic, readonly) ITCEventRsvpStatus status;
+@property (nonatomic, readonly) NSString *comments;
 
 @end
