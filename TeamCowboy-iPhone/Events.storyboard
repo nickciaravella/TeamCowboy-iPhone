@@ -9,7 +9,7 @@
         <scene sceneID="IiQ-BD-3L0">
             <objects>
                 <tableViewController id="kej-XK-lzD" customClass="ITCEventsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="235" sectionHeaderHeight="22" sectionFooterHeight="22" id="riC-lI-4N7">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="235" sectionHeaderHeight="22" sectionFooterHeight="22" id="riC-lI-4N7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -162,6 +162,7 @@
                                         <constraint firstItem="j6u-Gh-oOX" firstAttribute="top" secondItem="awz-n7-UxY" secondAttribute="bottom" constant="10" id="kta-oO-Nvu"/>
                                         <constraint firstItem="3Vf-LO-4vp" firstAttribute="top" secondItem="lH2-HL-5WD" secondAttribute="bottom" constant="10" id="rcX-g7-kDe"/>
                                         <constraint firstItem="jLX-bA-n1r" firstAttribute="leading" secondItem="bhx-3I-Lyc" secondAttribute="leadingMargin" constant="15" id="ynA-Qu-aYX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="B6Q-cq-wXy" secondAttribute="bottom" constant="8.5" id="zXn-ML-Ijt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -177,6 +178,26 @@
                                     <outlet property="timeLabel" destination="lH2-HL-5WD" id="2Lz-CO-4FJ"/>
                                     <outlet property="yesRSVPLabel" destination="nRB-GK-KSN" id="9i8-lu-eru"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="errorCell" rowHeight="124" id="v5w-6a-alL" customClass="ITCEventTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v5w-6a-alL" id="jPS-gb-umC">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There was a problem loading your schedule. Please try again by pulling down." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awE-sn-osA" customClass="ITCMultiLineLabel">
+                                            <rect key="frame" x="18" y="18" width="284" height="87.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="awE-sn-osA" secondAttribute="trailing" constant="10" id="GQ5-2j-LGq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="awE-sn-osA" secondAttribute="bottom" constant="10" id="P24-lB-ueQ"/>
+                                        <constraint firstItem="awE-sn-osA" firstAttribute="leading" secondItem="jPS-gb-umC" secondAttribute="leadingMargin" constant="10" id="sg3-S9-3eF"/>
+                                        <constraint firstItem="awE-sn-osA" firstAttribute="top" secondItem="jPS-gb-umC" secondAttribute="topMargin" constant="10" id="zEW-lA-yAi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>

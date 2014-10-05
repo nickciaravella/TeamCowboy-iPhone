@@ -44,7 +44,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.refreshControl = [UIRefreshControl new];
     self.refreshControl.tintColor = [UIColor lightGrayColor];
     [self.refreshControl addTarget:self
@@ -71,14 +71,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ITCEventTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"eventCell" forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
     if ( self.dataSource.loadingError )
     {
-        // TODO: handle showing error view
-        return cell;
+        return [self.tableView dequeueReusableCellWithIdentifier:@"errorCell"
+                                                    forIndexPath:indexPath];
     }
+    
+    ITCEventTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"eventCell"
+                                                                       forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     // TODO: Add default text if any properties are missing.
     ITCEvent *event         = [self.dataSource objectAtIndexPath:indexPath];
@@ -143,6 +144,17 @@
 - (void)dataSourceDidCompleteLoadingObjects:(ITCTableViewDataSource *)source
 {
     [self dispatchMainQueueIfNeeded:^{
+        
+        if ( self.dataSource.loadingError )
+        {
+            self.tableView.rowHeight = UITableViewAutomaticDimension;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        }
+        else
+        {
+            self.tableView.rowHeight = 225;
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        }
         
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
