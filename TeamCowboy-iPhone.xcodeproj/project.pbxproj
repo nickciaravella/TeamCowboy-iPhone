@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E04886819B4DDDA00E82020 /* ITCBasicButtonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04886719B4DDDA00E82020 /* ITCBasicButtonInfo.m */; };
+		3E27BE3819E0C3C300481383 /* ITCMultiLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E27BE3719E0C3C300481383 /* ITCMultiLineLabel.m */; };
 		3EC42F1119D740D000E2388F /* defaultUserThumbnail_Male.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC42F1019D740D000E2388F /* defaultUserThumbnail_Male.png */; };
 		3EC42F1419D741C500E2388F /* ITCEventAttendanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC42F1319D741C500E2388F /* ITCEventAttendanceTableViewController.m */; };
 		3EC42F1A19D75F2500E2388F /* ITCTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC42F1919D75F2500E2388F /* ITCTableViewDataSource.m */; };
@@ -90,6 +91,8 @@
 /* Begin PBXFileReference section */
 		3E04886619B4DDDA00E82020 /* ITCBasicButtonInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCBasicButtonInfo.h; sourceTree = "<group>"; };
 		3E04886719B4DDDA00E82020 /* ITCBasicButtonInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCBasicButtonInfo.m; sourceTree = "<group>"; };
+		3E27BE3619E0C3C300481383 /* ITCMultiLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCMultiLineLabel.h; sourceTree = "<group>"; };
+		3E27BE3719E0C3C300481383 /* ITCMultiLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCMultiLineLabel.m; sourceTree = "<group>"; };
 		3EC42F1019D740D000E2388F /* defaultUserThumbnail_Male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultUserThumbnail_Male.png; sourceTree = "<group>"; };
 		3EC42F1219D741C500E2388F /* ITCEventAttendanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITCEventAttendanceTableViewController.h; sourceTree = "<group>"; };
 		3EC42F1319D741C500E2388F /* ITCEventAttendanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITCEventAttendanceTableViewController.m; sourceTree = "<group>"; };
@@ -592,6 +595,8 @@
 			children = (
 				3E04886619B4DDDA00E82020 /* ITCBasicButtonInfo.h */,
 				3E04886719B4DDDA00E82020 /* ITCBasicButtonInfo.m */,
+				3E27BE3619E0C3C300481383 /* ITCMultiLineLabel.h */,
+				3E27BE3719E0C3C300481383 /* ITCMultiLineLabel.m */,
 				978C72D219B4075F003C817F /* UIColor+AppColors.h */,
 				978C72D319B4075F003C817F /* UIColor+AppColors.m */,
 				97A069C0199885080094556D /* UIViewController+Common.h */,
@@ -744,6 +749,7 @@
 				97290811199BC7CC00F568A5 /* NSString+URL.m in Sources */,
 				9711056219A312E800C2EF5C /* ITCActivity.m in Sources */,
 				9700DD4419B446BD007D52AD /* ITCSaveRsvpResponse.m in Sources */,
+				3E27BE3819E0C3C300481383 /* ITCMultiLineLabel.m in Sources */,
 				972907FD1999C7A200F568A5 /* NSError+Common.m in Sources */,
 				97290807199B07A700F568A5 /* ITCTeamCowboyEntitySerializer.m in Sources */,
 				97A069C5199889410094556D /* NSString+Common.m in Sources */,

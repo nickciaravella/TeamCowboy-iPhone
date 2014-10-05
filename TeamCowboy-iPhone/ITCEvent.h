@@ -20,7 +20,9 @@
 @property (nonatomic, readonly) NSDate   *eventDate;
 @property (nonatomic, readonly) BOOL      isTimeTBD;
 @property (nonatomic, readonly) NSString *homeAway;
+
 @property (nonatomic, readonly) ITCEventAttendanceList *attendanceList;
+@property (nonatomic, readonly) BOOL isAttendanceListLoaded;
 
 /**
  @brief Loads the RSVPs for an event. After this call, if there is no error, the "attendanceList" property will be populated.

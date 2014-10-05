@@ -32,12 +32,32 @@
     return controller;
 }
 
+#pragma mark - UIViewController
+
+//
+//
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    if ( !self.dataSource.isAttendanceListAvailable )
+    {
+        self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+}
+
 #pragma mark - UITableViewDataSource
 
 //
 //
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if ( !self.dataSource.isAttendanceListAvailable )
+    {
+        return 1;
+    }
+    
     return [self.dataSource numberOfSections];
 }
 
@@ -45,6 +65,11 @@
 //
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if ( !self.dataSource.isAttendanceListAvailable )
+    {
+        return 1;
+    }
+    
     return [self.dataSource numberOfObjectsInSection:section];
 }
 
@@ -52,6 +77,12 @@
 //
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if ( !self.dataSource.isAttendanceListAvailable )
+    {
+        return [self.tableView dequeueReusableCellWithIdentifier:@"ErrorCell"
+                                                    forIndexPath:indexPath];
+    }
+    
     ITCEventAttendanceTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"PersonCell"
                                                                                  forIndexPath:indexPath];
     ITCEventRsvp *rsvp = [self.dataSource objectAtIndexPath:indexPath];
@@ -74,6 +105,11 @@
 //
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+    if ( !self.dataSource.isAttendanceListAvailable )
+    {
+        return nil;
+    }
+    
     return [self.dataSource objectForSection:section];
 }
 

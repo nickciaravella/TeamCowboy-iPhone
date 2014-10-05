@@ -46,6 +46,7 @@
     [super viewDidLoad];
     
     self.refreshControl = [UIRefreshControl new];
+    self.refreshControl.tintColor = [UIColor lightGrayColor];
     [self.refreshControl addTarget:self
                             action:@selector(onRefreshControlActivated)
                   forControlEvents:UIControlEventValueChanged];
@@ -104,17 +105,7 @@
     cell.timeLabel.text = ( event.isTimeTBD ) ? nil : [formatter stringFromDate:event.eventDate];
     
     // RSVPs
-    NSUInteger yesResponses   = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusYes];
-    cell.yesRSVPLabel.text    = [NSString stringWithFormat:@"%lu", yesResponses];
-    
-    NSUInteger noResponses    = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusNo];
-    cell.noRSVPLabel.text     = [NSString stringWithFormat:@"%lu", noResponses];
-    
-    NSUInteger maybeResponses = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusMaybe];
-    cell.maybeRSVPLabel.text  = [NSString stringWithFormat:@"%lu", maybeResponses];
-    
-    cell.currentUserRSVPStatusView.backgroundColor = [self colorOfCurrentUserRsvpInAttendanceList:event.attendanceList];
-    [cell.rsvpButton addTarget:self action:@selector(onRsvpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self setupRsvpDataForCell:cell withEvent:event];
     
     return cell;
 }
@@ -289,6 +280,42 @@ didFailToRsvpForEventWithTag:(NSInteger)eventTag
         case ITCEventRsvpStatusNo:    return [UIColor notAttendingColor];
         default:                      return [UIColor clearColor];
     }
+}
+
+//
+//
+- (void)setupRsvpDataForCell:(ITCEventTableViewCell *)cell
+                   withEvent:(ITCEvent *)event
+{
+    if ( !event.isAttendanceListLoaded )
+    {
+        cell.yesRSVPLabel.text    = nil;
+        cell.noRSVPLabel.text     = nil;
+        cell.maybeRSVPLabel.text  = nil;
+        cell.currentUserRSVPStatusView.backgroundColor = [UIColor clearColor];
+    }
+    else if ( event.isAttendanceListLoaded && event.attendanceList == nil )
+    {
+        cell.yesRSVPLabel.text    = @"?";
+        cell.noRSVPLabel.text     = @"?";
+        cell.maybeRSVPLabel.text  = @"?";
+        cell.currentUserRSVPStatusView.backgroundColor = [UIColor clearColor];
+    }
+    else
+    {
+        NSUInteger yesResponses   = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusYes];
+        cell.yesRSVPLabel.text    = [NSString stringWithFormat:@"%lu", yesResponses];
+        
+        NSUInteger noResponses    = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusNo];
+        cell.noRSVPLabel.text     = [NSString stringWithFormat:@"%lu", noResponses];
+        
+        NSUInteger maybeResponses = [event.attendanceList numberOfResponsesMatchingStatus:ITCEventRsvpStatusMaybe];
+        cell.maybeRSVPLabel.text  = [NSString stringWithFormat:@"%lu", maybeResponses];
+        
+        cell.currentUserRSVPStatusView.backgroundColor = [self colorOfCurrentUserRsvpInAttendanceList:event.attendanceList];
+    }
+    
+    [cell.rsvpButton addTarget:self action:@selector(onRsvpButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end

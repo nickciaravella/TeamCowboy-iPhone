@@ -35,18 +35,27 @@
                                                       delegate:(id<ITCTableViewDataSourceDelegate>)delegate
 {
     ITCEventAttendanceTableViewDataSource *source = [ITCEventAttendanceTableViewDataSource new];
-
-    source.delegate = delegate;    
-    source.rsvps = [NSMutableArray new];
-    source.statuses = [NSMutableArray new];
+    source.delegate = delegate;
     
-    [self addUsersForStatus:ITCEventRsvpStatusYes        withStatusText:@"Attending"       forDataSource:source withEvent:event];
-    [self addUsersForStatus:ITCEventRsvpStatusMaybe      withStatusText:@"Maybe Attending" forDataSource:source withEvent:event];
-    [self addUsersForStatus:ITCEventRsvpStatusNo         withStatusText:@"Not Attending"   forDataSource:source withEvent:event];
-    [self addUsersForStatus:ITCEventRsvpStatusAvailable  withStatusText:@"Available"       forDataSource:source withEvent:event];
-    [self addUsersForStatus:ITCEventRsvpStatusNoResponse withStatusText:@"No Response"     forDataSource:source withEvent:event];
-    
-    [source loadUsersThumbnailPhotos];
+    if ( !event.isAttendanceListLoaded || event.attendanceList == nil )
+    {
+        source.isAttendanceListAvailable = NO;
+    }
+    else
+    {
+        source.isAttendanceListAvailable = YES;
+        
+        source.rsvps = [NSMutableArray new];
+        source.statuses = [NSMutableArray new];
+        
+        [self addUsersForStatus:ITCEventRsvpStatusYes        withStatusText:@"Attending"       forDataSource:source withEvent:event];
+        [self addUsersForStatus:ITCEventRsvpStatusMaybe      withStatusText:@"Maybe Attending" forDataSource:source withEvent:event];
+        [self addUsersForStatus:ITCEventRsvpStatusNo         withStatusText:@"Not Attending"   forDataSource:source withEvent:event];
+        [self addUsersForStatus:ITCEventRsvpStatusAvailable  withStatusText:@"Available"       forDataSource:source withEvent:event];
+        [self addUsersForStatus:ITCEventRsvpStatusNoResponse withStatusText:@"No Response"     forDataSource:source withEvent:event];
+        
+        [source loadUsersThumbnailPhotos];
+    }
     
     return source;
 }

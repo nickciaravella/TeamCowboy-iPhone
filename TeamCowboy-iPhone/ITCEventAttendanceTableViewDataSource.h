@@ -16,4 +16,9 @@
 + (ITCEventAttendanceTableViewDataSource *)dataSourceWithEvent:(ITCEvent *)event
                                                       delegate:(id<ITCTableViewDataSourceDelegate>)delegate;
 
+/**
+ @brief YES if the attendance list is available, otherwise NO
+ */
+@property (nonatomic, assign) BOOL isAttendanceListAvailable;
+
 @end

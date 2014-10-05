@@ -86,7 +86,7 @@
 //
 - (NSError *)loadAttendanceListBypassingCache:(BOOL)bypassCache
 {
-    NSError *error = nil;
+    NSError *error = nil;    
     _attendanceList = [ITCTeamCowboyRepository getEntityOfType:[ITCEventAttendanceList class]
                                            withCacheIdentifier:[NSString stringWithFormat:@"eventAttendanceList_%@", self.eventId]
                                              shouldBypassCache:bypassCache
@@ -97,6 +97,8 @@
                                                                  }
                                                  cacheDuration:60
                                                          error:&error];
+    
+    _isAttendanceListLoaded = YES;
     return error;
 }
 

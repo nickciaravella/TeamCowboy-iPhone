@@ -232,6 +232,29 @@
                                     <outlet property="userNameLabel" destination="0H3-k5-nbM" id="5Tz-PU-qOT"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ErrorCell" rowHeight="138" id="5Le-CQ-3ap" customClass="ITCEventAttendanceTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Le-CQ-3ap" id="dxk-1G-Prf">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The attendance list for this event is not currently available. Try refreshing by pulling down on the Schedule page. " lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okn-VA-ofN" customClass="ITCMultiLineLabel">
+                                            <rect key="frame" x="18" y="18" width="284" height="101.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="okn-VA-ofN" secondAttribute="trailing" constant="10" id="9l6-2p-Lwu"/>
+                                        <constraint firstItem="okn-VA-ofN" firstAttribute="leading" secondItem="dxk-1G-Prf" secondAttribute="leadingMargin" constant="10" id="bZa-2a-cLO"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="okn-VA-ofN" secondAttribute="bottom" constant="10" id="uhR-SO-vW1"/>
+                                        <constraint firstItem="okn-VA-ofN" firstAttribute="top" secondItem="dxk-1G-Prf" secondAttribute="topMargin" constant="10" id="ve4-oh-zcn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userNameLabel" destination="okn-VA-ofN" id="Lf5-02-eEa"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="KOu-vX-y9s" id="lMX-Pr-1Yy"/>
